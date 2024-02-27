@@ -46,6 +46,11 @@ body {
   }
 }
 
-.fa-star{
+
+.contenido-destacado{
   color: yellow;
+}
+
+.contenido-no-destacado{
+  color: rgb(202, 202, 202);
 }
