@@ -13,7 +13,7 @@ body {
   color: white !important;
 }
 
-@media (width >= 600px) and (width <= 2400px) {
+@media (width >= 600px) and (width <= 3400px) {
   .container-panel-lateral {
     width: 20%;
     background-color: rgb(0, 0, 0);
@@ -30,6 +30,10 @@ body {
 
 .container-tablas{
   margin: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .ancho-descripcion{
@@ -40,4 +44,8 @@ body {
   table {
     font-size: small;
   }
+}
+
+.fa-star{
+  color: yellow;
 }

@@ -15,6 +15,13 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../css/p-admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Panel de administracion</title>
   </head>
   <body>
@@ -72,7 +79,6 @@
     </section>
 
     <div class="container-columnas-administracion d-flex position-relative">
-
       <!-- Panel de administracion -->
       <section class="container-panel-lateral">
         <div>Panel de administración</div>
@@ -100,7 +106,7 @@
         <!-- Boton Administracion de usuarios -->
         <div class="dropdown">
           <button
-            class="btn btn-secondary dropdown-toggle btn-admin" 
+            class="btn btn-secondary dropdown-toggle btn-admin"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
@@ -122,7 +128,7 @@
       <section class="container-tablas">
         <div>
           <h1 id="encabezado-tablas" class="text-center">Administración de contenidos</h1>
-          
+
           <table class="table table-dark table-striped" id="tabla">
             <thead>
               <tr>
@@ -131,7 +137,7 @@
                 <th scope="col">Tipo</th>
                 <th scope="col">Categoría</th>
                 <th scope="col" class="w-25">Descripción</th>
-                <th scope="col" >URL imagen</th>
+                <th scope="col">URL imagen</th>
                 <th scope="col">URL video</th>
                 <th scope="col">Publicado</th>
                 <th scope="col">Acción</th>
@@ -144,8 +150,10 @@
                 <td>Película</td>
                 <td>Infantil</td>
                 <td>
-                  <span class="d-inline-block text-truncate" style="width: 200px;">El plan maestro de un villano para robarse la luna cambia de rumbo cuando un trío de huérfanas que
-                    buscan un padre se adueñan de su corazón.</span>
+                  <span class="d-inline-block text-truncate" style="width: 200px"
+                    >El plan maestro de un villano para robarse la luna cambia de rumbo cuando un trío de huérfanas que
+                    buscan un padre se adueñan de su corazón.</span
+                  >
                 </td>
                 <td>
                   <img
@@ -154,23 +162,19 @@
                     width="100px"
                   />
                 </td>
-                <td ><span>https://www.youtube.com/watch?v=KNmU0vtzEPs</span></td>
-                <td>SI✅</td>
+                <td><span>https://www.youtube.com/watch?v=KNmU0vtzEPs</span></td>
+                <td>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked1" checked />
+                    <label class="form-check-label" for="flexSwitchCheckChecked1">✅</label>
+                  </div>
+                </td>
                 <td class="w-25">
                   <div class="d-flex gap-2 flex-wrap">
-                    <button type="button" class="btn btn-danger">Borrar</button>
-                    <button type="button" class="btn btn-warning">Editar</button>
-                    <!-- <button type="button" class="btn btn-success">Destacar</button></div> -->
-                    <div class="form-check form-switch">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        role="switch"
-                        id="flexSwitchCheckChecked"
-                        checked
-                      />
-                      <label class="form-check-label" for="flexSwitchCheckChecked">Destacar</label>
-                    </div>
+                    <button type="button" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button type="button" class="btn btn-secondary"><i class="fa-regular fa-star"></i></button>
+                    <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+
                   </div>
                 </td>
               </tr>
@@ -181,8 +185,10 @@
                 <td>Película</td>
                 <td>Infantil</td>
                 <td>
-                  <span class="d-inline-block text-truncate" style="width: 200px;">El plan maestro de un villano para robarse la luna cambia de rumbo cuando un trío de huérfanas que
-                    buscan un padre se adueñan de su corazón.</span>
+                  <span class="d-inline-block text-truncate" style="width: 200px"
+                    >El plan maestro de un villano para robarse la luna cambia de rumbo cuando un trío de huérfanas que
+                    buscan un padre se adueñan de su corazón.</span
+                  >
                 </td>
                 <td>
                   <img
@@ -191,27 +197,21 @@
                     width="100px"
                   />
                 </td>
-                <td ><span>https://www.youtube.com/watch?v=KNmU0vtzEPs</span></td>
-                <td>NO⛔</td>
+                <td><span>https://www.youtube.com/watch?v=KNmU0vtzEPs</span></td>
+                <td>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked2" checked />
+                    <label class="form-check-label" for="flexSwitchCheckChecked2">⛔</label>
+                  </div>
+                </td>
                 <td class="w-25">
                   <div class="d-flex gap-2 flex-wrap">
-                    <button type="button" class="btn btn-danger">Borrar</button>
-                    <button type="button" class="btn btn-warning">Editar</button>
-                    <!-- <button type="button" class="btn btn-success">Destacar</button></div> -->
-                    <div class="form-check form-switch">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        role="switch"
-                        id="flexSwitchCheckChecked"
-                        checked
-                      />
-                      <label class="form-check-label" for="flexSwitchCheckChecked">Destacar</label>
-                    </div>
+                    <button type="button" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button type="button" class="btn btn-secondary"><i class="fa-solid fa-star"></i></button>
+                    <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
                   </div>
                 </td>
               </tr>
-
             </tbody>
           </table>
           <nav aria-label="Page navigation example">
