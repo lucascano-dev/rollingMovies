@@ -1,9 +1,9 @@
 const titulo = document.querySelector("#encabezado-tablas");
 const dropItem = document.querySelector(".enlace-test")
+const btnPublicado = document.getElementsByClassName("form-check-label")
 const iconoDestacar = document.getElementsByClassName("icono-destacar")
 const btnDestacar = document.getElementsByClassName("btn-destacar")
 const tabla = document.querySelector("#tabla")
-// const fila = tabla.querySelectorAll("tr")
 const btnVolver = document.getElementById("btn-volver")
 const btnAdminUsuarios = document.getElementById('btnAdminUsuarios')
 
@@ -11,7 +11,7 @@ console.log(titulo.textContent)
 
 dropItem.addEventListener("click", (event) => {
     event.preventDefault();
-    console.log('Click en coso  ')
+    console.log('Click')
 })
 
 /** Boton Volver */
@@ -38,3 +38,8 @@ for (let i = 0; i < btnDestacar.length; i++) {
 }
 
 /** Switch Publicado */
+for (let i = 0; i<btnPublicado.length ; i++) {
+    btnPublicado[i].addEventListener("click", () => {
+        if (btnPublicado[i].checked)
+    })
+}
