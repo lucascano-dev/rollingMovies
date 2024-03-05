@@ -1,0 +1,28 @@
+.FooterContainer
+{
+
+    text-align: center; 
+    background-color: rgb(231, 231, 231);
+    padding: 20px;
+font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+
+
+}
+
+.FooterSeccion {
+    text-align: center;
+    margin: 10px;
+}
+
+.Logo {
+   width: 30px;
+   height: auto;
+   margin: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
