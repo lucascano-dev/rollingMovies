@@ -1,28 +1,66 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .FooterContainer
 {
-
-    text-align: center; 
-    background-color: rgb(231, 231, 231);
-    padding: 20px;
-font-family: "Roboto", sans-serif;
-  font-weight: 100;
-  font-style: italic;
-
-
+    display: flex; 
+    background-color: rgb(227, 227, 227);
+    padding: 10px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
 }
 
 .FooterSeccion {
     text-align: center;
-    margin: 10px;
+    flex: 1;
+    padding: 10px;
+    
 }
 
 .Logo {
-   width: 30px;
-   height: auto;
-   margin: 20px;
+    width: 30px;
+    height: auto;
+    margin: 21px;
 }
 
 a{
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
+}
+
+.vertical-line {
+    border-left: 1px solid #ffffff; 
+  }
+
+@media (max-width:767px) {
+    .FooterContainer{
+        flex-direction: column;
+
+    }
+    .vertical-line{
+        border-left: none;
+    }
+    .Logo{
+        width: 30px;
+        margin: 15px;
+    }
+    .FooterSeccion a{
+        font-size: 15px;
+    }
+    .FooterSeccion h3{
+        font-size: 12px;
+    }
+    .FooterSeccion:nth-child(1)::after {
+        content: '';
+        display: block;
+        border-top: 1px solid #ccc;
+        margin-top: 10px; 
+        padding-top: 10px;  }
+
+        
+    
 }
