@@ -1,3 +1,4 @@
+const tablaContenido = document.querySelector("#tablaContenido");
 const titulo = document.querySelector("#encabezado-tablas");
 const dropItem = document.querySelector(".enlace-test")
 const btnPublicado = document.getElementsByClassName("form-check-label")
@@ -40,6 +41,8 @@ for (let i = 0; i < btnDestacar.length; i++) {
 /** Switch Publicado */
 for (let i = 0; i<btnPublicado.length ; i++) {
     btnPublicado[i].addEventListener("click", () => {
-        if (btnPublicado[i].checked)
+        // if (btnPublicado[i].checked)
     })
 }
+
+console.log(tablaContenido)

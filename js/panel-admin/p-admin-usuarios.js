@@ -2,16 +2,20 @@ const titulo = document.querySelector("#encabezado-tablas");
 const dropItem = document.querySelector(".enlace-test")
 const iconoDestacar = document.getElementsByClassName("icono-destacar")
 const btnDestacar = document.getElementsByClassName("btn-destacar")
-const tabla = document.querySelector("#tabla")
+// const tabla = document.querySelector("#tabla")
 // const fila = tabla.querySelectorAll("tr")
 const btnVolver = document.getElementById("btn-volver")
 const btnAdminUsuarios = document.getElementById('btnAdminUsuarios')
+const tablaUsuarios = document.querySelector('#tablaUsuarios')
+const usuariosRegistrados = JSON.parse(localStorage.getItem('usuarios')) || []
+
+
 
 console.log(titulo.textContent)
+console.log(usuariosRegistrados)
 
 dropItem.addEventListener("click", (event) => {
     event.preventDefault();
-    console.log('Click en coso  ')
 })
 
 /** Boton Volver */
@@ -19,6 +23,33 @@ btnVolver.addEventListener("click", () => {
     window.location.href = "index.html"
 })
 
+const cargaUsuarios = () => {
+    usuariosRegistrados.map(usuario => {
+        const tr = document.createElement('tr')
+        tr.innerHTML = `
+        <td>${usuario.id}</td>
+        <td>${usuario.nombre}</td>
+        <td>${usuario.email}</td>
+        <td>${usuario.password}</td>
+        <td>${usuario.stateActivation}</td>
+        <td>
+        <div class="form-check form-switch">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckChecked${usuario.id}"
+            checked
+          />
+          <label class="form-check-label" for="flexSwitchCheckChecked${usuario.id}">✅</label>
+        </div>
+      </td>
+        `
+        tablaUsuarios.appendChild(tr)
+    })
+}
+
+cargaUsuarios()
 
 
 
