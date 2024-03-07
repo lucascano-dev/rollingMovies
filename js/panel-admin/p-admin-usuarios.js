@@ -39,6 +39,7 @@ const cargaUsuarios = () => {
             type="checkbox"
             role="switch"
             id="flexSwitchCheckChecked${usuario.id}"
+            onclick="controlEstado(this)"
             checked
           />
           <label class="form-check-label" for="flexSwitchCheckChecked${usuario.id}">✅</label>
@@ -46,11 +47,18 @@ const cargaUsuarios = () => {
       </td>
         `
         tablaUsuarios.appendChild(tr)
+        
     })
 }
-
 cargaUsuarios()
 
+function controlEstado(checkbox) {
+    if (checkbox.checked) {
+        console.log(checkbox.id, 'CHECKEADO')
+    } else {
+        console.log(checkbox.id,'NO CHECJEADO')
+    }
+}
 
 
 /** Boton Destacar */
@@ -68,4 +76,5 @@ for (let i = 0; i < btnDestacar.length; i++) {
     })
 }
 
-/** Switch Publicado */
+/** Switch Estados Usuarios Activos */
+
