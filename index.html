@@ -10,7 +10,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
-   <footer class="FooterContainer">
+   <nav class="Navbar">
+    
+    <div class="Hamburguer" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <ul class="menu" id="menu">
+    <li><a href="#">Peliculas</a></li>
+    <li><a href="#">Login</a></li>
+    <li><a href="#">Registro</a></li>
+    <li><a href="#">Administracion</a></li>
+    </ul>
+
+    <div class="CinestrenarLogo">
+    <img src="./assets/img/Cinestrenar Logo.png" alt="Cinestrenar" class="CinestrenarLogo">
+    </div>
+    </nav>
+
+    <footer class="FooterContainer">
     
     <div class="FooterSeccion">
        
@@ -64,5 +84,6 @@
 
 
    </footer>
+   <script src="./js/PaginaPrincipal.js"></script>
 </body>
 </html>
