@@ -33,10 +33,10 @@ const cargaUsuarios = function() {
         <td>
           <div class="d-flex justify-content-end">
             <div>
-             ${usuario.stateActivation === 0 ? 'Pendiente&nbsp' : usuario.stateActivation === 1 ? 'Aprobado&nbsp' : 'Suspendido&nbsp'}
+             ${usuario.stateActivation === 0 ? 'Pendiente&nbsp' : usuario.stateActivation === 1 ? 'Aprobado&nbsp' : usuario.stateActivation === 2 ? 'Suspendido&nbsp' : null}
             </div>
             <div class="btn-group">
-              <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-opcion-tabla" data-bs-toggle="dropdown" aria-expanded="false">
+              <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-opcion-tabla d-flex justify-content-center" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fa-solid fa-ellipsis-vertical"></i>
               </button>
               <ul class="dropdown-menu">
@@ -50,11 +50,11 @@ const cargaUsuarios = function() {
         <td>
           <div class="d-flex justify-content-end">
           <div>
-          ${usuario.userRol}&nbsp
+          ${usuario.userRol === 0 ? 'Administrador' : usuario.userRol === 1 ? 'Suscriptor' : null }
         </div>
         <div class="btn-group">
-            <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-opcion-tabla" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa-solid fa-ellipsis-vertical"></i>
+            <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-opcion-tabla d-flex justify-content-center" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Cambiar a Administrador</a></li>
@@ -64,12 +64,12 @@ const cargaUsuarios = function() {
           </div>
           </div>
         </td>
-        <td>
+        <td class="d-flex justifyc-content-center align-items-center gap-2">
           <button type="button" class="btn btn-success">
-            <i class="fa-solid fa-pen-to-square fs-4"></i>
+            <i class="fa-solid fa-pen-to-square fs-6"></i>
           </button>
           <button type="button" class="btn btn-danger">
-            <i class="fa-solid fa-trash-can fs-4"></i>
+            <i class="fa-solid fa-trash-can fs-6"></i>
           </button>
         </td>
         `;
