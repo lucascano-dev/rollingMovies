@@ -29,18 +29,19 @@ const cargaUsuarios = () => {
         <td>${usuario.nombre}</td>
         <td>${usuario.email}</td>
         <td>${usuario.password}</td>
-        <td>${usuario.stateActivation}
-            <div class="form-check form-switch">
-                <input
-                class="form-check-input"
-                type="checkbox"
-                role="switch"
-                id="flexSwitchCheckChecked${usuario.id}"
-                onclick="controlEstado(this)"
-                
-                />
-                <label class="form-check-label" for="flexSwitchCheckChecked${usuario.id}">✅</label>
-            </div>
+        <td>${parseInt(usuario.stateActivation) === 0 ? 'Pendiente' : usuario.stateActivation === 1 ? 'Aprobado' : 'Suspendido'}
+          <div class="btn-group">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-ellipsis-v"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+        </div>
         </td>
         <td>${usuario.userRol}</td>
         <td>
