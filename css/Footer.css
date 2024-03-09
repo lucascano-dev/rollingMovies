@@ -4,7 +4,112 @@ body {
     padding: 0;
 
 }
+/* NAVBAR */
+.Navbar {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(227, 227, 227);
+    margin-top: 0px;
+    
+}
 
+.CinestrenarLogo {
+    width: 200px;
+    height: auto;
+}
+
+.Hamburguer {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+}
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: #534848;
+    margin: 3px 0;
+    
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+   
+    
+ 
+}
+
+.menu li {
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.menu a {
+    color: #333333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.menu a:hover {
+    color: #ccc;
+    font-size:35px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity:  0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(5px);
+    font-size: 20px;
+    padding: 15px;
+    left: 0;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 300px;
+    z-index: 1000;
+}
+.menu.active {
+    display: flex;
+    opacity: 1;
+}
+.Hamburguer {
+    display: flex;
+}
+.Navbar {
+    flex-direction: column;
+    
+    
+}
+.CinestrenarLogo{
+    height: 100px;
+    width: auto;
+    
+}
+.menu a{
+color: #fff;
+}
+
+.menu li {margin-bottom: 10px;}
+}
+/* NAVBAR */
+
+/* FOOTER */
 .FooterContainer
 {
     display: flex; 
@@ -176,3 +281,82 @@ a{
 
 .menu li {margin-bottom: 10px;}
 }
+/* FOOTER */
+
+/* PAGINA PRINCIPAL */
+.CarrouselCont {
+width: 100%;
+overflow: hidden;
+}
+
+.CarrouselSlide {
+display: flex;
+width: 300%;
+}
+
+.CarrouselSlide img {
+width: 100%;
+height: auto;    
+}
+
+.Slide {
+    position: relative;
+    flex: 1 0 auto;
+    text-align: start;
+}
+
+.Slide h2, .slide p {
+    margin: 5px;
+}
+
+.Slide button {
+    margin top: 10px;
+}
+.Slide img {
+    width: 100%;
+    height: auto;
+}
+.Overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 93%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    text-align: start;
+    font-size: 15px;
+    letter-spacing: 1px ;
+    padding: 20px;
+}
+.Overlay h2, .Overlay p {
+    margin: 5px;
+    padding: 10px;
+}
+
+.PlayButton {
+    margin-top: 10px;
+    background-color: #369439;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+/* PAGINA PRINCIPAL */
