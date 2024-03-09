@@ -84,6 +84,26 @@ a{
         margin-top: 0px;
         
     }
+    #registerButton{
+        padding: 20px;
+        background-color: transparent;
+        color: black;
+        border: none;
+        font-size: 20px;
+        font-family: "Roboto", sans-serif;
+       
+        margin-top: 0px;
+    }
+    #registerButton:hover{
+        padding: 20px;
+        background-color: transparent;
+        border: none;
+        font-size: 30px;
+        color: black;
+       
+        font-family: "Roboto", sans-serif;
+        margin-top: 0px;
+    }
 
     .CinestrenarLogo {
         width: 200px;
