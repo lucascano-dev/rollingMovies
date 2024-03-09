@@ -1,10 +1,11 @@
 class Usuario {
-    constructor(id, nombre, email, password, stateActivation) {
+    constructor(id, nombre, email, password, stateActivation, userRol) {
         this.id = id;
         this.nombre = nombre;
         this.email = email;
         this.password = password;
         this.stateActivation = stateActivation;
+        this.userRol = userRol;
     }
 }
 
@@ -22,7 +23,8 @@ function validarUsuario(e) {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   const confirmPassword = document.getElementById("confirmPassword").value;
-  const stateActivation = 'Pendiente'
+  const stateActivation = 0
+  const userRol = 'Admin'
 
     const validarEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   const resultadoValidarEmail = validarEmail.test(email);
@@ -41,7 +43,7 @@ function validarUsuario(e) {
         text: "Usuario no registrado",
       });
 
-      const nuevoUsuario = new Usuario(id, nombre, email, password, stateActivation )
+      const nuevoUsuario = new Usuario(id, nombre, email, password, stateActivation, userRol )
       usuariosRegistrados.push(nuevoUsuario)
 
       localStorage.setItem('usuarios',JSON.stringify(usuariosRegistrados))

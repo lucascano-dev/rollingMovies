@@ -54,3 +54,15 @@ body {
 .contenido-no-destacado{
   color: rgb(202, 202, 202);
 }
+
+
+.dropdown-toggle-opcion-tabla::after { /** Quitar flechas de dropdown de bootstrap*/
+    content: none;
+    
+}
+
+.dropdown-toggle-opcion-tabla{
+  font-size: 12px;
+  width: 10px;
+
+}

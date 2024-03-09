@@ -21,47 +21,63 @@ btnVolver.addEventListener("click", () => {
   window.location.href = "index.html";
 });
 
-const cargaUsuarios = () => {
-  usuariosRegistrados.map((usuario) => {
+
+const cargaUsuarios = function() {
+  usuariosRegistrados.map(function(usuario) {
     const tr = document.createElement("tr");
     tr.innerHTML = `
         <td>${usuario.id}</td>
         <td>${usuario.nombre}</td>
         <td>${usuario.email}</td>
         <td>${usuario.password}</td>
-        <td>${parseInt(usuario.stateActivation) === 0 ? 'Pendiente' : usuario.stateActivation === 1 ? 'Aprobado' : 'Suspendido'}
-          <div class="btn-group">
-            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-ellipsis-v"></i>
+        <td>
+          <div class="d-flex justify-content-end">
+            <div>
+             ${usuario.stateActivation === 0 ? 'Pendiente&nbsp' : usuario.stateActivation === 1 ? 'Aprobado&nbsp' : 'Suspendido&nbsp'}
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-opcion-tabla" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Aprobado</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Suspendido</a></li>
+              </ul>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="d-flex justify-content-end">
+          <div>
+          ${usuario.userRol}&nbsp
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-opcion-tabla" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#">Cambiar a Administrador</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Separated link</a></li>
+              <li><a class="dropdown-item" href="#">Cambiar a Suscriptor</a></li>
             </ul>
-        </div>
+          </div>
+          </div>
         </td>
-        <td>${usuario.userRol}</td>
         <td>
-        <div class="form-check form-switch">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            role="switch"
-            id="flexSwitchCheckChecked${usuario.id}"
-            onclick="controlEstado(this)"
-            
-          />
-          <label class="form-check-label" for="flexSwitchCheckChecked${usuario.id}">✅</label>
-        </div>
-      </td>
+          <button type="button" class="btn btn-success">
+            <i class="fa-solid fa-pen-to-square fs-4"></i>
+          </button>
+          <button type="button" class="btn btn-danger">
+            <i class="fa-solid fa-trash-can fs-4"></i>
+          </button>
+        </td>
         `;
     tablaUsuarios.appendChild(tr);
   });
 };
 cargaUsuarios();
+
 
 function controlEstado(checkbox) {
   const idCheck = document.getElementById(checkbox.id);
@@ -69,7 +85,7 @@ function controlEstado(checkbox) {
   if (checkbox.checked) {
     console.log(checkbox.id, "CHECKEADO");
   } else {
-    console.log(checkbox.id, "NO CHECEADO");
+    console.log(checkbox.id, "NO CHECKEADO");
   }
 }
 
