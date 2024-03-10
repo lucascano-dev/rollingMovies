@@ -2,11 +2,10 @@ const titulo = document.querySelector("#encabezado-tablas");
 const dropItem = document.querySelector(".enlace-test");
 const iconoDestacar = document.getElementsByClassName("icono-destacar");
 const btnDestacar = document.getElementsByClassName("btn-destacar");
-// const tabla = document.querySelector("#tabla")
-// const fila = tabla.querySelectorAll("tr")
 const btnVolver = document.getElementById("btn-volver");
 const btnAdminUsuarios = document.getElementById("btnAdminUsuarios");
 const tablaUsuarios = document.querySelector("#tablaUsuarios");
+const modalEditar = document.getElementById("")
 const usuariosRegistrados = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 console.log(titulo.textContent);
@@ -26,11 +25,11 @@ const cargaUsuarios = function() {
   usuariosRegistrados.map(function(usuario) {
     const tr = document.createElement("tr");
     tr.innerHTML = `
-        <td>${usuario.id}</td>
-        <td>${usuario.nombre}</td>
-        <td>${usuario.email}</td>
-        <td>${usuario.password}</td>
-        <td>
+        <td class="border" >${usuario.id}</td>
+        <td class="border" >${usuario.nombre}</td>
+        <td class="border" >${usuario.email}</td>
+        <td class="border" >${usuario.password}</td>
+        <td class="border" >
           <div class="d-flex justify-content-end">
             <div>
              ${usuario.stateActivation === 0 ? 'Pendiente&nbsp' : usuario.stateActivation === 1 ? 'Aprobado&nbsp' : usuario.stateActivation === 2 ? 'Suspendido&nbsp' : null}
@@ -47,10 +46,10 @@ const cargaUsuarios = function() {
             </div>
           </div>
         </td>
-        <td>
+        <td class="border" >
           <div class="d-flex justify-content-end">
           <div>
-          ${usuario.userRol === 0 ? 'Administrador' : usuario.userRol === 1 ? 'Suscriptor' : null }
+          ${usuario.userRol === 0 ? 'Administrador&nbsp' : usuario.userRol === 1 ? 'Suscriptor&nbsp' : null }
         </div>
         <div class="btn-group">
             <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-opcion-tabla d-flex justify-content-center" data-bs-toggle="dropdown" aria-expanded="false">
@@ -64,8 +63,8 @@ const cargaUsuarios = function() {
           </div>
           </div>
         </td>
-        <td class="d-flex justifyc-content-center align-items-center gap-2">
-          <button type="button" class="btn btn-success">
+        <td class="d-flex justifyc-content-center align-items-center gap-2 boder border-secondary">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">
             <i class="fa-solid fa-pen-to-square fs-6"></i>
           </button>
           <button type="button" class="btn btn-danger">
@@ -102,5 +101,3 @@ for (let i = 0; i < btnDestacar.length; i++) {
     }
   });
 }
-
-/** Switch Estados Usuarios Activos */
