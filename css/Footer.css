@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-
+    background-color: #e3e3e3;
 }
 /* NAVBAR */
 .Navbar {
@@ -359,4 +359,51 @@ height: auto;
     font-weight: 100;
     font-style: normal;
 }
+/*slider de peliculas por categoria*/
+.strip-container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px; 
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.movie-category {
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.strip {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px; 
+}
+
+.movie {
+    width: calc(20% - 20px); 
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 20px; 
+}
+
+.movie:last-child {
+    margin-right: 0;
+}
+
+.movie img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.movie p {
+    margin-top: 5px;
+    text-align: center;
+}
+/*slider de peliculas por categoria*/
+
 /* PAGINA PRINCIPAL */
