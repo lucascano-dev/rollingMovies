@@ -397,7 +397,7 @@ height: auto;
 
 .right-arrow {
     position: absolute;
-    top: 48%;
+    top: 51%;
     right: 70px;
     transform: translateY(-50%);
     font-size: 24px;
