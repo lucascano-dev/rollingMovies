@@ -1,29 +1,30 @@
-const titulo = document.querySelector("#encabezado-tablas");
-const dropItem = document.querySelector(".enlace-test");
-const iconoDestacar = document.getElementsByClassName("icono-destacar");
-const btnDestacar = document.getElementsByClassName("btn-destacar");
-const btnVolver = document.getElementById("btn-volver");
-const btnAdminUsuarios = document.getElementById("btnAdminUsuarios");
-const tablaUsuarios = document.querySelector("#tablaUsuarios");
-const modalEditar = document.getElementById("");
-let usuariosRegistrados = JSON.parse(localStorage.getItem("usuarios")) || [];
+const titulo = document.querySelector('#encabezado-tablas');
+const dropItem = document.querySelector('.enlace-test');
+const iconoDestacar = document.getElementsByClassName('icono-destacar');
+const btnDestacar = document.getElementsByClassName('btn-destacar');
+const btnVolver = document.getElementById('btn-volver');
+const btnAdminUsuarios = document.getElementById('btnAdminUsuarios');
+const tablaUsuarios = document.querySelector('#tablaUsuarios');
+const modalEditar = document.getElementById('');
+const formularioEditarUsuario = document.getElementById('formularioEditarUsuario');
+let usuariosRegistrados = JSON.parse(localStorage.getItem('usuarios')) || [];
 
 console.log(titulo.textContent);
 console.log(usuariosRegistrados);
 
-dropItem.addEventListener("click", (event) => {
+dropItem.addEventListener('click', (event) => {
   event.preventDefault();
 });
 
 /** Boton Volver */
-btnVolver.addEventListener("click", () => {
-  window.location.href = "index.html";
+btnVolver.addEventListener('click', () => {
+  window.location.href = 'index.html';
 });
 
 const cargaUsuarios = function () {
-  tablaUsuarios.innerHTML = "";
+  tablaUsuarios.innerHTML = '';
   usuariosRegistrados.map(function (usuario) {
-    const tr = document.createElement("tr");
+    const tr = document.createElement('tr');
     tr.innerHTML = `
         <td class="border" >${usuario.id}</td>
         <td class="border" >${usuario.nombre}</td>
@@ -34,11 +35,11 @@ const cargaUsuarios = function () {
             <div>
              ${
                usuario.stateActivation === 0
-                 ? "Pendiente&nbsp"
+                 ? 'Pendiente&nbsp'
                  : usuario.stateActivation === 1
-                 ? "Aprobado&nbsp"
+                 ? 'Aprobado&nbsp'
                  : usuario.stateActivation === 2
-                 ? "Suspendido&nbsp"
+                 ? 'Suspendido&nbsp'
                  : null
              }
             </div>
@@ -57,7 +58,7 @@ const cargaUsuarios = function () {
         <td class="border" >
           <div class="d-flex justify-content-end">
           <div>
-          ${usuario.userRol === 0 ? "Administrador&nbsp" : usuario.userRol === 1 ? "Suscriptor&nbsp" : null}
+          ${usuario.userRol === 0 ? 'Administrador&nbsp' : usuario.userRol === 1 ? 'Suscriptor&nbsp' : null}
         </div>
         <div class="btn-group">
             <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-opcion-tabla d-flex justify-content-center" data-bs-toggle="dropdown" aria-expanded="false">
@@ -97,38 +98,40 @@ const cargaUsuarios = function () {
 cargaUsuarios();
 
 const editarUsuario = function (idUsuario) {
-  const tituloModal = document.querySelector("#idUsuarioEditar");
-  const nombreModal = document.querySelector("#inputNombreUsuario");
-  const emailModal = document.querySelector("#inputEmailUsuario");
-  const passowrdModal = document.querySelector("#inputPasswordUsuario");
+  const tituloModal = document.querySelector('#idUsuarioEditar');
+  const nombreModal = document.querySelector('#inputNombreUsuario');
+  const emailModal = document.querySelector('#inputEmailUsuario');
+  const passowrdModal = document.querySelector('#inputPasswordUsuario');
 
   const usuario = usuariosRegistrados.find((usuario) => {
     return usuario.id == idUsuario;
   });
-  console.log("MIUSUARIO", usuario);
 
   tituloModal.textContent = usuario.id;
   nombreModal.value = usuario.nombre;
   emailModal.value = usuario.email;
   passowrdModal.value = usuario.password;
-};
 
-// console.log(usuariosEditados);
+  formularioEditarUsuario.setAttribute(
+    'data-id',
+    usuario.id
+  ); /** VER Finalizamos prototipo de proyecto- 27 de febrero de 2024: Min 54:07 */
+};
 
 function eliminarUsuario(idUsuario) {
   usuariosRegistrados = usuariosRegistrados.filter(function (usuario) {
     return usuario.id !== idUsuario;
   });
-  localStorage.setItem("usuarios", JSON.stringify(usuariosRegistrados));
+  localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
   cargaUsuarios();
 }
 
 function controlEstado(checkbox) {
   const idCheck = document.getElementById(checkbox.id);
-  console.log("ID DEL ELEMENTO", idCheck.id);
+  console.log('ID DEL ELEMENTO', idCheck.id);
   if (checkbox.checked) {
-    console.log(checkbox.id, "CHECKEADO");
+    console.log(checkbox.id, 'CHECKEADO');
   } else {
-    console.log(checkbox.id, "NO CHECKEADO");
+    console.log(checkbox.id, 'NO CHECKEADO');
   }
 }
