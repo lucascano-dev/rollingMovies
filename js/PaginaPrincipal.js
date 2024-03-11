@@ -32,8 +32,7 @@ regUser.addEventListener("click", () => {
     localStorage.setItem("usuarios", JSON.stringify(arrayUsers));
   }
   function isValidUser(userObject) {
-    let mailExpression =
-      /^([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$)/;
+    let mailExpression = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gm;
     if (
       userObject.nombre == "" ||
       userObject.correo == "" ||
