@@ -1,3 +1,4 @@
+
 function toggleMenu() {
   var menu = document.getElementById("menu");
   menu.classList.toggle("active");
@@ -81,3 +82,4 @@ regUser.addEventListener("click", () => {
     });
   }
 });
+
