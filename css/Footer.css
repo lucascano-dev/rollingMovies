@@ -367,20 +367,37 @@ height: auto;
     padding: 25px;
     margin: 15px;
     padding-left: 9px;
+   
 }
+.textslider{
+    display: flex;
+    position: absolute;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: -30px;
+    color: #333333;
 
+}
 .carousel-row {
     display: flex;
-    transition: transform 0.3s ease; /* Animación de desplazamiento */
+    transition: transform 0.3s ease;
+    margin-top: 10px;
+    
+
 }
 
 .movies {
-    flex: 0 0 20%; /* Ancho del 20% para cada película para mostrar 5 películas a la vez */
+    flex: 0 0 20%;
+
+}
+.movies img {
+    border-radius: 15px;
 }
 
 .right-arrow {
     position: absolute;
-    top: 50%;
+    top: 48%;
     right: 70px;
     transform: translateY(-50%);
     font-size: 24px;
