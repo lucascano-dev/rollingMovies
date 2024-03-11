@@ -166,6 +166,9 @@ function editarUsuario(e) {
   const modalHide = document.querySelector('.modal-backdrop');
   console.log(modalHide);
   modalHide.classList.remove('modal-backdrop', 'fade', 'show');
-  modalEditarUsuario.style.opacity = '0';
+  modalEditarUsuario.style.opacity = 'none';
   modalEditarUsuario.style.display = 'none';
+
+  /** HACER QUE BUSQUE SI CONTIENE TAL CLASE Y ELMINARLA:  */
+  // Quitar modal-backdrop, fade, show
 }
