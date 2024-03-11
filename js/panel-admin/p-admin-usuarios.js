@@ -100,14 +100,17 @@ const editarUsuario = function (idUsuario) {
   const tituloModal = document.querySelector("#idUsuarioEditar");
   const nombreModal = document.querySelector("#inputNombreUsuario");
   const emailModal = document.querySelector("#inputEmailUsuario");
-  const passowrdModal = document.querySelector("#inputPassowordUsuario");
-  tituloModal.textContent = idUsuario;
-  // usuariosRegistrados = usuariosRegistrados.findIndex(function (usuario) {});
-  localStorage.setItem("usuarios", JSON.stringify(usuariosRegistrados));
+  const passowrdModal = document.querySelector("#inputPasswordUsuario");
 
-  // const modalEditarUsuario = document.querySelector("#modalEditarUsuario");
-  // modalEditarUsuario.style.display = "block";
-  // modalEditarUsuario.style.opacity = "100";
+  const usuario = usuariosRegistrados.find((usuario) => {
+    return usuario.id == idUsuario;
+  });
+  console.log("MIUSUARIO", usuario);
+
+  tituloModal.textContent = usuario.id;
+  nombreModal.value = usuario.nombre;
+  emailModal.value = usuario.email;
+  passowrdModal.value = usuario.password;
 };
 
 // console.log(usuariosEditados);
