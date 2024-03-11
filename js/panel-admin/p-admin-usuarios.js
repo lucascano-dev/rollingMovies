@@ -54,7 +54,9 @@ const cargaUsuarios = function () {
               <i class="fa-solid fa-ellipsis-vertical"></i>
               </button>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" onclick="cambiarEstadoUsuario(${usuario.id})" href="#">Aprobado</a></li>
+                <li><a class="dropdown-item"
+                onclick="cambiarEstadoUsuario('${usuario.nombre}', '${`APROBADO`}')"
+                href="#">Aprobado</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">Suspendido</a></li>
               </ul>
@@ -147,7 +149,7 @@ function editarUsuario(e) {
   const tituloModal = document.querySelector('#idUsuarioEditar').value;
   const nombreModal = document.querySelector('#inputNombreUsuario').value;
   const emailModal = document.querySelector('#inputEmailUsuario').value;
-  const passowrdModal = document.querySelector('#inputPasswordUsuario').value;
+  const passwordModal = document.querySelector('#inputPasswordUsuario').value;
 
   // Relizar validaciones
 
@@ -162,7 +164,7 @@ function editarUsuario(e) {
   // console.log('NOMBRE INDEX:', usuariosRegistrados[usuarioIndex].nombre);
   usuariosRegistrados[usuarioIndex].nombre = nombreModal;
   usuariosRegistrados[usuarioIndex].email = emailModal;
-  usuariosRegistrados[usuarioIndex].password = passowrdModal;
+  usuariosRegistrados[usuarioIndex].password = passwordModal;
 
   //Se carga el nuevo array usuariosRegistrados en localStorage
   console.log(usuariosRegistrados);
@@ -170,6 +172,14 @@ function editarUsuario(e) {
   cargaUsuarios();
 }
 
-function cambiarEstadoUsuario(idUsuario) {
-  console.log('Aprobado', idUsuario);
+function cambiarEstadoUsuario(idUsuario, estado) {
+  console.log('Aprobado', idUsuario, estado);
+
+  const usuarioIndex = usuariosRegistrados.findIndex((usuario) => {
+    return usuario.id == idUsuario;
+  });
+
+  usuariosRegistrados[usuarioIndex].stateActivation = 1;
+  localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
+  cargaUsuarios();
 }
