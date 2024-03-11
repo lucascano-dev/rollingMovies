@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<h1>Pagina de peliculas</h1>
+
+    <!-- Botón para abrir el modal -->
+<button class="botoncito" id="btnModal">Detalles</button>
+
+<!-- Modal -->
+<div id="modalPelicula" class="modal">
+  <!-- Contenido del modal -->
+  <div class="modal-content">
+    <!-- Imagen de la película -->
+    <img src="../assets/img/mos_glyph_hires-1.jpg" alt="Nombre de la Película" class="img-pelicula">
+    <button class="reproducirBtn" onclick="window.location.href=`404.html` ">Reproducir</button>
+    
+    <!-- Descripción de la película -->
+    <p>El hombre de acero (en inglés, Man of Steel) es una película británico-estadounidense1​ de superhéroes de 2013 basada en el personaje Superman de DC Comics. En la película, Clark Kent se entera de que es un alienígena con superpoderes procedente del planeta Krypton. Como Superman, asume el papel de protector de la raza humana, tomando la decisión de enfrentarse al general Zod y evitar que destruya la humanidad. </p>
+
+    <h3>Elenco</h3>
+    
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../assets/img/henry.jpeg"  alt="...">
+          <p>Henry Cavill</p>
+        </div>
+        <div class="carousel-item">
+          <img src="../assets/img/amy.jpg" alt="...">
+          <p>Amy Adams</p>
+        </div>
+        <div class="carousel-item">
+          <img src="../assets/img/shanon.jpeg"  alt="...">
+          <p>Michael Shanon</p>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    
+    <!-- Botón para cerrar el modal -->
+    <span class="close">×</span>
+  </div>
+</div>
+<script src="../js/app.js"></script>
+</body>
+</html>
