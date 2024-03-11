@@ -142,6 +142,55 @@
               <!-- Se crea aqui el contenido de la tabla mediante JS -->
             </tbody>
           </table>
+
+          <!-- MODAL EDITAR USUARIO -->
+
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditarUsuario">
+            Editar Usuario
+          </button>
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="modalEditarUsuario"
+            tabindex="-1"
+            aria-labelledby="modalEditarUsuario"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered text-black">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Editar usuario <span id="idUsuarioEditar">123</span>
+                  </h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="formularioEditarUsuario">
+                    <div class="mb-3">
+                      <label for="inputNombreUsuario" class="form-label">Nombre</label>
+                      <input type="email" class="form-control" id="inputNombreUsuario" aria-describedby="emailHelp" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputEmailUsuario" class="form-label">Email</label>
+                      <input type="password" class="form-control" id="inputEmailUsuario" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputPasswordUsuario" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="inputPasswordUsuario" />
+                    </div>
+                    <div class="d-flex justify-content-end gap-2">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                      <button type="submit" class="btn btn-success">Actualizar</button>
+                    </div>
+                  </form>
+                </div>
+                <!-- <div class="modal-footer"></div> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Botones de paginacion -->
           <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
               <li class="page-item disabled">

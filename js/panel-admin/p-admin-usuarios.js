@@ -76,14 +76,17 @@ const cargaUsuarios = function () {
             id="btnEditar${usuario.id}"
             type="button"
             class="btn btn-success"
-            data-bs-dismiss="modal">
+            data-bs-toggle="modal" data-bs-target="#modalEditarUsuario"
+            onclick="editarUsuario(${usuario.id})"
+          >
             <i class="fa-solid fa-pen-to-square fs-6"></i>
           </button>
           <button
             id="btnEliminar${usuario.id}"
             type="button"
             class="btn btn-danger"
-            onclick="eliminarProducto(${usuario.id})">
+            onclick="eliminarUsuario(${usuario.id})"
+          >
             <i class="fa-solid fa-trash-can fs-6"></i>
           </button>
         </td>
@@ -93,7 +96,23 @@ const cargaUsuarios = function () {
 };
 cargaUsuarios();
 
-function eliminarProducto(idUsuario) {
+const editarUsuario = function (idUsuario) {
+  const tituloModal = document.querySelector("#idUsuarioEditar");
+  const nombreModal = document.querySelector("#inputNombreUsuario");
+  const emailModal = document.querySelector("#inputEmailUsuario");
+  const passowrdModal = document.querySelector("#inputPassowordUsuario");
+  tituloModal.textContent = idUsuario;
+  // usuariosRegistrados = usuariosRegistrados.findIndex(function (usuario) {});
+  localStorage.setItem("usuarios", JSON.stringify(usuariosRegistrados));
+
+  // const modalEditarUsuario = document.querySelector("#modalEditarUsuario");
+  // modalEditarUsuario.style.display = "block";
+  // modalEditarUsuario.style.opacity = "100";
+};
+
+// console.log(usuariosEditados);
+
+function eliminarUsuario(idUsuario) {
   usuariosRegistrados = usuariosRegistrados.filter(function (usuario) {
     return usuario.id !== idUsuario;
   });
@@ -109,18 +128,4 @@ function controlEstado(checkbox) {
   } else {
     console.log(checkbox.id, "NO CHECKEADO");
   }
-}
-
-/** Boton Destacar */
-console.log(iconoDestacar.length);
-for (let i = 0; i < btnDestacar.length; i++) {
-  btnDestacar[i].addEventListener("click", () => {
-    if (iconoDestacar[i].classList.contains("contenido-destacado")) {
-      iconoDestacar[i].classList.remove("contenido-destacado");
-      iconoDestacar[i].classList.add("contenido-no-destacado");
-    } else {
-      iconoDestacar[i].classList.remove("contenido-no-destacado");
-      iconoDestacar[i].classList.add("contenido-destacado");
-    }
-  });
 }
