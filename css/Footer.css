@@ -360,49 +360,39 @@ height: auto;
     font-style: normal;
 }
 /*slider de peliculas por categoria*/
-.strip-container {
+.carousel-container {
     width: 100%;
-    overflow: hidden;
-    margin-top: 20px; 
-    font-family: "Roboto", sans-serif;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 20px;
-    margin-bottom: 20px;
+    overflow-x: hidden;
+    position: relative;
+    padding: 25px;
+    margin: 15px;
+    padding-left: 9px;
 }
 
-.movie-category {
-    font-weight: bold;
-    margin-bottom: 10px;
-    margin-left: 20px;
-}
-
-.strip {
+.carousel-row {
     display: flex;
-    justify-content: space-between;
-    padding: 10px 20px; 
+    transition: transform 0.3s ease; /* Animación de desplazamiento */
 }
 
-.movie {
-    width: calc(20% - 20px); 
-    border-radius: 10px;
-    overflow: hidden;
-    margin-right: 20px; 
+.movies {
+    flex: 0 0 20%; /* Ancho del 20% para cada película para mostrar 5 películas a la vez */
 }
 
-.movie:last-child {
-    margin-right: 0;
-}
-
-.movie img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.movie p {
-    margin-top: 5px;
-    text-align: center;
+.right-arrow {
+    position: absolute;
+    top: 50%;
+    right: 70px;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #a8a6a6;
+    cursor: pointer;
+    z-index: 1;
+    backdrop-filter: blur(10px); 
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 110px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
 }
 /*slider de peliculas por categoria*/
 
