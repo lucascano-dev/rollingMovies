@@ -8,6 +8,7 @@ const tablaUsuarios = document.querySelector('#tablaUsuarios');
 const modalEditar = document.getElementById('');
 const formularioEditarUsuario = document.getElementById('formularioEditarUsuario');
 const modalEditarUsuario = document.getElementById('modalEditarUsuario');
+const estadoUsuario = document.getElementById('estadoUsuario');
 let usuariosRegistrados = JSON.parse(localStorage.getItem('usuarios')) || [];
 
 console.log(titulo.textContent);
@@ -36,22 +37,24 @@ const cargaUsuarios = function () {
         <td class="border" >
           <div class="d-flex justify-content-end">
             <div>
-             ${
-               usuario.stateActivation === 0
-                 ? 'Pendiente&nbsp'
-                 : usuario.stateActivation === 1
-                 ? 'Aprobado&nbsp'
-                 : usuario.stateActivation === 2
-                 ? 'Suspendido&nbsp'
-                 : null
-             }
+              <span id="estadoUsuario">
+                ${
+                  usuario.stateActivation === 0
+                    ? 'Pendiente&nbsp'
+                    : usuario.stateActivation === 1
+                    ? 'Aprobado&nbsp'
+                    : usuario.stateActivation === 2
+                    ? 'Suspendido&nbsp'
+                    : null
+                }
+              </span>
             </div>
             <div class="btn-group">
               <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-opcion-tabla d-flex justify-content-center" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fa-solid fa-ellipsis-vertical"></i>
               </button>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Aprobado</a></li>
+                <li><a class="dropdown-item" onclick="cambiarEstadoUsuario(${usuario.id})" href="#">Aprobado</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">Suspendido</a></li>
               </ul>
@@ -159,10 +162,14 @@ function editarUsuario(e) {
   // console.log('NOMBRE INDEX:', usuariosRegistrados[usuarioIndex].nombre);
   usuariosRegistrados[usuarioIndex].nombre = nombreModal;
   usuariosRegistrados[usuarioIndex].email = emailModal;
-  usuariosRegistrados[usuarioIndex].passowrd = passowrdModal;
+  usuariosRegistrados[usuarioIndex].password = passowrdModal;
 
   //Se carga el nuevo array usuariosRegistrados en localStorage
   console.log(usuariosRegistrados);
   localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
   cargaUsuarios();
+}
+
+function cambiarEstadoUsuario(idUsuario) {
+  console.log('Aprobado', idUsuario);
 }
