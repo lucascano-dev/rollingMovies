@@ -146,7 +146,7 @@ function editarUsuario(e) {
   const emailModal = document.querySelector('#inputEmailUsuario').value;
   const passowrdModal = document.querySelector('#inputPasswordUsuario').value;
 
-  //Validar
+  // Relizar validaciones
 
   const idUsuarioEnForm = formularioEditarUsuario.getAttribute('data-id');
   console.log('Obtengo id de usuario:', idUsuarioEnForm);
@@ -161,6 +161,7 @@ function editarUsuario(e) {
   usuariosRegistrados[usuarioIndex].email = emailModal;
   usuariosRegistrados[usuarioIndex].passowrd = passowrdModal;
 
+  //Se carga el nuevo array usuariosRegistrados en localStorage
   console.log(usuariosRegistrados);
   localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
   cargaUsuarios();
