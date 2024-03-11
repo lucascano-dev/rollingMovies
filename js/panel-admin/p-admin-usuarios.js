@@ -7,10 +7,13 @@ const btnAdminUsuarios = document.getElementById('btnAdminUsuarios');
 const tablaUsuarios = document.querySelector('#tablaUsuarios');
 const modalEditar = document.getElementById('');
 const formularioEditarUsuario = document.getElementById('formularioEditarUsuario');
+const modalEditarUsuario = document.getElementById('modalEditarUsuario');
 let usuariosRegistrados = JSON.parse(localStorage.getItem('usuarios')) || [];
 
 console.log(titulo.textContent);
 console.log(usuariosRegistrados);
+
+formularioEditarUsuario.addEventListener('submit', editarUsuario);
 
 dropItem.addEventListener('click', (event) => {
   event.preventDefault();
@@ -78,7 +81,7 @@ const cargaUsuarios = function () {
             type="button"
             class="btn btn-success"
             data-bs-toggle="modal" data-bs-target="#modalEditarUsuario"
-            onclick="editarUsuario(${usuario.id})"
+            onclick="handleModalEditarUsuario(${usuario.id})"
           >
             <i class="fa-solid fa-pen-to-square fs-6"></i>
           </button>
@@ -97,7 +100,7 @@ const cargaUsuarios = function () {
 };
 cargaUsuarios();
 
-const editarUsuario = function (idUsuario) {
+const handleModalEditarUsuario = function (idUsuario) {
   const tituloModal = document.querySelector('#idUsuarioEditar');
   const nombreModal = document.querySelector('#inputNombreUsuario');
   const emailModal = document.querySelector('#inputEmailUsuario');
@@ -115,7 +118,7 @@ const editarUsuario = function (idUsuario) {
   formularioEditarUsuario.setAttribute(
     'data-id',
     usuario.id
-  ); /** VER Finalizamos prototipo de proyecto- 27 de febrero de 2024: Min 54:07 */
+  ); /** Le agrego el atributo 'data-id' a la etiqueta form para que despues, pueda insertarle HTML cuando haga submit en el modal*/
 };
 
 function eliminarUsuario(idUsuario) {
@@ -134,4 +137,35 @@ function controlEstado(checkbox) {
   } else {
     console.log(checkbox.id, 'NO CHECKEADO');
   }
+}
+
+function editarUsuario(e) {
+  e.preventDefault();
+  const tituloModal = document.querySelector('#idUsuarioEditar').value;
+  const nombreModal = document.querySelector('#inputNombreUsuario').value;
+  const emailModal = document.querySelector('#inputEmailUsuario').value;
+  const passowrdModal = document.querySelector('#inputPasswordUsuario').value;
+
+  //Validar
+
+  const idUsuarioEnForm = formularioEditarUsuario.getAttribute('data-id');
+  console.log('Obtengo id de usuario:', idUsuarioEnForm);
+
+  const usuarioIndex = usuariosRegistrados.findIndex((usuario) => {
+    return usuario.id == parseInt(idUsuarioEnForm);
+  });
+
+  // console.log('PROD INDEX:', usuarioIndex);
+  // console.log('NOMBRE INDEX:', usuariosRegistrados[usuarioIndex].nombre);
+  usuariosRegistrados[usuarioIndex].nombre = nombreModal;
+  usuariosRegistrados[usuarioIndex].email = emailModal;
+  usuariosRegistrados[usuarioIndex].passowrd = passowrdModal;
+
+  /** Oculto modal */
+  modalEditarUsuario.style.display = 'none';
+  const modalHide = document.querySelector('.modal-backdrop');
+  console.log(modalHide);
+  modalHide.classList.remove('modal-backdrop', 'fade', 'show');
+  modalEditarUsuario.style.opacity = '0';
+  modalEditarUsuario.style.display = 'none';
 }
