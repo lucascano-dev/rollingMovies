@@ -161,14 +161,7 @@ function editarUsuario(e) {
   usuariosRegistrados[usuarioIndex].email = emailModal;
   usuariosRegistrados[usuarioIndex].passowrd = passowrdModal;
 
-  /** Oculto modal */
-  modalEditarUsuario.style.display = 'none';
-  const modalHide = document.querySelector('.modal-backdrop');
-  console.log(modalHide);
-  modalHide.classList.remove('modal-backdrop', 'fade', 'show');
-  modalEditarUsuario.style.opacity = 'none';
-  modalEditarUsuario.style.display = 'none';
-
-  /** HACER QUE BUSQUE SI CONTIENE TAL CLASE Y ELMINARLA:  */
-  // Quitar modal-backdrop, fade, show
+  console.log(usuariosRegistrados);
+  localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
+  cargaUsuarios();
 }
