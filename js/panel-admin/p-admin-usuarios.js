@@ -79,9 +79,17 @@ const cargaUsuarios = function () {
               <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Cambiar a Administrador</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Cambiar a Suscriptor</a></li>
+              <li>
+                <a class="dropdown-item"
+                onclick="cambiarRol(${usuario.id}, '${`ADMINISTRADOR`}')"
+                href="#">Cambiar a Administrador</a>
+              </li>
+                <li><hr class="dropdown-divider"></li>
+              <li>
+                <a class="dropdown-item"
+                onclick="cambiarRol(${usuario.id}, '${`SUSCRIPTOR`}')"
+                href="#">Cambiar a Suscriptor</a>
+              </li>
             </ul>
           </div>
           </div>
@@ -179,18 +187,33 @@ function editarUsuario(e) {
 }
 
 function cambiarEstadoUsuario(idUsuario, estado) {
-  console.log('Aprobado', idUsuario, estado);
+  const usuarioIndex = usuariosRegistrados.findIndex((usuario) => {
+    return usuario.id === parseInt(idUsuario);
+  });
+
+  usuarioIndex === -1
+    ? console.log('ERROR')
+    : estado === 'APROBADO'
+    ? (usuariosRegistrados[usuarioIndex].stateActivation = 1)
+    : (usuariosRegistrados[usuarioIndex].stateActivation = 2);
+
+  localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
+  cargaUsuarios();
+}
+
+function cambiarRol(idUsuario, rolUsuario) {
+  console.log('Aprobado', idUsuario, rolUsuario);
 
   const usuarioIndex = usuariosRegistrados.findIndex((usuario) => {
     return usuario.id === parseInt(idUsuario);
   });
 
-  if (estado === 'APROBADO') {
-    console.log(usuariosRegistrados);
-    usuariosRegistrados[usuarioIndex].stateActivation = 1;
-  } else {
-    usuariosRegistrados[usuarioIndex].stateActivation = 2;
-  }
+  usuarioIndex === -1
+    ? console.log('ERROR')
+    : rolUsuario === 'ADMINISTRADOR'
+    ? (usuariosRegistrados[usuarioIndex].userRol = 0)
+    : (usuariosRegistrados[usuarioIndex].userRol = 1);
+
   localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
   cargaUsuarios();
 }
