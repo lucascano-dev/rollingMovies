@@ -54,11 +54,17 @@ const cargaUsuarios = function () {
               <i class="fa-solid fa-ellipsis-vertical"></i>
               </button>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item"
-                onclick="cambiarEstadoUsuario('${usuario.nombre}', '${`APROBADO`}')"
-                href="#">Aprobado</a></li>
+                <li>
+                  <a class="dropdown-item"
+                  onclick="cambiarEstadoUsuario(${usuario.id}, '${`APROBADO`}')"
+                  href="#">Aprobado</a>
+                </li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Suspendido</a></li>
+                <li>
+                  <a class="dropdown-item" 
+                  onclick="cambiarEstadoUsuario(${usuario.id}, '${`SUSPENDIDO`}')"
+                  href="#">Suspendido</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -157,7 +163,7 @@ function editarUsuario(e) {
   console.log('Obtengo id de usuario:', idUsuarioEnForm);
 
   const usuarioIndex = usuariosRegistrados.findIndex((usuario) => {
-    return usuario.id == parseInt(idUsuarioEnForm);
+    return usuario.id == idUsuarioEnForm;
   });
 
   // console.log('PROD INDEX:', usuarioIndex);
@@ -176,10 +182,15 @@ function cambiarEstadoUsuario(idUsuario, estado) {
   console.log('Aprobado', idUsuario, estado);
 
   const usuarioIndex = usuariosRegistrados.findIndex((usuario) => {
-    return usuario.id == idUsuario;
+    return usuario.id === parseInt(idUsuario);
   });
 
-  usuariosRegistrados[usuarioIndex].stateActivation = 1;
+  if (estado === 'APROBADO') {
+    console.log(usuariosRegistrados);
+    usuariosRegistrados[usuarioIndex].stateActivation = 1;
+  } else {
+    usuariosRegistrados[usuarioIndex].stateActivation = 2;
+  }
   localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
   cargaUsuarios();
 }
