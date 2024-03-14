@@ -21,14 +21,14 @@ body {
     padding: 10px;
     height: 100vh;
   }
-  }
+}
 
-  .btn-admin {
-    width: 100%;
-    height: auto;
-  }
+.btn-admin {
+  width: 100%;
+  height: auto;
+}
 
-.container-tablas{
+.container-tablas {
   margin: 20px;
   padding: 10px;
   display: flex;
@@ -36,7 +36,7 @@ body {
   width: 100%;
 }
 
-.ancho-descripcion{
+.ancho-descripcion {
   width: 1px;
 }
 
@@ -46,23 +46,20 @@ body {
   }
 }
 
-
-.contenido-destacado{
+.contenido-destacado {
   color: yellow;
 }
 
-.contenido-no-destacado{
+.contenido-no-destacado {
   color: rgb(202, 202, 202);
 }
 
-
-.dropdown-toggle-opcion-tabla::after { /** Quitar flechas de dropdown de bootstrap*/
-    content: none;
-    
+.dropdown-toggle-opcion-tabla::after {
+  /** Quitar flechas de dropdown de bootstrap*/
+  content: none;
 }
 
-.dropdown-toggle-opcion-tabla{
+.dropdown-toggle-opcion-tabla {
   font-size: 12px;
   width: 10px;
-
 }

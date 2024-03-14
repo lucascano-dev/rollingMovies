@@ -98,7 +98,7 @@ const cargaUsuarios = function () {
           <button
             id="btnEditar${usuario.id}"
             type="button"
-            class="btn btn-success"
+            class="btn btn-success btn-sm"
             data-bs-toggle="modal" data-bs-target="#modalEditarUsuario"
             onclick="handleModalEditarUsuario(${usuario.id})"
           >
@@ -107,7 +107,7 @@ const cargaUsuarios = function () {
           <button
             id="btnEliminar${usuario.id}"
             type="button"
-            class="btn btn-danger"
+            class="btn btn-danger btn-sm"
             onclick="eliminarUsuario(${usuario.id})"
           >
             <i class="fa-solid fa-trash-can fs-6"></i>
@@ -128,6 +128,8 @@ const handleModalEditarUsuario = function (idUsuario) {
   const usuario = usuariosRegistrados.find((usuario) => {
     return usuario.id == idUsuario;
   });
+
+  console.log('MI USUARIO:', usuario);
 
   tituloModal.textContent = usuario.id;
   nombreModal.value = usuario.nombre;
