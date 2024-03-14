@@ -76,10 +76,15 @@ function cargarContenido() {
                       class="form-check-input"
                       type="checkbox"
                       role="switch"
-                      id="flexSwitchCheckChecked1"
+                      id="flexSwitchCheckChecked${movie.id}"
+                      onclick="publicarContenido(${movie.id})"
                       
                     />
-                    <label class="form-check-label" for="flexSwitchCheckChecked1">✅</label>
+                    <label class="form-check-label" for="flexSwitchCheckChecked1">
+                      <span id="icono-publicado-${movie.id}" 
+                        class="no-publicado">${movie.isPublicado ? '✅' : '❌'}
+                      </span>
+                    </label>
                   </div>
                 </td>
                 <td class="border">
@@ -95,7 +100,9 @@ function cargarContenido() {
                     }
                       
                     </button>
-                    <button type="button" class="btn btn-danger btn-sm fs-6"><i class="fa-solid fa-trash-can"></i></button>
+                    <button type="button" class="btn btn-danger btn-sm fs-6" onclick="eliminarContenido(${
+                      movie.id
+                    })"><i class="fa-solid fa-trash-can"></i></button>
                   </div>
                 </td>`;
     tablaContenido.appendChild(tr);
@@ -152,10 +159,49 @@ const destacarMovie = function (id) {
 cargarContenido();
 
 /** Switch Publicado */
-for (let i = 0; i < btnPublicado.length; i++) {
-  btnPublicado[i].addEventListener('click', () => {
-    console.log('Clic en switch de linea:', [i]);
-  });
-}
 
-console.log(tablaContenido);
+const publicarContenido = function (id) {
+  const iconoPublicado = document.getElementById(`icono-publicado-${id}`);
+
+  let allMoviesIndex;
+
+  if (iconoPublicado.classList.contains('no-publicado')) {
+    iconoPublicado.innerText = '✅';
+    iconoPublicado.classList.remove('no-publicado');
+    iconoPublicado.classList.add('publicado');
+
+    //Actualizo el valor de la propiedad "Publicado" del objeto
+    allMoviesIndex = allMovies.findIndex(function (movie) {
+      return movie.id === id;
+    });
+
+    allMovies[allMoviesIndex].isPublicado = true;
+    localStorage.setItem('movies', JSON.stringify(allMovies));
+    return;
+  }
+
+  if (iconoPublicado.classList.contains('publicado')) {
+    iconoPublicado.innerText = '❌';
+    iconoPublicado.classList.remove('publicado');
+    iconoPublicado.classList.add('no-publicado');
+
+    //Actualizo el valor de la propiedad "Publicado" del objeto
+    allMoviesIndex = allMovies.findIndex(function (movie) {
+      return movie.id === id;
+    });
+
+    allMovies[allMoviesIndex].isPublicado = false;
+    localStorage.setItem('movies', JSON.stringify(allMovies));
+    return;
+  }
+};
+
+/** Boton Eliminar */
+
+function eliminarContenido(id) {
+  allMovies = allMovies.filter(function (movie) {
+    return movie.id !== id;
+  });
+  localStorage.setItem('movies', JSON.stringify(allMovies));
+  cargarContenido();
+}
