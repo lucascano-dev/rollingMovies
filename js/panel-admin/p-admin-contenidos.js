@@ -78,11 +78,13 @@ function cargarContenido() {
                       role="switch"
                       id="flexSwitchCheckChecked${movie.id}"
                       onclick="publicarContenido(${movie.id})"
+                      ${movie.isPublicado ? 'checked' : ''}
                       
                     />
                     <label class="form-check-label" for="flexSwitchCheckChecked1">
                       <span id="icono-publicado-${movie.id}" 
-                        class="no-publicado">${movie.isPublicado ? '✅' : '❌'}
+                       ${movie.isPublicado ? `class="publicado" ` : `class="no-publicado"`}">
+                       ${movie.isPublicado ? '✅' : '❌'}
                       </span>
                     </label>
                   </div>
@@ -172,6 +174,7 @@ const publicarContenido = function (id) {
 
     //Actualizo el valor de la propiedad "Publicado" del objeto
     allMoviesIndex = allMovies.findIndex(function (movie) {
+      // console.log('MOVIE.ID=', movie.id, 'ID:', id);
       return movie.id === id;
     });
 
