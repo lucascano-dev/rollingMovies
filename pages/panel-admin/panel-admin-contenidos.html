@@ -141,15 +141,13 @@
             class="modal fade"
             id="modalAgregarContenido"
             tabindex="-1"
-            aria-labelledby="modalEditarUsuario"
+            aria-labelledby="modalAgregarContenido"
             aria-hidden="true"
           >
             <div class="modal-dialog modal-dialog-centered text-black">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">
-                    Agregar nuevo contenido <span id="idUsuarioEditar">PELI/SERIE</span>
-                  </h1>
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar nuevo contenido</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -185,8 +183,60 @@
                     </div>
                     <div class="d-flex justify-content-end gap-2">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                      <button id="btnGuardarContenido" type="submit" data-bs-dismiss="modal" class="btn btn-success">
+                        Guardar
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <!-- <div class="modal-footer"></div> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- MODAL EDITAR CONTENIDO -->
+
+          <div
+            class="modal fade"
+            id="modalEditarContenido"
+            tabindex="-1"
+            aria-labelledby="modalEditarContenido"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered text-black">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Editar Contenido <span id="idEditarContenido">123</span>
+                  </h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="formularioEditarContenido">
+                    <div class="mb-3">
+                      <label for="inputEditarNombreContenido" class="form-label">Nombre</label>
+                      <input type="text" class="form-control" id="inputEditarNombreContenido" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputEditarCategoriaContenido" class="form-label">Categoría</label>
+                      <input type="text" class="form-control" id="inputEditarCategoriaContenido" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputEditarDescripcionContenido" class="form-label">Descripción</label>
+                      <input type="text" class="form-control" id="inputEditarDescripcionContenido" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputEditarURLImagenContenido" class="form-label">URL Imagen</label>
+                      <input type="text" class="form-control" id="inputEditarURLImagenContenido" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputEditarURLVideoContenido" class="form-label">URL Video</label>
+                      <input type="text" class="form-control" id="inputEditarURLVideoContenido" />
+                    </div>
+                    <div class="d-flex justify-content-end gap-2">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                       <button id="btnActualizarUsuario" type="submit" data-bs-dismiss="modal" class="btn btn-success">
-                        Actualizar
+                        Actualizar contenido
                       </button>
                     </div>
                   </form>

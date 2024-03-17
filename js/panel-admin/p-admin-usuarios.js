@@ -14,8 +14,6 @@ let usuariosRegistrados = JSON.parse(localStorage.getItem('usuarios')) || [];
 console.log(titulo.textContent);
 console.log(usuariosRegistrados);
 
-formularioEditarUsuario.addEventListener('submit', editarUsuario);
-
 dropItem.addEventListener('click', (event) => {
   event.preventDefault();
 });
@@ -125,40 +123,24 @@ const handleModalEditarUsuario = function (idUsuario) {
   const emailModal = document.querySelector('#inputEmailUsuario');
   const passowrdModal = document.querySelector('#inputPasswordUsuario');
 
-  const usuario = usuariosRegistrados.find((usuario) => {
+  const usuarioSeleccionado = usuariosRegistrados.find((usuario) => {
     return usuario.id == idUsuario;
   });
 
-  console.log('MI USUARIO:', usuario);
+  console.log('MI USUARIO:', usuarioSeleccionado);
 
-  tituloModal.textContent = usuario.id;
-  nombreModal.value = usuario.nombre;
-  emailModal.value = usuario.email;
-  passowrdModal.value = usuario.password;
+  tituloModal.textContent = usuarioSeleccionado.id;
+  nombreModal.value = usuarioSeleccionado.nombre;
+  emailModal.value = usuarioSeleccionado.email;
+  passowrdModal.value = usuarioSeleccionado.password;
 
   formularioEditarUsuario.setAttribute(
     'data-id',
-    usuario.id
+    usuarioSeleccionado.id
   ); /** Le agrego el atributo 'data-id' a la etiqueta form para que despues, pueda insertarle HTML cuando haga submit en el modal*/
 };
 
-function eliminarUsuario(idUsuario) {
-  usuariosRegistrados = usuariosRegistrados.filter(function (usuario) {
-    return usuario.id !== idUsuario;
-  });
-  localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
-  cargaUsuarios();
-}
-
-function controlEstado(checkbox) {
-  const idCheck = document.getElementById(checkbox.id);
-  console.log('ID DEL ELEMENTO', idCheck.id);
-  if (checkbox.checked) {
-    console.log(checkbox.id, 'CHECKEADO');
-  } else {
-    console.log(checkbox.id, 'NO CHECKEADO');
-  }
-}
+formularioEditarUsuario.addEventListener('submit', editarUsuario);
 
 function editarUsuario(e) {
   e.preventDefault();
@@ -186,6 +168,24 @@ function editarUsuario(e) {
   console.log(usuariosRegistrados);
   localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
   cargaUsuarios();
+}
+
+function eliminarUsuario(idUsuario) {
+  usuariosRegistrados = usuariosRegistrados.filter(function (usuario) {
+    return usuario.id !== idUsuario;
+  });
+  localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
+  cargaUsuarios();
+}
+
+function controlEstado(checkbox) {
+  const idCheck = document.getElementById(checkbox.id);
+  console.log('ID DEL ELEMENTO', idCheck.id);
+  if (checkbox.checked) {
+    console.log(checkbox.id, 'CHECKEADO');
+  } else {
+    console.log(checkbox.id, 'NO CHECKEADO');
+  }
 }
 
 function cambiarEstadoUsuario(idUsuario, estado) {

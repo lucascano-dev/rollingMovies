@@ -4,10 +4,11 @@ const dropItem = document.querySelector('.enlace-test');
 const btnPublicado = document.getElementsByClassName('form-check-input');
 const iconoDestacar = document.querySelector('.icono-destacar');
 const btnDestacar = document.querySelector('.btn-destacar');
+const btnEditar = document.querySelector('.btn-editar');
 const tabla = document.querySelector('#tabla');
 const btnVolver = document.getElementById('btn-volver');
-const btnAdminUsuarios = document.getElementById('btnAdminUsuarios');
 const submitAgregarContenido = document.getElementById('formularioAdminContenido');
+const formularioEditarContenido = document.getElementById('formularioEditarContenido');
 let allMovies = JSON.parse(localStorage.getItem('movies')) || [];
 
 class ContenidoStreaming {
@@ -91,7 +92,13 @@ function cargarContenido() {
                 </td>
                 <td class="border">
                   <div class="d-flex gap-1 flex-wrap">
-                    <button type="button" class="btn btn-warning btn-sm fs-6"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button id="btnEditar"
+                      type="button"
+                      class="btn btn-warning btn-sm fs-6 btn-editar"
+                      data-bs-toggle="modal" data-bs-target="#modalEditarContenido"
+                      onclick="handleModalEditarMovie(${movie.id})">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
                     <button type="button" class="btn btn-secondary btn-sm fs-6 btn-destacar" onclick="destacarMovie(${
                       movie.id
                     })">
@@ -116,6 +123,61 @@ cargarContenido();
 btnVolver.addEventListener('click', () => {
   window.location.href = 'index.html';
 });
+
+/** Boton editar */
+function handleModalEditarMovie(idContenido) {
+  const tituloModalEditar = document.querySelector('#idEditarContenido');
+  const nombreModal = document.querySelector('#inputEditarNombreContenido');
+  const categoriaModal = document.querySelector('#inputEditarCategoriaContenido');
+  const descripcionModal = document.querySelector('#inputEditarDescripcionContenido');
+  const urlImagenModal = document.querySelector('#inputEditarURLImagenContenido');
+  const urlVideoModal = document.querySelector('#inputEditarURLVideoContenido');
+
+  const movieSeleccionada = allMovies.find((movie) => {
+    return movie.id == idContenido;
+  });
+
+  tituloModalEditar.textContent = movieSeleccionada.id;
+  nombreModal.value = movieSeleccionada.nombre;
+  categoriaModal.value = movieSeleccionada.categoria;
+  descripcionModal.value = movieSeleccionada.descripcion;
+  urlImagenModal.value = movieSeleccionada.urlImagen;
+  urlVideoModal.value = movieSeleccionada.urlVideo;
+
+  formularioEditarContenido.setAttribute('data-id', movieSeleccionada.id);
+}
+
+formularioEditarContenido.addEventListener('submit', editarContenido);
+
+function editarContenido(e) {
+  e.preventDefault();
+  const tituloModal = document.querySelector('#idEditarContenido').value;
+  const nombreModal = document.querySelector('#inputEditarNombreContenido').value;
+  const categoriaModal = document.querySelector('#inputEditarCategoriaContenido').value;
+  const descripcionModal = document.querySelector('#inputEditarDescripcionContenido').value;
+  const urlImagenModal = document.querySelector('#inputEditarURLImagenContenido').value;
+  const urlVideoModal = document.querySelector('#inputEditarURLVideoContenido').value;
+
+  //Realizar validaciones???
+  const idContenidoEnForm = formularioEditarContenido.getAttribute('data-id');
+  console.log('Obtengo id de usuario:', idContenidoEnForm);
+
+  const movieIndex = allMovies.findIndex((movie) => {
+    return movie.id == idContenidoEnForm;
+  });
+
+  allMovies[movieIndex].id = idContenidoEnForm;
+  allMovies[movieIndex].nombre = nombreModal;
+  allMovies[movieIndex].categoria = categoriaModal;
+  allMovies[movieIndex].descripcion = descripcionModal;
+  allMovies[movieIndex].urlImagen = urlImagenModal;
+  allMovies[movieIndex].urlVideo = urlVideoModal;
+
+  //Se carga el nuevo array allMovies en localStorage
+  console.log(allMovies);
+  localStorage.setItem('movies', JSON.stringify(allMovies));
+  cargarContenido();
+}
 
 /** Boton Destacar */
 const destacarMovie = function (id) {
