@@ -22,7 +22,12 @@ body {
   display: block;
 }
 
-.btn-manipular-panel-izquierdo {
+.contenedor-head-titulo-panel {
+  visibility: hide;
+}
+
+btn-manipular-panel-izquierdo-oculto {
+  display: block;
 }
 
 /* @media (width >= 600px) and (width <= 3400px) {

@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Allura|Josefin+Sans');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(0, 0, 0);
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
+}
+
+/***** ENCABEZADO *****/
+
+#encabezado-acercade {
+  background-color: #423f3f98;
+}
+
+.encabezado {
+  width: 100%;
+  height: 300px;
+  margin-top: 0px;
+  position: relative;
+  background-image: url('../assets/img/banner-acercade.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(72, 71, 71, 0.534);
+}
+
+.encabezado h1 {
+  color: rgb(195, 21, 21);
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* font-size: 2rem; */
+  text-decoration: underline dashed;
+}
+
+.descripcion {
+  margin-top: 30px;
+  text-align: center;
+  padding: 0 100px;
+  display: flex;
+}
+
+.descripcion img {
+  width: 20%;
+}
+
+.descripcion p {
+  line-height: 2;
+  padding-bottom: 2rem;
+  text-align: left;
+}
+
+.titulo-sobre-nosotros {
+  margin: 2rem;
+}
+
+.contenido-descripcion {
+  width: 100%;
+}
+
+.img-teams {
+  border-radius: 30px;
+  margin: 30px;
+}
+
+@media (width >= 375px) and (width <= 768px) {
+  .contenido-descripcion {
+    margin: 10px;
+  }
+
+  .descripcion {
+    flex-direction: column;
+  }
+
+  .descripcion img {
+    display: none;
+  }
+}
+
+/* CARDS Acerca de nosotros */
+
+.wrapper {
+  margin-top: 50px;
+}
+
+.wrapper h1 {
+  font-family: 'Allura', cursive;
+  font-size: 52px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.team {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.team .team_member {
+  background: #fff;
+  margin: 5px;
+  margin-bottom: 50px;
+  width: 300px;
+  padding: 20px;
+  line-height: 20px;
+  color: #8e8b8b;
+  position: relative;
+}
+
+.team .team_member h3 {
+  color: #0b1403;
+  font-size: 26px;
+  margin-top: 50px;
+}
+
+.team .team_member p.role {
+  color: #ccc;
+  margin: 12px 0;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.team .team_member .team_img {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.team_img img {
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.team .team_member .team_img img {
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+}
