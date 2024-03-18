@@ -21,51 +21,60 @@ body {
   background-image: url('../assets/img/banner-acercade.png');
 }
 
-.titulo {
-  padding: 10px;
-}
-
 .encabezado {
   width: 70%;
   height: 15rem;
   text-align: center;
 }
 
+.titulo {
+  padding: 10px;
+  width: 70%;
+  position: relative;
+  z-index: 5;
+}
+
 .encabezado h1 {
+  border-radius: 10px;
   color: rgb(195, 21, 21);
   text-align: center;
   font-size: 5rem;
-  background-color: rgba(241, 193, 20);
+  background-color: rgba(224, 203, 203, 0.327);
+  text-shadow: 5px 5px 5px rgb(238, 235, 235);
+}
+
+.columna1 {
+  width: 100%;
+}
+
+.historia {
+  width: 100%;
 }
 
 .descripcion {
   margin-top: 30px;
   text-align: center;
   padding: 0 100px;
-  display: flex;
-}
-
-.descripcion img {
-  width: 20%;
 }
 
 .descripcion p {
   line-height: 2;
   padding-bottom: 2rem;
-  text-align: left;
+  text-align: center;
 }
 
 .titulo-sobre-nosotros {
-  margin: 2rem;
+  width: 100%;
 }
 
-.contenido-descripcion {
-  width: 100%;
+.columna2 {
+  width: 40%;
 }
 
 .img-teams {
   border-radius: 30px;
   margin: 30px;
+  width: 100%;
 }
 
 @media (width >= 375px) and (width <= 768px) {
@@ -73,12 +82,24 @@ body {
     margin: 10px;
   }
 
+  .encabezado h1 {
+    font-size: 3rem;
+  }
   .descripcion {
     flex-direction: column;
+    width: 100%;
   }
 
-  .descripcion img {
+  .columna1 {
+    width: 100%;
+  }
+
+  .columna2 {
     display: none;
+  }
+
+  .titulo-sobre-nosotros {
+    width: 100%;
   }
 }
 
