@@ -17,30 +17,25 @@ body {
   background-color: #423f3f98;
 }
 
-.encabezado {
-  width: 100%;
-  height: 300px;
-  margin-top: 0px;
-  position: relative;
+.titulo-seccion {
   background-image: url('../assets/img/banner-acercade.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(72, 71, 71, 0.534);
+}
+
+.titulo {
+  padding: 10px;
+}
+
+.encabezado {
+  width: 70%;
+  height: 15rem;
+  text-align: center;
 }
 
 .encabezado h1 {
   color: rgb(195, 21, 21);
-  width: 100%;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* font-size: 2rem; */
-  text-decoration: underline dashed;
+  text-align: center;
+  font-size: 5rem;
+  background-color: rgba(241, 193, 20);
 }
 
 .descripcion {
