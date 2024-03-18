@@ -13,7 +13,28 @@ body {
   color: white !important;
 }
 
-@media (width >= 600px) and (width <= 3400px) {
+.container-panel-lateral-expandido {
+  width: 25%;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  height: 100vh;
+  display: block;
+}
+
+.btn-manipular-panel-izquierdo {
+}
+
+/* .container-panel-lateral-expandido {
+  width: 25%;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  height: 100vh;
+
+} */
+
+/* @media (width >= 600px) and (width <= 3400px) {
   .container-panel-lateral-expandido {
     width: 15%;
     background-color: rgb(0, 0, 0);
@@ -21,15 +42,7 @@ body {
     padding: 10px;
     height: 100vh;
   }
-
-  .container-panel-lateral-contraido {
-    width: 1%;
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    padding: 10px;
-    height: 100vh;
-  }
-}
+} */
 
 .btn-admin {
   width: 100%;
