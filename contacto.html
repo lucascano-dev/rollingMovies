@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Contactos</title>
+		<link rel="stylesheet" href="./css/contacto.css" />
+	</head>
+	<body>
+		<!--NAVBAR-->
+		<nav class="Navbar">
+			<div class="Hamburguer" onclick="toggleMenu()">
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+			</div>
+
+			<ul class="menu" id="menu">
+				<li><a href="#">PELICULAS</a></li>
+				<li><a href="#">LOGIN</a></li>
+				<li><a href="#">REGISTRO</a></li>
+				<li id="AdminUser" style="display: none"><a href="#">ADMINISTRACION</a></li>
+			</ul>
+
+			<div class="CinestrenarLogo">
+				<img
+					src="./assets/img/Cinestrenar Logo.png"
+					alt="Cinestrenar"
+					class="CinestrenarLogo"
+				/>
+			</div>
+		</nav>
+		<!--NAVBAR-->
+		<!--FORMULARIO DE CONTACTO-->
+		<div class="container">
+			<div class="form-container">
+				<h2>FORMULARIO DE CONTACTO</h2>
+				<form id="contactForm" onsubmit="return validarFormulario()">
+					<label for="nombre">Nombre:</label>
+					<input type="text" id="nombre" name="nombre" required />
+
+					<label for="apellido">Apellido:</label>
+					<input type="text" id="apellido" name="apellido" required />
+
+					<label for="email">Email:</label>
+					<input type="email" id="email" name="email" required />
+
+					<label for="celular">Celular:</label>
+					<input
+						type="tel"
+						id="celular"
+						name="celular"
+						pattern="[0-9]{10}"
+						required
+					/>
+
+					<label for="direccion">Dirección:</label>
+					<input type="text" id="direccion" name="direccion" required />
+
+					<label for="mensaje">Mensaje:</label>
+					<textarea id="mensaje" name="mensaje" required></textarea>
+
+					<input type="submit" value="ENVIAR" />
+				</form>
+			</div>
+			<div class="image-container">
+				<img
+					src="./assets/img/perro pagina de contacto 2.png"
+					alt="Imagen de perro en el cine"
+				/>
+			</div>
+		</div>
+		<!--FORMULARIO DE CONTACTO-->
+		<!--FOOTER-->
+		<footer class="FooterContainer">
+			<div class="FooterSeccion">
+				<a href="https://www.instagram.com/" style="text-decoration: none">
+					<img src="./assets/img/Instagram Logo.png" alt="Instagram" class="Logo" />
+				</a>
+
+				<a href="https://ar.linkedin.com//" style="text-decoration: none">
+					<img src="./assets/img/Linkedin Logo.png" alt="Linkedin" class="Logo" />
+				</a>
+
+				<a href="https://twitter.com/" style="text-decoration: none">
+					<img src="./assets/img/X logo.png" alt="X" class="Logo" />
+				</a>
+
+				<a href="https://www.facebook.com/" style="text-decoration: none">
+					<img src="./assets/img/Facebook icon.png" alt="Facebook" class="Logo" />
+				</a>
+
+				<a href="https://www.youtube.com/" style="text-decoration: none">
+					<img src="./assets/img/Youtube Logo.png" alt="Youtube" class="Logo" />
+				</a>
+			</div>
+
+			<div class="vertical-line"></div>
+
+			<div class="FooterSeccion">
+				<a href="#">
+					<h2>ACERCA DE NOSOTROS</h2>
+				</a>
+			</div>
+
+			<div class="vertical-line"></div>
+
+			<div class="FooterSeccion">
+				<a href="#">
+					<h2>CONTACTO</h2>
+				</a>
+			</div>
+
+			<div class="vertical-line"></div>
+
+			<div class="FooterSeccion">
+				<h3>Proyecto Creado Para Rolling Code</h3>
+			</div>
+		</footer>
+		<!--FOOTER-->
+		<script src="./js/contacto.js"></script>
+	</body>
+</html>
