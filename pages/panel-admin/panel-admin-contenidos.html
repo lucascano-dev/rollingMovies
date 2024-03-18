@@ -80,8 +80,13 @@
 
     <div class="container-columnas-administracion d-flex position-relative">
       <!-- Panel de administracion -->
-      <section class="container-panel-lateral">
-        <div>Panel de administración</div>
+      <section class="container-panel-lateral-expandido">
+        <div class="head-panel-izquierdo d-flex justify-content-center align-items-center bg-danger p-2 gap-1">
+          <p>Panel de administración</p>
+          <button id="btn-manipular-panel-izquierdo" class="btn btn-dark" type="button">
+            <i class="fa-solid fa-circle-chevron-left"></i>
+          </button>
+        </div>
         <br />
         <!-- Boton Administracion de contenidos -->
         <div class="dropdown">
@@ -91,7 +96,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Administrar contendio
+            <span>Sobre Contenidos</span>
           </button>
 
           <ul class="dropdown-menu">
@@ -109,7 +114,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Administrar usuarios
+            Sobre Usuarios
           </button>
 
           <ul class="dropdown-menu">
@@ -120,70 +125,152 @@
         </div>
       </section>
 
-      <!-- Tablas -->
-      <section class="container-tablas">
+      <section class="container-tablas table-responsive">
         <div>
           <button id="btn-volver" type="button" class="btn btn-primary btn-sm">< Ir a Panel de administración</button>
           <h1 id="encabezado-tablas" class="text-center">Administración de contenidos</h1>
-          <div class="d-flex justify-content-end"><button id="btn-volver" type="button" class="btn btn-success btn-sm m-3 fs-5"><i class="fa-solid fa-file-import"></i>&nbsp;Agregar nuevo contenido</button></div>
+          <div class="d-flex justify-content-end">
+            <button
+              id="btn-agregarContenido"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#modalAgregarContenido"
+              class="btn btn-success btn-sm m-3 fs-5"
+            >
+              <i class="fa-solid fa-file-import"></i>&nbsp;Agregar nuevo contenido
+            </button>
+          </div>
 
-          <table class="table table-dark table-striped" id="tabla">
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="modalAgregarContenido"
+            tabindex="-1"
+            aria-labelledby="modalAgregarContenido"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered text-black">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar nuevo contenido</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="formularioAdminContenido">
+                    <div class="mb-3">
+                      <label for="inputNombreContenido" class="form-label">Nombre</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputNombreContenido"
+                        aria-describedby="nombre contenido"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputCategoria" class="form-label">Categoría</label>
+                      <input type="text" class="form-control" id="inputCategoria" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputDescripcion" class="form-label">Descripción</label>
+                      <input type="text" class="form-control" id="inputDescripcion" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputURLImagen" class="form-label">URL Imagen</label>
+                      <input type="text" class="form-control" id="inputURLImagen" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputDescripcionImagen" class="form-label">Descripcion corta de imagen</label>
+                      <input type="text" class="form-control" id="inputDescripcionImagen" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputURLVideo" class="form-label">URL Video</label>
+                      <input type="text" class="form-control" id="inputURLVideo" />
+                    </div>
+                    <div class="d-flex justify-content-end gap-2">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                      <button id="btnGuardarContenido" type="submit" data-bs-dismiss="modal" class="btn btn-success">
+                        Guardar
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <!-- <div class="modal-footer"></div> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- MODAL EDITAR CONTENIDO -->
+
+          <div
+            class="modal fade"
+            id="modalEditarContenido"
+            tabindex="-1"
+            aria-labelledby="modalEditarContenido"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered text-black">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Editar Contenido <span id="idEditarContenido">123</span>
+                  </h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="formularioEditarContenido">
+                    <div class="mb-3">
+                      <label for="inputEditarNombreContenido" class="form-label">Nombre</label>
+                      <input type="text" class="form-control" id="inputEditarNombreContenido" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputEditarCategoriaContenido" class="form-label">Categoría</label>
+                      <input type="text" class="form-control" id="inputEditarCategoriaContenido" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputEditarDescripcionContenido" class="form-label">Descripción</label>
+                      <input type="text" class="form-control" id="inputEditarDescripcionContenido" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputEditarURLImagenContenido" class="form-label">URL Imagen</label>
+                      <input type="text" class="form-control" id="inputEditarURLImagenContenido" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputEditarURLVideoContenido" class="form-label">URL Video</label>
+                      <input type="text" class="form-control" id="inputEditarURLVideoContenido" />
+                    </div>
+                    <div class="d-flex justify-content-end gap-2">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                      <button id="btnActualizarUsuario" type="submit" data-bs-dismiss="modal" class="btn btn-success">
+                        Actualizar contenido
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <!-- <div class="modal-footer"></div> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Tablas -->
+
+          <table class="table table-dark table-striped border" id="tabla">
             <thead>
               <tr>
-                <th scope="col">Código</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Categoría</th>
-                <th scope="col" class="w-25">Descripción</th>
-                <th scope="col">URL imagen</th>
-                <th scope="col">URL video</th>
-                <th scope="col">Publicado</th>
-                <th scope="col">Acción</th>
+                <th class="border" scope="col">Código</th>
+                <th class="border" scope="col">Nombre</th>
+                <th class="border" scope="col">Categoría</th>
+                <th class="border" scope="col" class="w-25">Descripción</th>
+                <th class="border" scope="col">URL imagen</th>
+                <th class="border" scope="col">URL video</th>
+                <th class="border" scope="col">Publicado</th>
+                <th class="border" scope="col">Acción</th>
               </tr>
             </thead>
             <tbody id="tablaContenido">
-              <tr>
-                <td>15</td>
-                <td>Mi villano favorito</td>
-                <td>Infantil</td>
-                <td>
-                  <span class="d-inline-block text-truncate" style="width: 200px"
-                    >El plan maestro de un villano para robarse la luna cambia de rumbo cuando un trío de huérfanas que
-                    buscan un padre se adueñan de su corazón.</span
-                  >
-                </td>
-                <td>
-                  <img
-                    src="https://hbomax-images.warnermediacdn.com/images/GXEIDMQWihG2-gAEAAAG3/tile?size=640x360&partner=hbomaxcom&v=58a865f1c4bd8e30ecd6ca3bf2fa7de6&host=art-gallery.api.hbo.com&language=es-419"
-                    alt="imagen-miniatura"
-                    width="100px"
-                  />
-                </td>
-                <td><span>https://www.youtube.com/watch?v=KNmU0vtzEPs</span></td>
-                <td>
-                  <div class="form-check form-switch">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      role="switch"
-                      id="flexSwitchCheckChecked1"
-                      checked
-                    />
-                    <label class="form-check-label" for="flexSwitchCheckChecked1">✅</label>
-                  </div>
-                </td>
-                <td class="w-25">
-                  <div class="d-flex gap-2 flex-wrap">
-                    <button type="button" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
-                    <button type="button" class="btn btn-secondary btn-destacar">
-                      <i class="fa-solid fa-star icono-destacar contenido-no-destacado"></i>
-                    </button>
-                    <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
-                  </div>
-                </td>
-              </tr>
-
+              <!-- Aqui va todo el contenido de la tabla -->
             </tbody>
           </table>
+
           <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
               <li class="page-item disabled">
@@ -202,6 +289,6 @@
     </div>
 
     <script src="../../js/panel-admin/p-admin-contenidos.js"></script>
-
+    <script src="../../js/panel-admin/p-admin-control-panel.js"></script>
   </body>
 </html>

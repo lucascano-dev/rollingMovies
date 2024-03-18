@@ -80,8 +80,13 @@
 
     <div class="container-columnas-administracion d-flex position-relative">
       <!-- Panel de administracion -->
-      <section class="container-panel-lateral">
-        <div>Panel de administración</div>
+      <section class="container-panel-lateral-expandido">
+        <div class="d-flex justify-content-center align-items-center bg-danger p-2 gap-1">
+          <p>Panel de administración</p>
+          <button id="btn-manipular-panel-izquierdo" class="btn btn-dark" type="button">
+            <i class="fa-solid fa-circle-chevron-left"></i>
+          </button>
+        </div>
         <br />
         <!-- Boton Administracion de contenidos -->
         <div class="dropdown">
@@ -91,7 +96,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Administrar contendio
+            <span>Sobre Contenidos</span>
           </button>
 
           <ul class="dropdown-menu">
@@ -109,7 +114,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Administrar usuarios
+            Sobre Usuarios
           </button>
 
           <ul class="dropdown-menu">
@@ -121,46 +126,74 @@
       </section>
 
       <!-- Tablas -->
-      <section class="container-tablas">
+      <section class="container-tablas table-responsive">
         <div>
           <button id="btn-volver" type="button" class="btn btn-primary btn-sm">< Ir a Panel de administración</button>
           <h1 id="encabezado-tablas" class="text-center">Administración de usuarios</h1>
 
-          <table class="table table-dark table-striped">
+          <table class="table table-dark table-striped border">
             <thead>
               <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Email</th>
-                <th scope="col">Password</th>
-                <th scope="col">Estado</th>
-                <th scope="col">Acción</th>
+                <th class="border" scope="col">ID</th>
+                <th class="border" scope="col">Nombre</th>
+                <th class="border" scope="col">Email</th>
+                <th class="border" scope="col">Password</th>
+                <th class="border" scope="col">Estado</th>
+                <th class="border" scope="col">Rol</th>
+                <th class="border" scope="col">Acción</th>
               </tr>
             </thead>
             <tbody id="tablaUsuarios">
-              <!-- <tr>
-                <td>12345689787</td>
-                <td>Lucas Aarón Cano</td>
-                <td>lucas_cano@outlook.com</td>
-                <td>Password</td>
-                <td>Pendiente</td>
-                <td>
-                  <div class="form-check form-switch">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      role="switch"
-                      id="flexSwitchCheckChecked1"
-                      checked
-                    />
-                    <label class="form-check-label" for="flexSwitchCheckChecked1">✅</label>
-                  </div>
-                </td>
-              </tr> -->
-
-      
+              <!-- Se crea aqui el contenido de la tabla mediante JS -->
             </tbody>
           </table>
+
+          <!-- MODAL EDITAR USUARIO -->
+
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="modalEditarUsuario"
+            tabindex="-1"
+            aria-labelledby="modalEditarUsuario"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered text-black">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Editar usuario <span id="idUsuarioEditar">123</span>
+                  </h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="formularioEditarUsuario">
+                    <div class="mb-3">
+                      <label for="inputNombreUsuario" class="form-label">Nombre</label>
+                      <input type="text" class="form-control" id="inputNombreUsuario" aria-describedby="nombre" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputEmailUsuario" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="inputEmailUsuario" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputPasswordUsuario" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="inputPasswordUsuario" />
+                    </div>
+                    <div class="d-flex justify-content-end gap-2">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                      <button id="btnActualizarUsuario" type="submit" data-bs-dismiss="modal" class="btn btn-success">
+                        Actualizar
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <!-- <div class="modal-footer"></div> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Botones de paginacion -->
           <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
               <li class="page-item disabled">
@@ -179,5 +212,7 @@
     </div>
 
     <script src="../../js/panel-admin/p-admin-usuarios.js"></script>
+    <script src="../../js/panel-admin/p-admin-control-panel.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

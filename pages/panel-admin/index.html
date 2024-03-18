@@ -80,8 +80,16 @@
 
     <div class="container-columnas-administracion d-flex position-relative">
       <!-- Panel de administracion -->
-      <section class="container-panel-lateral">
-        <div>Panel de administración</div>
+      <section class="container-panel-lateral-expandido">
+        <div class="d-flex justify-content-center align-items-center bg-danger p-2 gap-1">
+          <div><p class="head-nombre-panel">Panel de administración</p></div>
+          <button id="btn-manipular-panel-izquierdo" class="btn btn-dark" type="button">
+            <i class="fa-solid fa-circle-chevron-left"></i>
+          </button>
+        </div>
+        <button id="btn-manipular-panel-izquierdo-oculto" class="btn btn-dark" type="button">
+          <i class="fa-solid fa-circle-chevron-left"></i>
+        </button>
         <br />
         <!-- Boton Administracion de contenidos -->
         <div class="dropdown">
@@ -91,7 +99,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Administrar contendio
+            <span>Sobre Contenidos</span>
           </button>
 
           <ul class="dropdown-menu">
@@ -109,7 +117,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Administrar usuarios
+            Sobre Usuarios
           </button>
 
           <ul class="dropdown-menu">
@@ -148,5 +156,6 @@
     </div>
 
     <script src="../../js/panel-admin/p-admin-index.js"></script>
+    <script src="../../js/panel-admin/p-admin-control-panel.js"></script>
   </body>
 </html>

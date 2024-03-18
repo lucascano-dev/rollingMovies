@@ -13,22 +13,39 @@ body {
   color: white !important;
 }
 
-@media (width >= 600px) and (width <= 3400px) {
-  .container-panel-lateral {
-    width: 20%;
+.container-panel-lateral-expandido {
+  width: 25%;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  height: 100vh;
+  display: block;
+}
+
+.contenedor-head-titulo-panel {
+  visibility: hide;
+}
+
+btn-manipular-panel-izquierdo-oculto {
+  display: block;
+}
+
+/* @media (width >= 600px) and (width <= 3400px) {
+  .container-panel-lateral-expandido {
+    width: 15%;
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
     padding: 10px;
     height: 100vh;
   }
-  }
+} */
 
-  .btn-admin {
-    width: 100%;
-    height: auto;
-  }
+.btn-admin {
+  width: 100%;
+  height: auto;
+}
 
-.container-tablas{
+.container-tablas {
   margin: 20px;
   padding: 10px;
   display: flex;
@@ -36,7 +53,7 @@ body {
   width: 100%;
 }
 
-.ancho-descripcion{
+.ancho-descripcion {
   width: 1px;
 }
 
@@ -46,11 +63,20 @@ body {
   }
 }
 
-
-.contenido-destacado{
+.contenido-destacado {
   color: yellow;
 }
 
-.contenido-no-destacado{
+.contenido-no-destacado {
   color: rgb(202, 202, 202);
+}
+
+.dropdown-toggle-opcion-tabla::after {
+  /** Quitar flechas de dropdown de bootstrap*/
+  content: none;
+}
+
+.dropdown-toggle-opcion-tabla {
+  font-size: 12px;
+  width: 10px;
 }
