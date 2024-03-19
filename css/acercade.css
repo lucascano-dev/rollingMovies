@@ -19,6 +19,10 @@ body {
 
 .titulo-seccion {
   background-image: url('../assets/img/banner-acercade.png');
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 18rem;
 }
 
 .encabezado {
@@ -27,6 +31,9 @@ body {
   text-align: center;
 }
 
+.imagen-background {
+  width: 100vw;
+}
 .titulo {
   padding: 10px;
   width: 70%;
@@ -65,6 +72,7 @@ body {
 
 .titulo-sobre-nosotros {
   width: 100%;
+  text-shadow: 3px 5px 5px rgb(199, 65, 65);
 }
 
 .columna2 {
@@ -75,6 +83,11 @@ body {
   border-radius: 30px;
   margin: 30px;
   width: 100%;
+}
+
+.h1nombre {
+  text-shadow: 3px 5px 5px rgb(199, 65, 65);
+  padding-bottom: 30px;
 }
 
 @media (width >= 375px) and (width <= 768px) {
@@ -118,10 +131,11 @@ body {
 
 .team {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   width: auto;
   text-align: center;
   flex-wrap: wrap;
+  margin: 10px;
 }
 
 .team .team_member {

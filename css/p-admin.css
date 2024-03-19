@@ -26,6 +26,12 @@ body {
   visibility: hide;
 }
 
+.seccion-admin-usuario {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 btn-manipular-panel-izquierdo-oculto {
   display: block;
 }
@@ -46,11 +52,8 @@ btn-manipular-panel-izquierdo-oculto {
 }
 
 .container-tablas {
-  margin: 20px;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
   width: 100%;
+  margin: 5%;
 }
 
 .ancho-descripcion {

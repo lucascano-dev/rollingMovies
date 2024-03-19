@@ -11,9 +11,6 @@ const modalEditarUsuario = document.getElementById('modalEditarUsuario');
 const estadoUsuario = document.getElementById('estadoUsuario');
 let usuariosRegistrados = JSON.parse(localStorage.getItem('usuarios')) || [];
 
-console.log(titulo.textContent);
-console.log(usuariosRegistrados);
-
 dropItem.addEventListener('click', (event) => {
   event.preventDefault();
 });
