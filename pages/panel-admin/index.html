@@ -81,56 +81,61 @@
     <div class="container-columnas-administracion d-flex position-relative">
       <!-- Panel de administracion -->
       <section class="container-panel-lateral-expandido">
-        <div class="d-flex justify-content-center align-items-center bg-danger p-2 gap-1">
-          <div><p class="head-nombre-panel">Panel de administración</p></div>
-          <button id="btn-manipular-panel-izquierdo" class="btn btn-dark" type="button">
-            <i class="fa-solid fa-circle-chevron-left"></i>
-          </button>
-        </div>
-        <button id="btn-manipular-panel-izquierdo-oculto" class="btn btn-dark" type="button">
-          <i class="fa-solid fa-circle-chevron-left"></i>
-        </button>
-        <br />
-        <!-- Boton Administracion de contenidos -->
-        <div class="dropdown">
-          <button
-            class="btn btn-secondary dropdown-toggle btn-admin"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <span>Sobre Contenidos</span>
-          </button>
+        <div class="container-elementos-panel">
+          <div class="d-flex justify-content-center align-items-center bg-danger p-2 gap-1">
+            <div><p class="head-nombre-panel">Panel de administración</p></div>
+            <button id="btn-manipular-panel-izquierdo" class="btn btn-dark" type="button">
+              <i class="fa-solid fa-circle-chevron-left"></i>
+            </button>
+          </div>
 
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item enlace-test" href="#">Mostrar todos los contenidos</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Agregar nuevo contenido</a></li>
-          </ul>
-        </div>
-        <hr />
-        <!-- Boton Administracion de usuarios -->
-        <div class="dropdown">
-          <button
-            class="btn btn-secondary dropdown-toggle btn-admin"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Sobre Usuarios
-          </button>
+          <br />
+          <!-- Boton Administracion de contenidos -->
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle btn-admin"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span>Sobre Contenidos</span>
+            </button>
 
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Mostrar todos los usuarios</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Agregar nuevo usuario</a></li>
-          </ul>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item enlace-test" href="#">Mostrar todos los contenidos</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Agregar nuevo contenido</a></li>
+            </ul>
+          </div>
+          <hr />
+          <!-- Boton Administracion de usuarios -->
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle btn-admin"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Sobre Usuarios
+            </button>
+
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Mostrar todos los usuarios</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Agregar nuevo usuario</a></li>
+            </ul>
+          </div>
         </div>
       </section>
 
       <!-- Tablas -->
-      <section class="container-tablas">
+      <section class="container-panel-derecho">
         <div>
+          <div>
+            <button id="btn-volver" type="button" class="btn btn-primary btn-sm">
+              > Home / Panel de administración
+            </button>
+          </div>
           <h1 id="encabezado-tablas" class="text-center">Panel de administración</h1>
 
           <div class="d-flex justify-content-center gap-5 mt-5">

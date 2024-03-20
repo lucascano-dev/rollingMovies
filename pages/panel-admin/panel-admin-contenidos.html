@@ -26,7 +26,7 @@
   </head>
   <body>
     <section class="container-navbar">
-      <nav class="navbar bg-dark navbar-expand-lg text-light">
+      <nav class="navbar bg-dark navbar-expand-lg text-light w-100">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Navbar</a>
           <button
@@ -81,41 +81,43 @@
     <div class="container-columnas-administracion d-flex position-relative">
       <!-- Panel de administracion -->
       <section class="container-panel-lateral-expandido">
-        <div class="head-panel-izquierdo d-flex justify-content-center align-items-center bg-danger p-2 gap-1">
-          <p>Panel de administración</p>
-          <button id="btn-manipular-panel-izquierdo" class="btn btn-dark" type="button">
-            <i class="fa-solid fa-circle-chevron-left"></i>
-          </button>
-        </div>
-        <br />
-        <!-- Boton Administracion de contenidos -->
-        <div class="dropdown">
-          <button
-            class="btn btn-secondary dropdown-toggle btn-admin"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <span>Sobre Contenidos</span>
-          </button>
+        <div class="container-elementos-panel">
+          <div class="head-panel-izquierdo d-flex justify-content-center align-items-center bg-danger p-2 gap-1">
+            <p>Panel de administración</p>
+            <button id="btn-manipular-panel-izquierdo" class="btn btn-dark" type="button">
+              <i class="fa-solid fa-circle-chevron-left"></i>
+            </button>
+          </div>
+          <br />
+          <!-- Boton Administracion de contenidos -->
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle btn-admin"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span>Sobre Contenidos</span>
+            </button>
 
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item enlace-test" href="#">Mostrar todos los contenidos</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Agregar nuevo contenido</a></li>
-          </ul>
-        </div>
-        <hr />
-        <!-- Boton Administracion de usuarios -->
-        <div class="dropdown">
-          <button
-            class="btn btn-secondary dropdown-toggle btn-admin"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Sobre Usuarios
-          </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item enlace-test" href="#">Mostrar todos los contenidos</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Agregar nuevo contenido</a></li>
+            </ul>
+          </div>
+          <hr />
+          <!-- Boton Administracion de usuarios -->
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle btn-admin"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Sobre Usuarios
+            </button>
+          </div>
 
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Mostrar todos los usuarios</a></li>
@@ -125,9 +127,11 @@
         </div>
       </section>
 
-      <section class="container-tablas table-responsive">
-        <div>
-          <button id="btn-volver" type="button" class="btn btn-primary btn-sm">< Ir a Panel de administración</button>
+      <section class="container-panel-derecho">
+        <div class="encabezado-titulo-botones d-flex justify-content-between flex-column">
+          <div>
+            <button id="btn-volver" type="button" class="btn btn-primary btn-sm">< Ir a Panel de administración</button>
+          </div>
           <h1 id="encabezado-tablas" class="text-center">Administración de contenidos</h1>
           <div class="d-flex justify-content-end">
             <button
@@ -140,119 +144,10 @@
               <i class="fa-solid fa-file-import"></i>&nbsp;Agregar nuevo contenido
             </button>
           </div>
+        </div>
 
-          <!-- Modal -->
-          <div
-            class="modal fade"
-            id="modalAgregarContenido"
-            tabindex="-1"
-            aria-labelledby="modalAgregarContenido"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-dialog-centered text-black">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar nuevo contenido</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <form id="formularioAdminContenido">
-                    <div class="mb-3">
-                      <label for="inputNombreContenido" class="form-label">Nombre</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="inputNombreContenido"
-                        aria-describedby="nombre contenido"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label for="inputCategoria" class="form-label">Categoría</label>
-                      <input type="text" class="form-control" id="inputCategoria" />
-                    </div>
-                    <div class="mb-3">
-                      <label for="inputDescripcion" class="form-label">Descripción</label>
-                      <input type="text" class="form-control" id="inputDescripcion" />
-                    </div>
-                    <div class="mb-3">
-                      <label for="inputURLImagen" class="form-label">URL Imagen</label>
-                      <input type="text" class="form-control" id="inputURLImagen" />
-                    </div>
-                    <div class="mb-3">
-                      <label for="inputDescripcionImagen" class="form-label">Descripcion corta de imagen</label>
-                      <input type="text" class="form-control" id="inputDescripcionImagen" />
-                    </div>
-                    <div class="mb-3">
-                      <label for="inputURLVideo" class="form-label">URL Video</label>
-                      <input type="text" class="form-control" id="inputURLVideo" />
-                    </div>
-                    <div class="d-flex justify-content-end gap-2">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                      <button id="btnGuardarContenido" type="submit" data-bs-dismiss="modal" class="btn btn-success">
-                        Guardar
-                      </button>
-                    </div>
-                  </form>
-                </div>
-                <!-- <div class="modal-footer"></div> -->
-              </div>
-            </div>
-          </div>
-
-          <!-- MODAL EDITAR CONTENIDO -->
-
-          <div
-            class="modal fade"
-            id="modalEditarContenido"
-            tabindex="-1"
-            aria-labelledby="modalEditarContenido"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-dialog-centered text-black">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">
-                    Editar Contenido <span id="idEditarContenido">123</span>
-                  </h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <form id="formularioEditarContenido">
-                    <div class="mb-3">
-                      <label for="inputEditarNombreContenido" class="form-label">Nombre</label>
-                      <input type="text" class="form-control" id="inputEditarNombreContenido" />
-                    </div>
-                    <div class="mb-3">
-                      <label for="inputEditarCategoriaContenido" class="form-label">Categoría</label>
-                      <input type="text" class="form-control" id="inputEditarCategoriaContenido" />
-                    </div>
-                    <div class="mb-3">
-                      <label for="inputEditarDescripcionContenido" class="form-label">Descripción</label>
-                      <input type="text" class="form-control" id="inputEditarDescripcionContenido" />
-                    </div>
-                    <div class="mb-3">
-                      <label for="inputEditarURLImagenContenido" class="form-label">URL Imagen</label>
-                      <input type="text" class="form-control" id="inputEditarURLImagenContenido" />
-                    </div>
-                    <div class="mb-3">
-                      <label for="inputEditarURLVideoContenido" class="form-label">URL Video</label>
-                      <input type="text" class="form-control" id="inputEditarURLVideoContenido" />
-                    </div>
-                    <div class="d-flex justify-content-end gap-2">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                      <button id="btnActualizarUsuario" type="submit" data-bs-dismiss="modal" class="btn btn-success">
-                        Actualizar contenido
-                      </button>
-                    </div>
-                  </form>
-                </div>
-                <!-- <div class="modal-footer"></div> -->
-              </div>
-            </div>
-          </div>
-
-          <!-- Tablas -->
-
+        <!-- Tablas -->
+        <div class="container-tablas table-responsive">
           <table class="table table-dark table-striped border" id="tabla">
             <thead>
               <tr>
@@ -270,20 +165,128 @@
               <!-- Aqui va todo el contenido de la tabla -->
             </tbody>
           </table>
+        </div>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link">Anterior</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Siguiente</a>
+            </li>
+          </ul>
+        </nav>
 
-          <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-              <li class="page-item disabled">
-                <a class="page-link">Anterior</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#">Siguiente</a>
-              </li>
-            </ul>
-          </nav>
+        <!-- Modal Contenido-->
+        <div
+          class="modal fade"
+          id="modalAgregarContenido"
+          tabindex="-1"
+          aria-labelledby="modalAgregarContenido"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered text-black">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar nuevo contenido</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form id="formularioAdminContenido">
+                  <div class="mb-3">
+                    <label for="inputNombreContenido" class="form-label">Nombre</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputNombreContenido"
+                      aria-describedby="nombre contenido"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputCategoria" class="form-label">Categoría</label>
+                    <input type="text" class="form-control" id="inputCategoria" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputDescripcion" class="form-label">Descripción</label>
+                    <input type="text" class="form-control" id="inputDescripcion" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputURLImagen" class="form-label">URL Imagen</label>
+                    <input type="text" class="form-control" id="inputURLImagen" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputDescripcionImagen" class="form-label">Descripcion corta de imagen</label>
+                    <input type="text" class="form-control" id="inputDescripcionImagen" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputURLVideo" class="form-label">URL Video</label>
+                    <input type="text" class="form-control" id="inputURLVideo" />
+                  </div>
+                  <div class="d-flex justify-content-end gap-2">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button id="btnGuardarContenido" type="submit" data-bs-dismiss="modal" class="btn btn-success">
+                      Guardar
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <!-- <div class="modal-footer"></div> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- MODAL EDITAR CONTENIDO -->
+        <div
+          class="modal fade"
+          id="modalEditarContenido"
+          tabindex="-1"
+          aria-labelledby="modalEditarContenido"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered text-black">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Editar Contenido <span id="idEditarContenido">123</span>
+                </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form id="formularioEditarContenido">
+                  <div class="mb-3">
+                    <label for="inputEditarNombreContenido" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="inputEditarNombreContenido" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputEditarCategoriaContenido" class="form-label">Categoría</label>
+                    <input type="text" class="form-control" id="inputEditarCategoriaContenido" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputEditarDescripcionContenido" class="form-label">Descripción</label>
+                    <input type="text" class="form-control" id="inputEditarDescripcionContenido" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputEditarURLImagenContenido" class="form-label">URL Imagen</label>
+                    <input type="text" class="form-control" id="inputEditarURLImagenContenido" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputEditarURLVideoContenido" class="form-label">URL Video</label>
+                    <input type="text" class="form-control" id="inputEditarURLVideoContenido" />
+                  </div>
+                  <div class="d-flex justify-content-end gap-2">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button id="btnActualizarUsuario" type="submit" data-bs-dismiss="modal" class="btn btn-success">
+                      Actualizar contenido
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <!-- <div class="modal-footer"></div> -->
+            </div>
+          </div>
         </div>
       </section>
     </div>

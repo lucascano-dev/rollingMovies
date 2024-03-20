@@ -53,7 +53,8 @@ btn-manipular-panel-izquierdo-oculto {
 
 .container-tablas {
   width: 100%;
-  margin: 5%;
+
+  /* border: 5px solid rgb(255, 255, 255); */
 }
 
 .ancho-descripcion {
@@ -64,6 +65,39 @@ btn-manipular-panel-izquierdo-oculto {
   table {
     font-size: small;
   }
+}
+
+.container-columnas-administracion {
+  width: 100%;
+  height: 100vh;
+}
+
+.container-elementos-panel {
+  position: fixed;
+}
+
+.container-panel-lateral-expandido {
+  /* position: fixed; */
+  width: 20vw;
+}
+
+.container-panel-derecho {
+  position: absolute;
+  left: 20vw;
+  width: 70%;
+  margin-left: 3%;
+  /* border: red 1px solid; */
+  padding: 15px;
+}
+
+.encabezado-titulo-botones {
+  margin-bottom: 20px;
+  width: 100%;
+  /* border: 1px solid rgb(255, 255, 255); */
+  display: flex;
+  justify-content: center;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
 }
 
 .contenido-destacado {
