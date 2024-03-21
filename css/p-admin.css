@@ -36,23 +36,6 @@ body {
   /* border: 1px solid rgb(222, 7, 182); */
 }
 
-@media (width <= 820px) {
-  .container-panel-lateral-expandido {
-    width: 55%;
-  }
-
-  .container-elementos-panel {
-    width: 50%;
-  }
-}
-
-@media (width <= 425px) {
-  .btn-principales {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-
 .seccion-admin-usuario {
   width: 100%;
   display: flex;
@@ -104,12 +87,6 @@ body {
   width: 1px;
 }
 
-@media (width <=1366px) {
-  table {
-    font-size: small;
-  }
-}
-
 .container-columnas-administracion {
   width: 100%;
   height: 100vh;
@@ -150,4 +127,43 @@ body {
 .dropdown-toggle-opcion-tabla {
   font-size: 12px;
   width: 10px;
+}
+
+@media (width <=1366px) {
+  table {
+    font-size: x-small;
+  }
+}
+
+@media (width <= 820px) {
+  .container-panel-lateral-expandido {
+    width: 55%;
+  }
+
+  .container-elementos-panel {
+    width: 50%;
+  }
+}
+
+@media (width <= 430px) {
+  .btn-principales {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .container-panel-derecho {
+    position: absolute;
+    left: 10vw;
+    width: 85%;
+    margin-left: 3%;
+    /* border: red 1px solid; */
+    padding: 15px;
+  }
+}
+
+@media (width <=855px) {
+  .container-panel-derecho {
+    left: 8vw;
+    width: 80%;
+  }
 }

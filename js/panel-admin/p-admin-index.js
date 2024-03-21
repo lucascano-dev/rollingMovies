@@ -1,6 +1,5 @@
 const btnAdminContenidos = document.getElementById('btnAdminContenidos');
 const btnAdminUsuarios = document.getElementById('btnAdminUsuarios');
-const btnPanelExpandido = document.querySelector('container-panel-lateral-expandido');
 
 /** Panel de administracion principal */
 btnAdminContenidos.addEventListener('click', () => {
