@@ -1,7 +1,4 @@
-const btnPanel = document.getElementById('btn-manipular-panel-izquierdo');
-
-btnPanel.addEventListener('click', () => {
-  console.log('TEST');
-  const id = Date.now();
-  console.log(id);
-});
+const btnPanelExpandido = document.querySelector('#btn-manipular-panel-izquierdo-expandido');
+const btnPanelOcutlo = document.querySelector('#btn-manipular-panel-izquierdo-oculto');
+const contenedorExpandido = document.querySelector('.container-panel-lateral-expandido');
+const contenedorOculto = document.querySelector('.container-panel-lateral-oculto');

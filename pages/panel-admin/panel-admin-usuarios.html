@@ -80,12 +80,20 @@
 
     <div class="container-columnas-administracion d-flex position-relative">
       <!-- Panel de administracion -->
+      <section class="container-panel-lateral-oculto">
+        <div class="contenedor-head-titulo-panel d-flex justify-content-center align-items-center bg-danger gap-1">
+          <div><p class="head-nombre-panel"></p></div>
+          <button id="btn-manipular-panel-izquierdo-oculto" class="btn btn-dark" type="button">
+            <i class="btn-abrir-panel-izquierdo fa-solid fa-circle-chevron-right"></i>
+          </button>
+        </div>
+      </section>
       <section class="container-panel-lateral-expandido">
         <div class="container-elementos-panel">
           <div class="d-flex justify-content-center align-items-center bg-danger p-2 gap-1">
             <p>Panel de administración</p>
-            <button id="btn-manipular-panel-izquierdo" class="btn btn-dark" type="button">
-              <i class="fa-solid fa-circle-chevron-left"></i>
+            <button id="btn-manipular-panel-izquierdo-expandido" class="btn btn-dark" type="button">
+              <i class="btn-cerrar-panel-izquierdo fa-solid fa-circle-chevron-left"></i>
             </button>
           </div>
           <br />

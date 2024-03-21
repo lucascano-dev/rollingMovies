@@ -19,24 +19,38 @@ body {
 }
 
 .container-panel-lateral-expandido {
-  width: 21vw;
+  width: 21%;
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   padding: 10px;
   height: 100%;
-  display: block;
+  /* display: block; */
   position: fixed;
+  z-index: 1;
   /* border: 1px solid rgb(255, 255, 255); */
 }
 
 .container-elementos-panel {
-  width: 19vw;
+  width: 19%;
   position: fixed;
   /* border: 1px solid rgb(222, 7, 182); */
 }
 
-.contenedor-head-titulo-panel {
-  visibility: hide;
+@media (width <= 820px) {
+  .container-panel-lateral-expandido {
+    width: 55%;
+  }
+
+  .container-elementos-panel {
+    width: 50%;
+  }
+}
+
+@media (width <= 425px) {
+  .btn-principales {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .seccion-admin-usuario {
@@ -45,8 +59,30 @@ body {
   justify-content: center;
 }
 
-btn-manipular-panel-izquierdo-oculto {
-  display: block;
+/* ===== INICIO MANEJAR VISIBILIDAD DE PANEL LATERAL IZQUIERDO ===== */
+.container-panel-lateral-expandido {
+  /* display: block; */
+}
+
+.contenedor-head-titulo-panel {
+  width: 15px;
+  padding: 0.5;
+}
+
+.container-panel-lateral-oculto {
+  padding-top: 10px;
+  /* display: none; */
+  width: 15px;
+  height: 100%;
+  background-color: black;
+  position: fixed;
+  z-index: 1;
+}
+/* ===== FIN MANEJAR VISIBILIDAD DE PANEL LATERAL IZQUIERDO =====*/
+
+.btn-admin {
+  width: 100%;
+  height: auto;
 }
 
 /* @media (width >= 600px) and (width <= 3400px) {
@@ -58,12 +94,6 @@ btn-manipular-panel-izquierdo-oculto {
     height: 100vh;
   }
 } */
-
-.btn-admin {
-  width: 100%;
-  height: auto;
-}
-
 .container-tablas {
   width: 100%;
 

@@ -80,11 +80,19 @@
 
     <div class="container-columnas-administracion d-flex position-relative">
       <!-- Panel de administracion -->
+      <section class="container-panel-lateral-oculto">
+        <div class="d-flex justify-content-center align-items-center bg-danger p-2 gap-1">
+          <div><p class="head-nombre-panel"></p></div>
+          <button id="btn-manipular-panel-izquierdo-oculto" class="btn btn-dark" type="button">
+            <i class="fa-solid fa-circle-chevron-right"></i>
+          </button>
+        </div>
+      </section>
       <section class="container-panel-lateral-expandido">
         <div class="container-elementos-panel">
           <div class="head-panel-izquierdo d-flex justify-content-center align-items-center bg-danger p-2 gap-1">
             <p>Panel de administración</p>
-            <button id="btn-manipular-panel-izquierdo" class="btn btn-dark" type="button">
+            <button id="btn-manipular-panel-izquierdo-expandido" class="btn btn-dark" type="button">
               <i class="fa-solid fa-circle-chevron-left"></i>
             </button>
           </div>
@@ -291,7 +299,7 @@
       </section>
     </div>
 
-    <script src="../../js/panel-admin/p-admin-contenidos.js"></script>
     <script src="../../js/panel-admin/p-admin-control-panel.js"></script>
+    <script src="../../js/panel-admin/p-admin-contenidos.js"></script>
   </body>
 </html>

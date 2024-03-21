@@ -31,7 +31,7 @@ dropItem.addEventListener('click', (event) => {
   console.log('Click');
 });
 
-formularioAdminContenido.addEventListener('submit', agregarContenidoNuevo);
+submitAgregarContenido.addEventListener('submit', agregarContenidoNuevo);
 
 function agregarContenidoNuevo(e) {
   e.preventDefault();
