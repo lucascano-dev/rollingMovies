@@ -264,6 +264,7 @@ a {
 		margin-bottom: 10px;
 	}
 }
+
 /* FOOTER */
 
 /* PAGINA PRINCIPAL */
@@ -391,7 +392,24 @@ a {
 	padding-right: 5px;
 	border-radius: 5px;
 }
-
+/*media query del body*/
+@media screen and (max-width: 768px) {
+	.Overlay p {
+		display: none;
+	}
+	.Overlay {
+		height: 280px;
+	}
+	.Overlay button {
+		width: 100px;
+		font-size: 12px;
+	}
+	.CarrouselSlide img {
+		width: 50%;
+		height: auto;
+	}
+}
+/*media query del body*/
 /*slider de peliculas por categoria*/
 
 /* PAGINA PRINCIPAL */
