@@ -1,126 +1,207 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rolling Movies</title>
-<link rel="stylesheet" href="css/Footer.css">
+    <link rel="stylesheet" href="css/Footer.css">
 
 
 
 </head>
+
 <body>
-   <nav class="Navbar">
-    <div class="Hamburguer" onclick="toggleMenu()">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-    </div>
+    <!--NAVBAR-->
+    <nav class="Navbar">
 
-    <ul class="menu" id="menu">
-    <li><a href="#">PELICULAS</a></li>
-    <li><a href="#">LOGIN</a></li>
-    <li><a href="#">REGISTRO</a></li>
-    <li id="AdminUser" style="display: none;"><a href="#">ADMINISTRACION</a></li>
-    </ul>
+        <div class="Hamburguer" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
 
-    <div class="CinestrenarLogo">
-    <img src="./assets/img/Cinestrenar Logo.png" alt="Cinestrenar" class="CinestrenarLogo">
-    </div>
+        <ul class="menu" id="menu">
+            <li><a href="#">PELICULAS</a></li>
+            <li><a href="#">LOGIN</a></li>
+            <li><a href="#">REGISTRO</a></li>
+            <li id="AdminUser" style="display: none;"><a href="#">ADMINISTRACION</a></li>
+        </ul>
+
+        <div class="CinestrenarLogo">
+            <img src="./assets/img/Cinestrenar Logo.png" alt="Cinestrenar" class="CinestrenarLogo">
+        </div>
     </nav>
+    <!--NAVBAR-->
 
-    <footer class="FooterContainer">
-    
-    <div class="FooterSeccion">
-       
-        <a href="https://www.instagram.com/" style="text-decoration: none;">
-            <img src="./assets/img/Instagram Logo.png" alt="Instagram" class="Logo">
-        </a>
+    <!--PAGINA PRINCIPAL-->
+    <!--Elementos del Carrousel-->
+    <div class="CarrouselCont">
 
-        <a href="https://ar.linkedin.com//" style="text-decoration: none;">
-            <img src="./assets/img/Linkedin Logo.png" alt="Linkedin" class="Logo">
-        </a>
-       
-        <a href="https://twitter.com/" style="text-decoration: none;">
-            <img src="./assets/img/X Logo.png" alt="X" class="Logo">
-        </a>
-        
-        <a href="https://www.facebook.com/" style="text-decoration: none;">
-            <img src="./assets/img/Facebook icon.png" alt="Facebook" class="Logo">
-        </a>
-        
-        <a href="https://www.youtube.com/" style="text-decoration: none;">
-            <img src="./assets/img/Youtube Logo.png" alt="Youtube" class="Logo">
-        </a>   
-        </div>
-
-        <div class="vertical-line"></div>
-
-    <div class="FooterSeccion">
-        <a href="#">
-            <h2>ACERCA DE NOSOTROS</h2>
-        </a>
-        
-    </div>
-
-    <div class="vertical-line"></div>
-
-    <div class="FooterSeccion">
-        <a href="#">
-            <h2>CONTACTO</h2>
-        </a>
-        
-    </div>
-
-    <div class="vertical-line"></div>
-
-    <div class="FooterSeccion">
-    
-    <h3>Proyecto Creado Para Rolling Code</h3>
-      
-        
-    </div>
-
-
-   </footer>
-   <style>
-        .img-100 {
-            max-width: 100%;
-            max-height: 100%;
-        }
-        .iframe-100{
-            max-width: 100%;
-            max-height: 100%;
-        }
-    </style>
-    <a href="#modalArticulo" role="button" class="btn btn-primary" data-toggle="modal">Detalles</a>
-    <div id="modalArticulo" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <img src="./assets/img/mos_glyph_hires-1.jpg" class="img-100">
-                <button id = "reproducirBtn">Reproducir</button>
-                
-                
-                <p>El hombre de acero (en inglés, Man of Steel) es una película británico estadounidense​ de superhéroes de 2013 basada en el personaje Superman de DC Comics.</p>
-                <h5>Elenco: Henry Cavill, Amy Adams, Russel Crowe, Diane Lane, Kevin Costner, Michael Shanon</h5>
-
-                <!-- Otra imagen -->
-                <!-- <img src="../images/Imagen1200x1200.jpg" class="img-100"> -->
+        <div class="CarrouselSlide">
+            <div class="Slide">
+                <img src="./assets/img/Interstellar.png" alt="Interstellar">
+                <div class="Overlay">
+                    <h2>INTERSTELLAR</h2>
+                    <button class="PlayButton">VER AHORA</button>
+                    <p>Cuenta la historia de un grupo de astronautas que viajan a través de un agujero de gusano cerca
+                        de Saturno en busca de un nuevo hogar pero gracias a la dilatacion del tiempo cada minuto cerca
+                        del agujero negro podria tomarles años en la tierra por lo que deben apresurarse si quieren
+                        encontrar un hogar a tiempo</p>
+                </div>
             </div>
-        </div>
-    </div>
-    <script>
-        const reproducirBtn = document.getElementById('reproducirBtn');
-        reproducirBtn.addEventListener('click', () => {
-            window.location.href = '404.html'; // Cambia la ruta según la ubicación de tu archivo HTML
-        });
-    </script>
 
-    <script src="./js/app.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-   <script src="./js/PaginaPrincipal.js"></script>
+
+            <div class="Slide">
+                <img src="./assets/img/Scarface.png" alt="Scarface">
+                <div class="Overlay">
+                    <h2>SCARFACE</h2>
+                    <button class="PlayButton">VER AHORA</button>
+                    <p>Cuenta la historia de Tony Montana, un refugiado cubano que llega a Miami en los años 80 sin un
+                        solo centavo en el bolsillo, pero que pronto se ve involucrado en el negocio de la droga cuando
+                        él y sus amigos reciben tarjetas verdes a cambio de asesinar a un capo de la droga de Miami</p>
+                </div>
+            </div>
+
+
+            <div class="Slide">
+                <img src="./assets/img/Breaking Bad.png" alt="Breaking Bad">
+                <div class="Overlay">
+                    <h2>BREAKING BAD</h2>
+                    <button class="PlayButton">VER AHORA</button>
+                    <p>Un profesor de Química de secundaria con cáncer terminal se asocia a un ex estudiante para
+                        asegurar el futuro de su familia al fabricar y vender metanfetamina pero no sera nada facil,
+                        este mundo ya esta dominado por otros con sus propios intereses</p>
+                </div>
+
+            </div>
+
+        </div>
+        <!--Elementos del Carrousel-->
+
+        <!--Elementos de la Seccion de Categoria-->
+
+        <div class="carousel-container">
+            <h2 class="textslider">COMEDIA</h2>
+            <div class="carousel-row comedy">
+
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Espia y medio.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/kickass.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/jack y jill.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/malditos vecinos.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Ted.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/BayWatch.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/son como niños.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/vacaciones.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/un viernes de locos.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Superbad.png" alt=""></div>
+            </div>
+
+            <div class="arrow right-arrow">➤</div>
+        </div>
+
+
+        <div class="carousel-container">
+            <h2 class="textslider">TERROR</h2>
+            <div class="carousel-row terror">
+
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Terror/Dahmer.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Terror/Martirs.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Terror/Saw X.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Terror/Silent Hill.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Terror/La Purga.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Terror/El Conjuro.png"></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Terror/El Resplandor.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Terror/La bruja de Blair.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Terror/It.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Terror/Terrifier.png" alt=""></div>
+            </div>
+
+            <div class="arrow right-arrow">➤</div>
+        </div>
+
+
+
+        <div class="carousel-container">
+            <h2 class="textslider">CIENCIA FICCION</h2>
+            <div class="carousel-row scifi">
+
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Ciencia Ficcion/1 Origen.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Ciencia Ficcion/2 Matrix.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Ciencia Ficcion/5-Blade Runner.png" alt="">
+                </div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Ciencia Ficcion/8-tenet.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Ciencia Ficcion/4-el creador.png" alt="">
+                </div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Ciencia Ficcion/10-godzilla.png" alt="">
+                </div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Ciencia Ficcion/6-tron.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Ciencia Ficcion/7-Loki.png" alt=""></div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Ciencia Ficcion/9-la llegada.png" alt="">
+                </div>
+                <div class="movies"><img src="./assets/img/Peliculas 320px/Ciencia Ficcion/3 Alien.png" alt=""></div>
+            </div>
+
+            <div class="arrow right-arrow">➤</div>
+        </div>
+
+        <!--Elementos de la Seccion de Categoria-->
+        <!--PAGINA PRINCIPAL-->
+
+        <!--FOOTER-->
+        <footer class="FooterContainer">
+
+            <div class="FooterSeccion">
+
+                <a href="https://www.instagram.com/" style="text-decoration: none;">
+                    <img src="./assets/img/Instagram Logo.png" alt="Instagram" class="Logo">
+                </a>
+
+                <a href="https://ar.linkedin.com//" style="text-decoration: none;">
+                    <img src="./assets/img/Linkedin Logo.png" alt="Linkedin" class="Logo">
+                </a>
+
+                <a href="https://twitter.com/" style="text-decoration: none;">
+                    <img src="./assets/img/X Logo.png" alt="X" class="Logo">
+                </a>
+
+                <a href="https://www.facebook.com/" style="text-decoration: none;">
+                    <img src="./assets/img/Facebook icon.png" alt="Facebook" class="Logo">
+                </a>
+
+                <a href="https://www.youtube.com/" style="text-decoration: none;">
+                    <img src="./assets/img/Youtube Logo.png" alt="Youtube" class="Logo">
+                </a>
+            </div>
+
+            <div class="vertical-line"></div>
+
+            <div class="FooterSeccion">
+                <a href="#">
+                    <h2>ACERCA DE NOSOTROS</h2>
+                </a>
+
+            </div>
+
+            <div class="vertical-line"></div>
+
+            <div class="FooterSeccion">
+                <a href="#">
+                    <h2>CONTACTO</h2>
+                </a>
+
+            </div>
+
+            <div class="vertical-line">
+            </div>
+
+            <div class="FooterSeccion">
+                <h3>Proyecto Creado Para Rolling Code</h3>
+            </div>
+        </footer>
+        <!--FOOTER-->
+        <script src="./js/PaginaPrincipal.js"></script>
 
 </body>
+
 </html>

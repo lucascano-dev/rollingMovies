@@ -1,7 +1,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	background-color: #e3e3e3;
+	background-image: url(../assets/img/fondo.png);
 }
 /* NAVBAR */
 .Navbar {
@@ -100,7 +100,6 @@ body {
 	}
 }
 /* NAVBAR */
-
 /* FOOTER */
 .FooterContainer {
 	display: flex;
@@ -264,152 +263,140 @@ a {
 		margin-bottom: 10px;
 	}
 }
-
 /* FOOTER */
+/*FORMULARIO DE CONTACTO*/
 
-/* PAGINA PRINCIPAL */
-.CarrouselCont {
-	width: 100%;
-	overflow: hidden;
-}
-
-.CarrouselSlide {
+.container {
 	display: flex;
-	width: 300%;
-}
-
-.CarrouselSlide img {
-	width: 100%;
-	height: auto;
-}
-
-.Slide {
-	position: relative;
-	flex: 1 0 auto;
-	text-align: start;
-}
-
-.Slide h2,
-.slide p {
-	margin: 5px;
-}
-
-.Slide button {
-	margin-top: 10px;
-}
-.Slide img {
-	width: 100%;
-	height: auto;
-}
-.Overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 10%;
-	height: 93%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
-	backdrop-filter: blur(10px);
-	color: white;
+	width: 70%;
 	font-family: 'Roboto', sans-serif;
-	font-weight: 100;
 	font-style: normal;
-	text-align: start;
-	font-size: 15px;
-	letter-spacing: 1px;
 	padding: 20px;
+	padding-left: 100px;
+	margin: 20px;
 }
-.Overlay h2,
-.Overlay p {
-	margin: 5px;
-	padding: 10px;
+.container img {
+	width: 600px;
+	align-items: end;
 }
 
-.PlayButton {
-	margin-top: 10px;
-	background-color: #369439;
-	border: none;
-	color: rgb(255, 255, 255);
-	padding: 10px 12px;
+.form-container {
+	width: 50%;
+	padding-left: 25px;
+	padding-right: 43px;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	margin-right: 20px;
+}
+
+.form-container h2 {
 	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	cursor: pointer;
-	border-radius: 8px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+	font-size: 20px;
 	font-family: 'Roboto', sans-serif;
-	font-weight: 100;
 	font-style: normal;
 }
-/*slider de peliculas por categoria*/
-.carousel-container {
+
+.form-container label,
+.form-container input,
+.form-container textarea {
+	display: block;
+	margin-bottom: 15px;
 	width: 100%;
-	overflow-x: hidden;
-	position: relative;
-	padding: 25px;
-	margin: 15px;
-	padding-left: 9px;
-}
-.textslider {
-	display: flex;
-	position: absolute;
-	font-family: 'Roboto', sans-serif;
-	font-weight: 400;
-	font-style: normal;
-	margin-top: -30px;
-	color: #333333;
-}
-.carousel-row {
-	display: flex;
-	transition: transform 0.3s ease;
-	margin-top: 10px;
 }
 
-.movies {
-	flex: 0 0 20%;
-}
-.movies img {
-	border-radius: 15px;
-}
-
-.right-arrow {
-	position: absolute;
-	top: 51%;
-	right: 70px;
-	transform: translateY(-50%);
-	font-size: 24px;
-	color: #a8a6a6;
-	cursor: pointer;
-	z-index: 1;
-	backdrop-filter: blur(10px);
-	background-color: rgba(0, 0, 0, 0.5);
-	padding: 110px;
-	padding-left: 5px;
-	padding-right: 5px;
+.form-container input[type='text'],
+.form-container input[type='email'],
+.form-container input[type='tel'],
+.form-container textarea {
+	padding: 10px;
+	border: 1px solid #ccc;
 	border-radius: 5px;
 }
-/*media query del body*/
-@media screen and (max-width: 768px) {
-	.Overlay p {
+
+.form-container input[type='submit'] {
+	background-color: #dd0101;
+	color: white;
+	border: none;
+	padding: 15px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	align-items: center;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	font-size: 15px;
+	font-family: 'Roboto', sans-serif;
+	font-style: normal;
+}
+
+.form-container input[type='submit']:hover {
+	background-color: #ff0000;
+}
+.image-container {
+	margin-left: 20px;
+	width: 20%;
+}
+@media screen and (max-width: 767px) {
+	.image-container {
 		display: none;
 	}
-	.Overlay {
-		height: 280px;
+	.container {
+		padding: 0;
+		width: 90%;
 	}
-	.Overlay button {
-		width: 100px;
-		font-size: 12px;
+	.container img {
+		display: none;
 	}
-	.CarrouselSlide img {
-		width: 50%;
-		height: auto;
+	.form-container {
+		width: 100%;
+		margin-right: 0;
+	}
+	body {
+		background-image: none;
+		background-color: #ccc;
 	}
 }
-/*media query del body*/
-/*slider de peliculas por categoria*/
 
-/* PAGINA PRINCIPAL */
+@media only screen and (min-width: 768px) and (max-width: 1280px) {
+	.container img {
+		height: auto;
+		width: 280px;
+		padding-left: 38px;
+	}
+	.container {
+		justify-content: center;
+		padding: 0;
+	}
+	.form-container {
+		margin: 20px;
+		width: 90%;
+		height: 850px;
+	}
+	body {
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.FooterContainer {
+		display: block;
+		bottom: 0;
+	}
+	.form-container label,
+	.form-container input,
+	.form-container textarea {
+		display: block;
+		margin-bottom: 25px;
+		width: 100%;
+		font-size: 17px;
+	}
+
+	.form-container input[type='submit'] {
+		margin-top: 20px;
+	}
+
+	.form-container textarea {
+		resize: vertical;
+	}
+}
+/*FORMULARIO DE CONTACTO*/
