@@ -9,6 +9,11 @@ body {
   color: white;
 }
 
+.container-navbar {
+  width: 100%;
+  z-index: 1;
+}
+
 .navbar li a {
   color: white !important;
 }
