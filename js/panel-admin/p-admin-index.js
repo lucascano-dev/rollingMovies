@@ -1,6 +1,6 @@
 const btnAdminContenidos = document.getElementById('btnAdminContenidos');
 const btnAdminUsuarios = document.getElementById('btnAdminUsuarios');
-// console.log(JSON.parse(localStorage.getItem('stateMenuLateral')));
+const btnPanelExpandido = document.querySelector('container-panel-lateral-expandido');
 
 /** Panel de administracion principal */
 btnAdminContenidos.addEventListener('click', () => {
