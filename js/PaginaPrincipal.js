@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 
 function toggleMenu() {
   var menu = document.getElementById("menu");
   menu.classList.toggle("active");
+=======
+/*Menu Desplegable*/
+function toggleMenu() {
+	var menu = document.getElementById('menu');
+	menu.classList.toggle('active');
+>>>>>>> 476924d952a5cf74e5f297c3aef4278e1336256e
 }
+/*Menu Desplegable*/
 
+<<<<<<< HEAD
 const AdminLogged = true;
 
 window.onload = function () {
@@ -84,3 +93,17 @@ regUser.addEventListener("click", () => {
   }
 });
 
+=======
+/* Mostrar opcion de administrador si el admin es el usuario Logeado*/
+const AdminLogged = true;
+
+window.onload = function () {
+	const AdminUser = document.getElementById('AdminUser');
+	if (AdminLogged) {
+		AdminUser.style.display = 'block';
+	} else {
+		AdminUser.style.display = 'none';
+	}
+};
+/* Mostrar opcion de administrador si el admin es el usuario Logeado*/
+>>>>>>> 476924d952a5cf74e5f297c3aef4278e1336256e
