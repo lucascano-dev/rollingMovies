@@ -49,14 +49,14 @@ body {
 	display: inline-block;
 }
 
-.menu a {
-	color: #333333;
-	text-decoration: none;
-	transition: color 0.3s;
+.menu button {
+	color: #333333 !important;
+	text-decoration: none !important;
+	transition: color 0.3s !important;
 }
-.menu a:hover {
-	color: #ccc;
-	font-size: 35px;
+.menu button:hover {
+	color: #ccc !important;
+	font-size: 35px !important;
 }
 
 @media screen and (max-width: 768px) {
@@ -92,8 +92,8 @@ body {
 		height: 100px;
 		width: auto;
 	}
-	.menu a {
-		color: #fff;
+	.menu button {
+		color: #fff !important;
 	}
 
 	.menu li {
@@ -119,8 +119,8 @@ body {
 .FooterSeccion {
 	text-align: center;
 	flex: 1;
-	padding: 10px;
-	font-size: 12px;
+	padding: 1rem;
+	font-size: 1rem;
 	margin: auto;
 }
 
@@ -130,8 +130,7 @@ body {
 }
 
 .FooterSeccion h2 {
-	font-size: 18px;
-	margin-top: 15px;
+	font-size: 1rem;
 }
 .Logo {
 	width: 30px;
@@ -205,7 +204,8 @@ a {
     }
 
 .CinestrenarLogo {
-	width: 200px;
+	border: none !important;
+	width: 15rem;
 	height: auto;
 }
 
@@ -239,14 +239,14 @@ a {
 	display: inline-block;
 }
 
-.menu a {
-	color: #333333;
-	text-decoration: none;
-	transition: color 0.3s;
+.menu button {
+	color: #333333 !important;
+	text-decoration: none !important;
+	transition: color 0.3s !important;
 }
-.menu a:hover {
-	color: #ccc;
-	font-size: 35px;
+.menu button:hover {
+	color: #ccc !important;
+	font-size: 35px !important;
 }
 
 @media screen and (max-width: 768px) {
@@ -281,8 +281,8 @@ a {
 		height: 100px;
 		width: auto;
 	}
-	.menu a {
-		color: #fff;
+	.menu button {
+		color: #fff !important;
 	}
 
 	.menu li {

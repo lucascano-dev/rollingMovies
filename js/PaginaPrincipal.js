@@ -6,18 +6,21 @@ function toggleMenu() {
 /*Menu Desplegable*/
 
 /* Mostrar opcion de administrador si el admin es el usuario Logeado*/
-const AdminLogged = JSON.parse(localStorage.getItem('userLogged'));
-console.log(AdminLogged)
-const isAdminLogged = AdminLogged.userRol == 0 ? true : false;
-if (isAdminLogged) {
-  window.onload = function () {
+const AdminUser = document.getElementById('AdminUser')
+
+if (localStorage.getItem('userLogged') !== undefined) {
+  const AdminLogged = JSON.parse(localStorage.getItem('userLogged'));
+
+  if (AdminLogged !== null) {
+    const isAdminLogged = AdminLogged.userRol == 0 ? true : false;
     if (isAdminLogged) {
       AdminUser.style.display = "block";
     } else {
       AdminUser.style.display = "none";
     }
-  };
-}
+  }
+};
+
 
 /* Mostrar opcion de administrador si el admin es el usuario Logeado*/
 

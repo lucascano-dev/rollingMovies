@@ -35,6 +35,7 @@ regUser.addEventListener("click", () => {
             return false;
         } else if (JSON.stringify(arrayUsers).includes(userObject.nombre)) {
             errorHandling("error", "El usuario ya se encuentra registrado!");
+            return false;
         } else {
             errorHandling("success", "Usuario registrado correctamente")
             return true;
