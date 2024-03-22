@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <!--NAVBAR-->
     <nav class="Navbar">
         <div class="Hamburguer" onclick="toggleMenu()">
             <div class="line"></div>
@@ -41,7 +42,9 @@
                                     <input type="password" name="passUser" id="passUser" class="col-6 my-2">
                                 </form>
                             </div>
-                            <button href="#" class="btn text-left text-primary">Has olvidado tu contraseña? click
+                            <button onclick="location.href='./pages/404.html'" class="btn text-left text-primary">Has
+                                olvidado tu
+                                contraseña? click
                                 aqui</button>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary"
@@ -93,10 +96,10 @@
         </ul>
 
         <div class="CinestrenarLogo">
-            <a href=""><img src="./assets/img/Cinestrenar Logo.png" alt="Cinestrenar" class="CinestrenarLogo" /></a>
+            <a href="./index.html"><img src="./assets/img/Cinestrenar Logo sin sombra.png" alt="Cinestrenar"
+                    class="CinestrenarLogo" /></a>
         </div>
     </nav>
-    <!--NAVBAR-->
 
     <!--PAGINA PRINCIPAL-->
     <!-- seccion peliculas destacadas -->
@@ -442,6 +445,8 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="./js/PaginaPrincipal.js"></script>
+    <script src="./js/loginHandler.js"></script>
+    <script src="./js/registerHandler.js"></script>
     <link rel="stylesheet" href="css/Footer.css" />
 </body>
 

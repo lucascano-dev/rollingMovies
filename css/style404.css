@@ -1,0 +1,468 @@
+
+
+
+body{
+    background-color: #ffffff;     
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+}
+
+.titulo{
+  
+  color: rgb(255, 255, 255);
+  font-family: "Roboto", sans-serif;
+  font-size: 65px;
+}
+
+.h1nombre{
+    
+       
+    font-size: larger;
+    font-family: "Roboto", sans-serif;
+    padding-top: 70px;
+    color: white;
+    
+}
+
+p {
+  color: white;
+  text-align: center;
+    
+}
+
+
+h3 {
+  text-align: center;
+}
+
+.textoError {
+ 
+  font-family: "Roboto", sans-serif;
+  font-size: 65px;
+  text-align: center;
+        
+}
+
+.organizar404{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: calc(100vh - 86.4px);
+  background-image: url(../assets/img/Sin\ título.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  
+    
+}
+
+@media (width >= 769px) and (width <=1200px){
+
+  .titulo{font-size: 45px;}
+  .h1nombre{font-size: 45px;}
+  .textoError{font-size: 45px;}
+}
+
+
+@media (width >= 360px) and (width <=768px){
+
+  .titulo{font-size: 45px;}
+  .h1nombre{font-size: 45px;}
+  .textoError{font-size: 45px;}
+}
+
+.h1nombre, .textoError {
+
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+
+}
+
+
+.areaTexto {
+
+  border: #888;
+  border-radius: 10px;
+}
+
+h5{
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+
+
+}
+
+.main-container p{
+
+  font-size: 2rem;
+
+}
+
+/*Navbar*/
+
+.Navbar {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(227, 227, 227);
+  margin-top: 0px;
+  
+
+}
+
+.CinestrenarLogo {
+  width: 200px;
+  height: auto;
+}
+
+.Hamburguer {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: auto;
+}
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: #534848;
+  margin: 3px 0;
+
+}
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+
+
+
+}
+
+.menu li {
+  margin-right: 20px;
+  display: inline-block;
+}
+
+.menu a {
+  color: #333333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.menu a:hover {
+  color: #ccc;
+  font-size:35px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity:  0;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(5px);
+  font-size: 20px;
+  padding: 15px;
+  left: 0;
+  border-radius: 10px;
+  margin: 0 auto;
+  width: 300px;
+  z-index: 1000;
+}
+.menu.active {
+  display: flex;
+  opacity: 1;
+}
+.Hamburguer {
+  display: flex;
+}
+.Navbar {
+  flex-direction: column;
+
+
+}
+.CinestrenarLogo{
+  height: 100px;
+  width: auto;
+
+}
+.menu a{
+color: #fff;
+}
+
+.menu li {margin-bottom: 10px;}
+}
+
+/* FOOTER */
+.FooterContainer
+{
+    display: flex; 
+    background-color: rgb(227, 227, 227);
+    padding: 10px;
+    font-family: "Roboto", sans-serif;
+    color: #333333;
+    font-style: normal;
+}
+
+.FooterContainer a:hover{
+    color: #ccc;
+    font-size: 13px;
+}
+.FooterSeccion {
+    text-align: center;
+    flex: 1;
+    padding: 10px;
+    font-size: 12px;
+    margin: auto;
+    
+}
+
+.FooterSeccion h3 {
+    font-size: 18px;
+    margin-top: 15px
+}
+
+.Logo {
+    width: 30px;
+    height: auto;
+    margin: 21px;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.vertical-line {
+    border-left: 1px solid #ffffff; 
+  }
+
+@media (max-width:768px) {
+    .FooterContainer{
+        flex-direction: column;
+
+    }
+    .vertical-line{
+        border-left: none;
+    }
+    .Logo{
+        width: 30px;
+        margin: 15px;
+    }
+    .FooterSeccion a{
+        font-size: 11px;
+    }
+    .FooterSeccion h3{
+        font-size: 13px;
+    }
+    .FooterSeccion:nth-child(1)::after {
+        content: '';
+        display: block;
+        border-top: 1px solid #ccc;
+        margin-top: 10px; 
+        padding-top: 10px;  }
+    }
+    
+
+    .Navbar {
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: rgb(227, 227, 227);
+       
+        margin-top: 0px;
+        
+    }
+
+    .CinestrenarLogo {
+        width: 200px;
+        height: auto;
+    }
+
+    .Hamburguer {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        margin-left: auto;
+    }
+    .line {
+        width: 25px;
+        height: 3px;
+        background-color: #534848;
+        margin: 3px 0;
+        
+    }
+
+    .menu {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        font-size: 20px;
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+       
+        
+     
+    }
+
+    .menu li {
+        margin-right: 20px;
+        display: inline-block;
+    }
+   
+    .menu a {
+        color: #333333;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    .menu a:hover {
+        color: #ccc;
+        font-size:35px;
+    }
+
+   
+    @media screen and (max-width: 768px) {
+        .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity:  0;
+        transition: opacity 0.3s ease;
+        backdrop-filter: blur(5px);
+        font-size: 20px;
+        padding: 15px;
+        left: 0;
+        border-radius: 10px;
+        margin: 0 auto;
+        width: 300px;
+    }
+    .menu.active {
+        display: flex;
+        opacity: 1;
+    }
+    .Hamburguer {
+        display: flex;
+    }
+    .Navbar {
+        flex-direction: column;
+        
+        
+    }
+    .CinestrenarLogo{
+        height: 100px;
+        width: auto;
+        
+    }
+    .menu a{
+    color: #fff;
+}
+
+.menu li {margin-bottom: 10px;}
+}
+/* FOOTER */
+
+
+/*Boton inicio*/
+.boton-inicio {
+  display: inline-block;
+  padding: 10px 20px;
+  width: max-content;
+  text-decoration: none;
+  color: white;
+  background-color: #6a6f75;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.boton-inicio:hover {
+  background-color: #0056b3;
+}
+
+.botonReportar {
+  display: inline-block;
+  padding: 10px 20px;
+  width: max-content;
+  text-decoration: none;
+  color: white;
+  background-color: #6a6f75;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.botonReportar:hover {
+  background-color: #0056b3;
+}
+
+
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Se queda fijo en la pantalla */
+  z-index: 1; /* Se sitúa sobre el resto del contenido */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Alto completo */
+  overflow: auto; /* Habilita el desplazamiento si es necesario */
+  background-color: rgb(0,0,0); /* Fondo negro */
+  background-color: rgba(0,0,0,0.4); /* Fondo negro con opacidad */
+  
+}
+
+/* Estilo del contenido del modal */
+.modalContenido {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% desde arriba y centrado horizontalmente */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 25%; /* Ancho del contenido */
+  
+}
+
+/* Estilo del botón de cerrar */
+.cerrar {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+textarea{
+  resize: none;
+}

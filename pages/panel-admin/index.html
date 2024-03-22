@@ -27,11 +27,42 @@
 
       <ul class="menu" id="menu">
         <li><a href="#">PELICULAS</a></li>
-        <li><a href="#">LOGIN</a></li>
+        <li>
+          <button type="button" class="btn btn-primary bg-transparent text-black" id="registerButton"
+            data-bs-toggle="modal" data-bs-target="#modalLogin">
+            INGRESO
+          </button>
+          <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Ingreso</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form action="" class="row" id="form">
+                    <label for="user" class="col-4">Nombre/Correo Electronico: </label>
+                    <input type="text" name="user" id="user" class="col-6 my-2">
+                    <label for="passUser" class="col-4">Contraseña</label>
+                    <input type="password" name="passUser" id="passUser" class="col-6 my-2">
+                  </form>
+                </div>
+                <button onclick="location.href='./pages/404.html'" class="btn text-left text-primary">Has
+                  olvidado tu
+                  contraseña? click
+                  aqui</button>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-primary" id="logUser">Ingresar!</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
         <li><!-- Button trigger modal -->
           <button type="button" class="btn btn-primary bg-transparent text-black" id="registerButton"
             data-bs-toggle="modal" data-bs-target="#exampleModal">
-            REGISTER
+            REGISTRO
           </button>
 
           <!-- Modal -->
@@ -40,7 +71,7 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Registro</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -56,8 +87,8 @@
                   </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                  <button type="button" class="btn btn-primary" id="regUser">Register!</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-primary" id="regUser">Registrarse!</button>
                 </div>
               </div>
             </div>
@@ -67,7 +98,8 @@
       </ul>
 
       <div class="CinestrenarLogo">
-        <a href=""><img src="../../assets/img/Cinestrenar Logo.png" alt="Cinestrenar" class="CinestrenarLogo" /></a>
+        <a href="../../index.html"><img src="../../assets/img/Cinestrenar Logo sin sombra.png" alt="Cinestrenar"
+            class="CinestrenarLogo" /></a>
       </div>
     </nav>
   </section>
@@ -205,6 +237,11 @@
   <script src="../../js/panel-admin/p-admin-index.js"></script>
   <script src="../../js/panel-admin/p-admin-control-panel.js"></script>
   <link rel="stylesheet" href="../../css/Footer.css">
+  <script src="../../js/PaginaPrincipal.js"></script>
+  <script src="../../js/loginHandler.js"></script>
+  <script src="../../js/registerHandler.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="../../css/Footer.css" />
 </body>
 
 </html>
