@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Contactos</title>
+	<link rel="stylesheet" href="./css/contacto.css" />
+</head>
+
+<body>
+	<!--NAVBAR-->
+	<nav class="Navbar">
+		<div class="Hamburguer" onclick="toggleMenu()">
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+		</div>
+
+		<ul class="menu" id="menu">
+			<li><a href="#">PELICULAS</a></li>
+			<li>
+				<button type="button" class="btn btn-primary bg-transparent text-black" id="registerButton"
+					data-bs-toggle="modal" data-bs-target="#modalLogin">
+					INGRESO
+				</button>
+				<div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel"
+					aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h1 class="modal-title fs-5" id="exampleModalLabel">Ingreso</h1>
+								<button type="button" class="btn-close" data-bs-dismiss="modal"
+									aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<form action="" class="row" id="form">
+									<label for="user" class="col-4">Nombre/Correo Electronico: </label>
+									<input type="text" name="user" id="user" class="col-6 my-2">
+									<label for="passUser" class="col-4">Contraseña</label>
+									<input type="password" name="passUser" id="passUser" class="col-6 my-2">
+								</form>
+							</div>
+							<button onclick="location.href='./pages/404.html'" class="btn text-left text-primary">Has
+								olvidado tu
+								contraseña? click
+								aqui</button>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-bs-dismiss="modal">Cancelar</button>
+								<button type="button" class="btn btn-primary" id="logUser">Ingresar!</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li><!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary bg-transparent text-black" id="registerButton"
+					data-bs-toggle="modal" data-bs-target="#exampleModal">
+					REGISTRO
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+					aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h1 class="modal-title fs-5" id="exampleModalLabel">Registro</h1>
+								<button type="button" class="btn-close" data-bs-dismiss="modal"
+									aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<form action="" class="row" id="form">
+									<label for="name" class="col-4">Nombre: </label>
+									<input type="text" name="name" id="name" class="col-6 my-2">
+									<label for="pass" class="col-4">Correo Electronico</label>
+									<input type="email" name="mail" id="mail" class="col-6 my-2">
+									<label for="pass" class="col-4">Contraseña</label>
+									<input type="password" name="pass" id="pass" class="col-6 my-2">
+									<label for="confirmPass" class="col-4">Confirmar Contraseña</label>
+									<input type="password" name="confirmPass" id="confirmPass" class="col-6 my-2">
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-bs-dismiss="modal">Cancelar</button>
+								<button type="button" class="btn btn-primary" id="regUser">Registrarse!</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li id="AdminUser" style="display: none;"><a href="./pages/panel-admin/index.html">ADMINISTRACION</a></li>
+		</ul>
+
+		<div class="CinestrenarLogo">
+			<a href="../index.html"><img src="../assets/img/Cinestrenar Logo sin sombra.png" alt="Cinestrenar"
+					class="CinestrenarLogo" /></a>
+		</div>
+	</nav>
+	<!--NAVBAR-->
+	<!--FORMULARIO DE CONTACTO-->
+	<div class="container">
+		<div class="form-container">
+			<h2>FORMULARIO DE CONTACTO</h2>
+			<form id="contactForm" onsubmit="return validarFormulario()">
+				<label for="nombre">Nombre:</label>
+				<input type="text" id="nombre" name="nombre" required />
+
+				<label for="apellido">Apellido:</label>
+				<input type="text" id="apellido" name="apellido" required />
+
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required />
+
+				<label for="celular">Celular:</label>
+				<input type="tel" id="celular" name="celular" pattern="[0-9]{10}" required />
+
+				<label for="direccion">Dirección:</label>
+				<input type="text" id="direccion" name="direccion" required />
+
+				<label for="mensaje">Mensaje:</label>
+				<textarea id="mensaje" name="mensaje" required></textarea>
+
+				<input type="submit" value="ENVIAR" />
+			</form>
+		</div>
+		<div class="image-container">
+			<img src="./assets/img/perro pagina de contacto 2.png" alt="Imagen de perro en el cine" />
+		</div>
+	</div>
+	<!--FORMULARIO DE CONTACTO-->
+	<!--FOOTER-->
+	<footer class="FooterContainer">
+		<div class="FooterSeccion">
+			<a href="https://www.instagram.com/" style="text-decoration: none">
+				<img src="./assets/img/Instagram Logo.png" alt="Instagram" class="Logo" />
+			</a>
+
+			<a href="https://ar.linkedin.com//" style="text-decoration: none">
+				<img src="./assets/img/Linkedin Logo.png" alt="Linkedin" class="Logo" />
+			</a>
+
+			<a href="https://twitter.com/" style="text-decoration: none">
+				<img src="./assets/img/X logo.png" alt="X" class="Logo" />
+			</a>
+
+			<a href="https://www.facebook.com/" style="text-decoration: none">
+				<img src="./assets/img/Facebook icon.png" alt="Facebook" class="Logo" />
+			</a>
+
+			<a href="https://www.youtube.com/" style="text-decoration: none">
+				<img src="./assets/img/Youtube Logo.png" alt="Youtube" class="Logo" />
+			</a>
+		</div>
+
+		<div class="vertical-line"></div>
+
+		<div class="FooterSeccion">
+			<a href="#">
+				<h2>ACERCA DE NOSOTROS</h2>
+			</a>
+		</div>
+
+		<div class="vertical-line"></div>
+
+		<div class="FooterSeccion">
+			<a href="#">
+				<h2>CONTACTO</h2>
+			</a>
+		</div>
+
+		<div class="vertical-line"></div>
+
+		<div class="FooterSeccion">
+			<h3>Proyecto Creado Para Rolling Code</h3>
+		</div>
+	</footer>
+	<!--FOOTER-->
+	<script src="./js/contacto.js"></script>
+	<script src="../js/PaginaPrincipal.js"></script>
+	<script src="../js/loginHandler.js"></script>
+	<script src="../js/registerHandler.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<link rel="stylesheet" href="../css/Footer.css" />
+</body>
+
+</html>
