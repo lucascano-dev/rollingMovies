@@ -6,7 +6,7 @@ function toggleMenu() {
 /*Menu Desplegable*/
 
 /* Mostrar opcion de administrador si el admin es el usuario Logeado*/
-const AdminLogged = true;
+const AdminLogged = localStorage.getItem('usuarioLogged');
 
 window.onload = function () {
   const AdminUser = document.getElementById("AdminUser");
@@ -23,11 +23,13 @@ const regUser = document.getElementById("regUser");
 regUser.addEventListener("click", () => {
   let arrayUsers = JSON.parse(localStorage.getItem("usuarios")) || [];
   let userObject = {
+    id:Date.now(),
     nombre: document.getElementById("name").value,
     correo: document.getElementById("mail").value,
     pass: document.getElementById("pass").value,
     confirmPass: document.getElementById("confirmPass").value,
-    isAdmin: false,
+    stateActivation: 0,
+    userRol: 1,
   };
   let isValid = isValidUser(userObject);
   if (isValid == true) {
@@ -84,3 +86,35 @@ regUser.addEventListener("click", () => {
     });
   }
 });
+
+//Manejador de imagenes modal detalle de pelicula.
+const miImagen = document.querySelectorAll("img.imgButton")
+console.log(miImagen)
+miImagen.forEach((imagen)=>{
+  imagen.addEventListener('click',()=>{
+    let src= imagen.src
+    console.log(src)
+  })
+})
+
+//Login 
+const logUser = document.getElementById('logUser')
+logUser.addEventListener('click',(e)=>{
+    const user = document.getElementById("user").value
+    const passUser = document.getElementById("passUser").value
+
+    const arrayUsers = JSON.parse(localStorage.getItem('usuarios'))
+    console.log(arrayUsers)
+    arrayUsers.filter((users)=>{
+      if(users.nombre == user){
+        console.log("Usuario Encontrado")
+      }else{
+        console.log("Usuario No Encontrado")
+
+      }
+    })
+
+
+
+    console.log("Usuario: "+user+" pass: "+passUser)
+})

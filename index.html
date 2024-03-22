@@ -19,11 +19,43 @@
 
         <ul class="menu" id="menu">
             <li><a href="#">PELICULAS</a></li>
-            <li><a href="#">LOGIN</a></li>
+            <li>
+                <button type="button" class="btn btn-primary bg-transparent text-black" id="registerButton"
+                    data-bs-toggle="modal" data-bs-target="#modalLogin">
+                    INGRESO
+                </button>
+                <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Ingreso</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="" class="row" id="form">
+                                    <label for="user" class="col-4">Nombre/Correo Electronico: </label>
+                                    <input type="text" name="user" id="user" class="col-6 my-2">
+                                    <label for="passUser" class="col-4">Contraseña</label>
+                                    <input type="password" name="passUser" id="passUser" class="col-6 my-2">
+                                </form>
+                            </div>
+                            <button href="#" class="btn text-left text-primary">Has olvidado tu contraseña? click
+                                aqui</button>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-primary" id="logUser">Ingresar!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
             <li><!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary bg-transparent text-black" id="registerButton"
                     data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    REGISTER
+                    REGISTRO
                 </button>
 
                 <!-- Modal -->
@@ -32,7 +64,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Registro</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
@@ -49,8 +81,9 @@
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn btn-primary" id="regUser">Register!</button>
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-primary" id="regUser">Registrarse!</button>
                             </div>
                         </div>
                     </div>
@@ -70,16 +103,16 @@
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <button class="SlideButton""><img class=" img-fluid" src="./assets/img/Interstellar.png"
-                    alt="Interstellar"></button>
+                <button type="button" class="SlideButton"><img class="img-fluid imgButton" style="width: 100vw;"
+                        src="./assets/img/Interstellar.png" alt="Interstellar"></button>
             </div>
             <div class="carousel-item">
-                <button class="SlideButton"><img class="img-fluid" src="./assets/img/Scarface.png"
-                        alt="Scarface"></button>
+                <button type="button" class="SlideButton"><img class="img-fluid imgButton" style="width: 100vw;"
+                        src="./assets/img/Scarface.png" alt="Scarface"></button>
             </div>
             <div class="carousel-item">
-                <button class="SlideButton"><img class="img-fluid" src="./assets/img/Breaking Bad.png"
-                        alt="Breaking Bad"></button>
+                <button type="button" class="SlideButton"><img class="img-fluid imgButton" style="width: 100vw;"
+                        src="./assets/img/Breaking Bad.png" alt="Breaking Bad"></button>
             </div>
         </div>
     </div>
@@ -93,32 +126,32 @@
                 <div class="row row-cols-5 p-3  row-cols-md-5 g-4">
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"><img src="./assets/img/Peliculas 320px/Espia y medio.png"
-                                    alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Espia y medio.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"><img src="./assets/img/Peliculas 320px/kickass.png"
-                                    alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/kickass.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"><img src="./assets/img/Peliculas 320px/jack y jill.png"
-                                    alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/jack y jill.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"> <img src="./assets/img/Peliculas 320px/malditos vecinos.png"
-                                    alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/malditos vecinos.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"> <img src="./assets/img/Peliculas 320px/Ted.png"
-                                    alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Ted.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                 </div>
@@ -127,44 +160,44 @@
                 <div class="row row-cols-5 p-3  row-cols-md-5 g-4">
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"><img src="./assets/img/Peliculas 320px/BayWatch.png"
-                                    alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/BayWatch.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"> <img src="./assets/img/Peliculas 320px/son como niños.png"
-                                    alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/son como niños.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"><img src="./assets/img/Peliculas 320px/Superbad.png"
-                                    alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Superbad.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"><img src="./assets/img/Peliculas 320px/vacaciones.png"
-                                    alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/vacaciones.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"><img
-                                    src="./assets/img/Peliculas 320px/un viernes de locos.png" alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/un viernes de locos.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev pt-5" style="width: 2rem;" type="button" data-bs-target="#carouselComedia"
-            data-bs-slide="prev">
+        <button type="button" class="carousel-control-prev pt-5" style="width: 2rem;" type="button"
+            data-bs-target="#carouselComedia" data-bs-slide="prev">
             <span class="carousel-control-prev-icon bg-black rounded-circle" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next pt-5 " style="width: 2rem;" type="button" data-bs-target="#carouselComedia"
-            data-bs-slide="next">
+        <button type="button" class="carousel-control-next pt-5 " style="width: 2rem;" type="button"
+            data-bs-target="#carouselComedia" data-bs-slide="next">
             <span class="carousel-control-next-icon bg-black rounded-circle" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
@@ -179,32 +212,32 @@
                 <div class="row row-cols-5 p-3  row-cols-md-5 g-4">
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"><img src="./assets/img/Peliculas 320px/Terror/Dahmer.png"
-                                    alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Terror/Dahmer.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"> <img src="./assets/img/Peliculas 320px/Terror/Martirs.png"
-                                    alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Terror/Martirs.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"> <img src="./assets/img/Peliculas 320px/Terror/Saw X.png"
-                                    alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Terror/Saw X.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"><img
-                                    src="./assets/img/Peliculas 320px/Terror/Silent Hill.png" alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Terror/Silent Hill.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"><img src="./assets/img/Peliculas 320px/Terror/La Purga.png"
-                                    alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Terror/La Purga.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                 </div>
@@ -213,44 +246,44 @@
                 <div class="row row-cols-5 p-3  row-cols-md-5 g-4">
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"><img
-                                    src="./assets/img/Peliculas 320px/Terror/El Conjuro.png" /></button>
+                            <img src="./assets/img/Peliculas 320px/Terror/El Conjuro.png"
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"><img
-                                    src="./assets/img/Peliculas 320px/Terror/El Resplandor.png" alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Terror/El Resplandor.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"> <img
-                                    src="./assets/img/Peliculas 320px/Terror/La bruja de Blair.png" alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Terror/La bruja de Blair.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"><img src="./assets/img/Peliculas 320px/Terror/It.png"
-                                    alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Terror/It.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"> <img src="./assets/img/Peliculas 320px/Terror/Terrifier.png"
-                                    alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Terror/Terrifier.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev pt-5" style="width: 2rem;" type="button" data-bs-target="#carouselTerror"
-            data-bs-slide="prev">
+        <button type="button" class="carousel-control-prev pt-5" style="width: 2rem;" type="button"
+            data-bs-target="#carouselTerror" data-bs-slide="prev">
             <span class="carousel-control-prev-icon bg-black rounded-circle" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next pt-5 " style="width: 2rem;" type="button" data-bs-target="#carouselTerror"
-            data-bs-slide="next">
+        <button type="button" class="carousel-control-next pt-5 " style="width: 2rem;" type="button"
+            data-bs-target="#carouselTerror" data-bs-slide="next">
             <span class="carousel-control-next-icon bg-black rounded-circle" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
@@ -265,81 +298,77 @@
                 <div class="row row-cols-5 p-3  row-cols-md-5 g-4">
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"> <img
-                                    src="./assets/img/Peliculas 320px/Ciencia Ficcion/1 Origen.png" alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Ciencia Ficcion/1 Origen.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"> <img
-                                    src="./assets/img/Peliculas 320px/Ciencia Ficcion/2 Matrix.png" alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Ciencia Ficcion/2 Matrix.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"> <img
-                                    src="./assets/img/Peliculas 320px/Ciencia Ficcion/5-Blade Runner.png"
-                                    alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Ciencia Ficcion/5-Blade Runner.png" class=" btn border-0 p-0
+                                imgButton m-0" alt="" />
+                        </div>
+                    </div>
+                    <div class=" col">
+                        <div class="card">
+                            <img src="./assets/img/Peliculas 320px/Ciencia Ficcion/8-tenet.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"> <img
-                                    src="./assets/img/Peliculas 320px/Ciencia Ficcion/8-tenet.png" alt="" /></button>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <button class="btn buttoncard"> <img
-                                    src="./assets/img/Peliculas 320px/Ciencia Ficcion/4-el creador.png"
-                                    alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Ciencia Ficcion/4-el creador.png"
+                                altclass="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="carousel-item">
+            <div class=" carousel-item">
                 <div class="row row-cols-5 p-3  row-cols-md-5 g-4">
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"> <img
-                                    src="./assets/img/Peliculas 320px/Ciencia Ficcion/10-godzilla.png"
-                                    alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Ciencia Ficcion/10-godzilla.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"> <img
-                                    src="./assets/img/Peliculas 320px/Ciencia Ficcion/6-tron.png" alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Ciencia Ficcion/6-tron.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"> <img
-                                    src="./assets/img/Peliculas 320px/Ciencia Ficcion/7-Loki.png" alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Ciencia Ficcion/7-Loki.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"> <img
-                                    src="./assets/img/Peliculas 320px/Ciencia Ficcion/9-la llegada.png"
-                                    alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Ciencia Ficcion/9-la llegada.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
-                            <button class="btn buttoncard"> <img
-                                    src="./assets/img/Peliculas 320px/Ciencia Ficcion/3 Alien.png" alt="" /></button>
+                            <img src="./assets/img/Peliculas 320px/Ciencia Ficcion/3 Alien.png" alt=""
+                                class="btn border-0 p-0 m-0 imgButton" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev pt-5" style="width: 2rem;" type="button"
+        <button type="button" class="carousel-control-prev pt-5" style="width: 2rem;" type="button"
             data-bs-target="#carouselCienciaFiccion" data-bs-slide="prev">
             <span class="carousel-control-prev-icon bg-black rounded-circle" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next pt-5 " style="width: 2rem;" type="button"
+        <button type="button" class="carousel-control-next pt-5 " style="width: 2rem;" type="button"
             data-bs-target="#carouselCienciaFiccion" data-bs-slide="next">
             <span class="carousel-control-next-icon bg-black rounded-circle" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
@@ -410,6 +439,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="./js/PaginaPrincipal.js"></script>
     <link rel="stylesheet" href="css/Footer.css" />
 </body>
