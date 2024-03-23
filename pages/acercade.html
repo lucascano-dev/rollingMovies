@@ -27,10 +27,10 @@
     </div>
 
     <ul class="menu" id="menu">
-      <li><a href="#">PELICULAS</a></li>
+      <!-- <li><button type="button" class="btn bg-transparent">PELICULAS</button></li> -->
       <li>
-        <button type="button" class="btn btn-primary bg-transparent text-black" id="registerButton"
-          data-bs-toggle="modal" data-bs-target="#modalLogin">
+        <button type="button" class="btn btn-primary bg-transparent text-black" id="loginButton" data-bs-toggle="modal"
+          data-bs-target="#modalLogin">
           INGRESO
         </button>
         <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -94,13 +94,15 @@
           </div>
         </div>
       </li>
-      <li id="AdminUser" style="display: none;"><a href="./pages/panel-admin/index.html">ADMINISTRACION</a></li>
+      <li id="AdminUser" style="display: none;"><button type="button" class="btn btn-primary bg-transparent text-black"
+          id="navButton" onclick='adminHandler()'>ADMINISTRACION</button></li>
     </ul>
 
-    <a href="./index.html"><img src="./assets/img/Cinestrenar Logo sin sombra.png" alt="Cinestrenar"
+
+    <a href="./index.html"><img src="../assets/img/Cinestrenar Logo sin sombra.png" alt="Cinestrenar"
         class="CinestrenarLogo btn bg-transparent" /></a>
-    </div>
   </nav>
+
   <div id="encabezado-acercade">
     <section class="titulo-seccion">
       <div class="encabezado container-fluid m-auto d-flex align-items-center justify-content-center">

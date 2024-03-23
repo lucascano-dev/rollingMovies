@@ -26,9 +26,9 @@
       </div>
 
       <ul class="menu" id="menu">
-        <li><a href="#">PELICULAS</a></li>
+        <!-- <li><button type="button" class="btn bg-transparent">PELICULAS</button></li> -->
         <li>
-          <button type="button" class="btn btn-primary bg-transparent text-black" id="registerButton"
+          <button type="button" class="btn btn-primary bg-transparent text-black" id="loginButton"
             data-bs-toggle="modal" data-bs-target="#modalLogin">
             INGRESO
           </button>
@@ -94,18 +94,21 @@
             </div>
           </div>
         </li>
-        <li id="AdminUser" style="display: none;"><a href="./pages/panel-admin/index.html">ADMINISTRACION</a></li>
+        <li id="AdminUser" style="display: none;"><button type="button"
+            class="btn btn-primary bg-transparent text-black" id="navButton"
+            onclick='adminHandler()'>ADMINISTRACION</button></li>
       </ul>
+
 
       <a href="../../index.html"><img src="../../assets/img/Cinestrenar Logo sin sombra.png" alt="Cinestrenar"
           class="CinestrenarLogo btn bg-transparent" /></a>
-      </div>
     </nav>
+
   </section>
 
   <div class="container-columnas-administracion d-flex position-relative">
     <!-- Panel de administracion -->
-    <section class="container-panel-lateral-oculto">
+    <!-- <section class="container-panel-lateral-oculto">
       <div class="d-flex justify-content-center align-items-center bg-danger p-2 gap-1">
         <div>
           <p class="head-nombre-panel"></p>
@@ -123,25 +126,25 @@
             <i class="fa-solid fa-circle-chevron-left"></i>
           </button>
         </div>
-        <br />
-        <!-- Boton Administracion de contenidos -->
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle btn-admin" type="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            <span>Sobre Contenidos</span>
-          </button>
+        <br />-->
+    <!-- Boton Administracion de contenidos -->
+    <!-- <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle btn-admin" type="button" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <span>Sobre Contenidos</span>
+      </button>
 
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item enlace-test" href="#">Mostrar todos los contenidos</a></li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-            <li><a class="dropdown-item" href="#">Agregar nuevo contenido</a></li>
-          </ul>
-        </div>
-        <hr />
-        <!-- Boton Administracion de usuarios -->
-        <div class="dropdown">
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item enlace-test" href="#">Mostrar todos los contenidos</a></li>
+        <li>
+          <hr class="dropdown-divider" />
+        </li>
+        <li><a class="dropdown-item" href="#">Agregar nuevo contenido</a></li>
+      </ul>
+    </div>
+    <hr /> -->
+    <!-- Boton Administracion de usuarios -->
+    <!-- <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle btn-admin" type="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             Sobre Usuarios
@@ -156,7 +159,7 @@
           <li><a class="dropdown-item" href="#">Agregar nuevo usuario</a></li>
         </ul>
       </div>
-    </section>
+    </section>  -->
 
     <section class="container-panel-derecho">
       <div class="encabezado-titulo-botones d-flex justify-content-between flex-column">
@@ -164,7 +167,7 @@
           <button id="btn-volver" type="button" class="btn btn-primary btn-sm">
             < Ir a Panel de administración</button>
         </div>
-        <h1 id="encabezado-tablas" class="text-center">Administración de contenidos</h1>
+        <h1 id="encabezado-tablas" class="text-center text-black">Administración de contenidos</h1>
         <div class="d-flex justify-content-end">
           <button id="btn-agregarContenido" type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarContenido"
             class="btn btn-success btn-sm m-3 fs-5">

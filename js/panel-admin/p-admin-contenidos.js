@@ -26,10 +26,10 @@ class ContenidoStreaming {
 
 console.log(titulo.textContent);
 
-dropItem.addEventListener('click', (event) => {
-  event.preventDefault();
-  console.log('Click');
-});
+// dropItem.addEventListener('click', (event) => {
+//   event.preventDefault();
+//   console.log('Click');
+// });
 
 submitAgregarContenido.addEventListener('submit', agregarContenidoNuevo);
 
@@ -68,9 +68,8 @@ function cargarContenido() {
                     width="60px"
                   />
                 </td>
-                <td class="border"><span class="d-inline-block text-truncate" style="width: 150px">${
-                  movie.urlVideo
-                }</span></td>
+                <td class="border"><span class="d-inline-block text-truncate" style="width: 150px">${movie.urlVideo
+      }</span></td>
                 <td class="border">
                   <div class="form-check form-switch">
                     <input
@@ -99,19 +98,16 @@ function cargarContenido() {
                       onclick="handleModalEditarMovie(${movie.id})">
                         <i class="fa-solid fa-pen-to-square"></i>
                     </button>
-                    <button type="button" class="btn btn-secondary btn-sm fs-6 btn-destacar" onclick="destacarMovie(${
-                      movie.id
-                    })">
-                    ${
-                      movie.isDestacado
-                        ? `<i id="icono-destacado-${movie.id}" class="fa-solid fa-star contenido-destacado"></i>`
-                        : `<i id="icono-destacado-${movie.id}" class="fa-solid fa-star contenido-no-destacado"></i>`
-                    }
+                    <button type="button" class="btn btn-secondary btn-sm fs-6 btn-destacar" onclick="destacarMovie(${movie.id
+      })">
+                    ${movie.isDestacado
+        ? `<i id="icono-destacado-${movie.id}" class="fa-solid fa-star contenido-destacado"></i>`
+        : `<i id="icono-destacado-${movie.id}" class="fa-solid fa-star contenido-no-destacado"></i>`
+      }
                       
                     </button>
-                    <button type="button" class="btn btn-danger btn-sm fs-6" onclick="eliminarContenido(${
-                      movie.id
-                    })"><i class="fa-solid fa-trash-can"></i></button>
+                    <button type="button" class="btn btn-danger btn-sm fs-6" onclick="eliminarContenido(${movie.id
+      })"><i class="fa-solid fa-trash-can"></i></button>
                   </div>
                 </td>`;
     tablaContenido.appendChild(tr);

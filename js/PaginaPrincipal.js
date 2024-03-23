@@ -29,7 +29,31 @@ const miImagen = document.querySelectorAll("img.imgButton")
 // console.log(miImagen)
 miImagen.forEach((imagen) => {
   imagen.addEventListener('click', () => {
-    let src = imagen.src
-    // console.log(src)
+    let title = imagen.alt
+    let movies = JSON.parse(localStorage.getItem('movies'))
+    let movieFound = movies.find((movie) => movie.nombre == title)
+    let modalInfo = document.getElementById('modal-body')
+    let modalContent = document.getElementById('bg-image')
+    if (modalContent.style.backgroundImage) {
+      modalContent.style.removeProperty('background-image')
+    }
+    // console.log(movieFound)
+    if (movieFound !== undefined) {
+      imagen.setAttribute('data-bs-toggle', 'modal')
+      imagen.setAttribute('data-bs-target', '#detallePelicula')
+      modalContent.style.backgroundImage = `url('./assets/img/${title}.png')` || `url('./assets/img/Peliculas 320px/${title}.png')` || `url('./assets/img/Peliculas 320px/Terror/${title}.png')` || `url('./assets/img/Peliculas 320px/Ciencia Ficcion/${title}.png')`
+      console.log(modalContent.style.backgroundImage)
+      // style="height: 80vh; width: 50vw; background-position: 50% center; background-repeat: no-repeat; background-size: cover;"
+      modalContent.style.height = "80vh"
+      modalContent.style.width = "50vw"
+      modalContent.style.backgroundPosition = "50% center"
+      modalContent.style.backgroundRepeat = "no-repeat"
+      modalContent.style.backgroundSize = "cover"
+
+    }
   })
 })
+
+const adminHandler = () => {
+  window.location.href = "./pages/panel-admin/index.html"
+}

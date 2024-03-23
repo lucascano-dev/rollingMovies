@@ -18,9 +18,9 @@
 		</div>
 
 		<ul class="menu" id="menu">
-			<li><a href="#">PELICULAS</a></li>
+			<!-- <li><button type="button" class="btn bg-transparent">PELICULAS</button></li> -->
 			<li>
-				<button type="button" class="btn btn-primary bg-transparent text-black" id="registerButton"
+				<button type="button" class="btn btn-primary bg-transparent text-black" id="loginButton"
 					data-bs-toggle="modal" data-bs-target="#modalLogin">
 					INGRESO
 				</button>
@@ -91,12 +91,16 @@
 					</div>
 				</div>
 			</li>
-			<li id="AdminUser" style="display: none;"><a href="./pages/panel-admin/index.html">ADMINISTRACION</a></li>
+			<li id="AdminUser" style="display: none;"><button type="button"
+					class="btn btn-primary bg-transparent text-black" id="navButton"
+					onclick='adminHandler()'>ADMINISTRACION</button></li>
 		</ul>
 
-		<a href="./index.html"><img src="./assets/img/Cinestrenar Logo sin sombra.png" alt="Cinestrenar"
+
+		<a href="./index.html"><img src="../assets/img/Cinestrenar Logo sin sombra.png" alt="Cinestrenar"
 				class="CinestrenarLogo btn bg-transparent" /></a>
 	</nav>
+
 	<!--NAVBAR-->
 	<!--FORMULARIO DE CONTACTO-->
 	<div class="container">

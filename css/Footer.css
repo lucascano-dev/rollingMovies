@@ -3,6 +3,7 @@ body {
 	padding: 0;
 	background-color: #e3e3e3;
 }
+
 /* NAVBAR */
 .Navbar {
 	display: flex;
@@ -24,6 +25,7 @@ body {
 	cursor: pointer;
 	margin-left: auto;
 }
+
 .line {
 	width: 25px;
 	height: 3px;
@@ -49,15 +51,16 @@ body {
 	display: inline-block;
 }
 
-.menu button {
+/* .menu button {
 	color: #333333 !important;
 	text-decoration: none !important;
 	transition: color 0.3s !important;
 }
+
 .menu button:hover {
 	color: #ccc !important;
 	font-size: 35px !important;
-}
+} */
 
 @media screen and (max-width: 768px) {
 	.menu {
@@ -78,20 +81,25 @@ body {
 		width: 300px;
 		z-index: 1000;
 	}
+
 	.menu.active {
 		display: flex;
 		opacity: 1;
 	}
+
 	.Hamburguer {
 		display: flex;
 	}
+
 	.Navbar {
 		flex-direction: column;
 	}
+
 	.CinestrenarLogo {
 		height: 100px;
 		width: auto;
 	}
+
 	.menu button {
 		color: #fff !important;
 	}
@@ -100,6 +108,7 @@ body {
 		margin-bottom: 10px;
 	}
 }
+
 /* NAVBAR */
 
 /* FOOTER */
@@ -116,6 +125,7 @@ body {
 	color: #ccc;
 	font-size: 13px;
 }
+
 .FooterSeccion {
 	text-align: center;
 	flex: 1;
@@ -132,6 +142,7 @@ body {
 .FooterSeccion h2 {
 	font-size: 1rem;
 }
+
 .Logo {
 	width: 30px;
 	height: auto;
@@ -151,19 +162,24 @@ a {
 	.FooterContainer {
 		flex-direction: column;
 	}
+
 	.vertical-line {
 		border-left: none;
 	}
+
 	.Logo {
 		width: 30px;
 		margin: 15px;
 	}
+
 	.FooterSeccion a {
 		font-size: 11px;
 	}
+
 	.FooterSeccion h3 {
 		font-size: 13px;
 	}
+
 	.FooterSeccion:nth-child(1)::after {
 		content: '';
 		display: block;
@@ -182,26 +198,28 @@ a {
 
 	margin-top: 0px;
 }
-    #registerButton{
-        padding: 20px;
-        background-color: transparent;
-        color: black;
-        border: none;
-        font-size: 20px;
-        font-family: "Roboto", sans-serif;
-       
-        margin-top: 0px;
-    }
-    #registerButton:hover{
-        padding: 20px;
-        background-color: transparent;
-        border: none;
-        font-size: 30px;
-        color: black;
-       
-        font-family: "Roboto", sans-serif;
-        margin-top: 0px;
-    }
+
+#registerButton {
+	padding: 20px;
+	background-color: transparent;
+	color: black;
+	border: none;
+	font-size: 20px;
+	font-family: "Roboto", sans-serif;
+
+	margin-top: 0px;
+}
+
+#registerButton:hover {
+	padding: 20px;
+	background-color: transparent;
+	border: none;
+	font-size: 30px;
+	color: black;
+
+	font-family: "Roboto", sans-serif;
+	margin-top: 0px;
+}
 
 .CinestrenarLogo {
 	border: none !important;
@@ -215,6 +233,7 @@ a {
 	cursor: pointer;
 	margin-left: auto;
 }
+
 .line {
 	width: 25px;
 	height: 3px;
@@ -239,15 +258,16 @@ a {
 	display: inline-block;
 }
 
-.menu button {
+/* .menu button {
 	color: #333333 !important;
 	text-decoration: none !important;
 	transition: color 0.3s !important;
 }
+
 .menu button:hover {
 	color: #ccc !important;
 	font-size: 35px !important;
-}
+} */
 
 @media screen and (max-width: 768px) {
 	.menu {
@@ -267,20 +287,25 @@ a {
 		margin: 0 auto;
 		width: 300px;
 	}
+
 	.menu.active {
 		display: flex;
 		opacity: 1;
 	}
+
 	.Hamburguer {
 		display: flex;
 	}
+
 	.Navbar {
 		flex-direction: column;
 	}
+
 	.CinestrenarLogo {
 		height: 100px;
 		width: auto;
 	}
+
 	.menu button {
 		color: #fff !important;
 	}
@@ -296,8 +321,80 @@ a {
 	border: 0;
 	padding: 0;
 }
+
 .buttoncard {
 	padding: 0;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
 /* PAGINA PRINCIPAL */
+
+#navButton {
+	padding: 20px;
+	background-color: transparent;
+	color: #333333 !important;
+	text-decoration: none !important;
+	transition: color 0.3s !important;
+	border: none;
+	font-size: 20px;
+	font-family: "Roboto", sans-serif;
+
+	margin-top: 0px;
+}
+
+#navButton:hover {
+	padding: 20px;
+	background-color: transparent;
+	border: none;
+	color: #ccc !important;
+	font-size: 35px !important;
+
+	font-family: "Roboto", sans-serif;
+	margin-top: 0px;
+}
+
+#loginButton {
+	padding: 20px;
+	background-color: transparent;
+	color: #333333 !important;
+	text-decoration: none !important;
+	transition: color 0.3s !important;
+	border: none;
+	font-size: 20px;
+	font-family: "Roboto", sans-serif;
+
+	margin-top: 0px;
+}
+
+#loginButton:hover {
+	padding: 20px;
+	background-color: transparent;
+	border: none;
+	color: #ccc !important;
+	font-size: 35px !important;
+	font-family: "Roboto", sans-serif;
+	margin-top: 0px;
+}
+
+#registerButton {
+	padding: 20px;
+	background-color: transparent;
+	color: #333333 !important;
+	text-decoration: none !important;
+	transition: color 0.3s !important;
+	border: none;
+	font-size: 20px;
+	font-family: "Roboto", sans-serif;
+
+	margin-top: 0px;
+}
+
+#registerButton:hover {
+	padding: 20px;
+	background-color: transparent;
+	border: none;
+	color: #ccc !important;
+	font-size: 35px !important;
+	font-family: "Roboto", sans-serif;
+	margin-top: 0px;
+}

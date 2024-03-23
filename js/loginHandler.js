@@ -6,7 +6,7 @@ function errorHandling(messageType, text) {
 }
 
 //Login 
-const regButtonText = document.getElementById('registerButton')
+const regButtonText = document.getElementById('loginButton')
 const logUser = document.getElementById('logUser')
 const isLogged = localStorage.getItem('userLogged') ? true : false;
 if (isLogged) {

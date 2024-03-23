@@ -26,9 +26,9 @@
       </div>
 
       <ul class="menu" id="menu">
-        <li><a href="#">PELICULAS</a></li>
+        <!-- <li><button type="button" class="btn bg-transparent">PELICULAS</button></li> -->
         <li>
-          <button type="button" class="btn btn-primary bg-transparent text-black" id="registerButton"
+          <button type="button" class="btn btn-primary bg-transparent text-black" id="loginButton"
             data-bs-toggle="modal" data-bs-target="#modalLogin">
             INGRESO
           </button>
@@ -94,18 +94,21 @@
             </div>
           </div>
         </li>
-        <li id="AdminUser" style="display: none;"><a href="./pages/panel-admin/index.html">ADMINISTRACION</a></li>
+        <li id="AdminUser" style="display: none;"><button type="button"
+            class="btn btn-primary bg-transparent text-black" id="navButton"
+            onclick='adminHandler()'>ADMINISTRACION</button></li>
       </ul>
+
 
       <a href="../../index.html"><img src="../../assets/img/Cinestrenar Logo sin sombra.png" alt="Cinestrenar"
           class="CinestrenarLogo btn bg-transparent" /></a>
-      </div>
     </nav>
+
   </section>
 
   <div class="container-columnas-administracion d-flex position-relative">
     <!-- Panel de administracion -->
-    <section class="container-panel-lateral-oculto">
+    <!-- <section class="container-panel-lateral-oculto">
       <div class="contenedor-head-titulo-panel d-flex justify-content-center align-items-center bg-danger p-2 gap-1">
         <div>
           <p class="head-nombre-panel"></p>
@@ -123,9 +126,9 @@
             <i class="btn-cerrar-panel-izquierdo fa-solid fa-circle-chevron-left"></i>
           </button>
         </div>
-        <br />
-        <!-- Boton Administracion de contenidos -->
-        <div class="dropdown">
+        <br /> -->
+    <!-- Boton Administracion de contenidos -->
+    <!-- <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle btn-admin" type="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             <span>Sobre Contenidos</span>
@@ -139,9 +142,9 @@
             <li><a class="dropdown-item" href="#">Agregar nuevo contenido</a></li>
           </ul>
         </div>
-        <hr />
-        <!-- Boton Administracion de usuarios -->
-        <div class="dropdown">
+        <hr /> -->
+    <!-- Boton Administracion de usuarios -->
+    <!-- <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle btn-admin" type="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             Sobre Usuarios
@@ -154,16 +157,16 @@
             </li>
             <li><a class="dropdown-item" href="#">Agregar nuevo usuario</a></li>
           </ul>
-        </div>
-      </div>
-    </section>
+        </div> -->
+    <!-- </div>
+    </section> -->
 
     <!-- Tablas -->
     <section class="container-panel-derecho">
       <div>
         <button id="btn-volver" type="button" class="btn btn-primary btn-sm">
           < Ir a Panel de administración</button>
-            <h1 id="encabezado-tablas" class="text-center">Administración de usuarios</h1>
+            <h1 id="encabezado-tablas" class="text-center text-black">Administración de usuarios</h1>
       </div>
 
       <div class="container-tablas table-responsive">

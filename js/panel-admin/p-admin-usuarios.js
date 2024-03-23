@@ -11,9 +11,9 @@ const modalEditarUsuario = document.getElementById('modalEditarUsuario');
 const estadoUsuario = document.getElementById('estadoUsuario');
 let usuariosRegistrados = JSON.parse(localStorage.getItem('usuarios')) || [];
 
-dropItem.addEventListener('click', (event) => {
-  event.preventDefault();
-});
+// dropItem.addEventListener('click', (event) => {
+//   event.preventDefault();
+// });
 
 /** Boton Volver */
 btnVolver.addEventListener('click', () => {
@@ -33,15 +33,14 @@ const cargaUsuarios = function () {
           <div class="d-flex justify-content-end">
             <div>
               <span id="estadoUsuario">
-                ${
-                  usuario.stateActivation === 0
-                    ? 'Pendiente&nbsp'
-                    : usuario.stateActivation === 1
-                    ? 'Aprobado&nbsp'
-                    : usuario.stateActivation === 2
-                    ? 'Suspendido&nbsp'
-                    : null
-                }
+                ${usuario.stateActivation === 0
+        ? 'Pendiente&nbsp'
+        : usuario.stateActivation === 1
+          ? 'Aprobado&nbsp'
+          : usuario.stateActivation === 2
+            ? 'Suspendido&nbsp'
+            : null
+      }
               </span>
             </div>
             <div class="btn-group">
@@ -124,11 +123,11 @@ const handleModalEditarUsuario = function (idUsuario) {
     return usuario.id == idUsuario;
   });
 
-  console.log('MI USUARIO:', usuarioSeleccionado);
+  // console.log('MI USUARIO:', usuarioSeleccionado);
 
   tituloModal.textContent = usuarioSeleccionado.id;
   nombreModal.value = usuarioSeleccionado.nombre;
-  emailModal.value = usuarioSeleccionado.email;
+  emailModal.value = usuarioSeleccionado.correo;
   passowrdModal.value = usuarioSeleccionado.password;
 
   formularioEditarUsuario.setAttribute(
@@ -193,8 +192,8 @@ function cambiarEstadoUsuario(idUsuario, estado) {
   usuarioIndex === -1
     ? console.log('ERROR')
     : estado === 'APROBADO'
-    ? (usuariosRegistrados[usuarioIndex].stateActivation = 1)
-    : (usuariosRegistrados[usuarioIndex].stateActivation = 2);
+      ? (usuariosRegistrados[usuarioIndex].stateActivation = 1)
+      : (usuariosRegistrados[usuarioIndex].stateActivation = 2);
 
   localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
   cargaUsuarios();
@@ -210,8 +209,8 @@ function cambiarRol(idUsuario, rolUsuario) {
   usuarioIndex === -1
     ? console.log('ERROR')
     : rolUsuario === 'ADMINISTRADOR'
-    ? (usuariosRegistrados[usuarioIndex].userRol = 0)
-    : (usuariosRegistrados[usuarioIndex].userRol = 1);
+      ? (usuariosRegistrados[usuarioIndex].userRol = 0)
+      : (usuariosRegistrados[usuarioIndex].userRol = 1);
 
   localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
   cargaUsuarios();

@@ -26,9 +26,9 @@
       </div>
 
       <ul class="menu" id="menu">
-        <li><a href="#">PELICULAS</a></li>
+        <!-- <li><button type="button" class="btn bg-transparent">PELICULAS</button></li> -->
         <li>
-          <button type="button" class="btn btn-primary bg-transparent text-black" id="registerButton"
+          <button type="button" class="btn btn-primary bg-transparent text-black" id="loginButton"
             data-bs-toggle="modal" data-bs-target="#modalLogin">
             INGRESO
           </button>
@@ -94,18 +94,20 @@
             </div>
           </div>
         </li>
-        <li id="AdminUser" style="display: none;"><a href="./pages/panel-admin/index.html">ADMINISTRACION</a></li>
+        <li id="AdminUser" style="display: none;"><button type="button"
+            class="btn btn-primary bg-transparent text-black" id="navButton"
+            onclick='adminHandler()'>ADMINISTRACION</button></li>
       </ul>
+
 
       <a href="../../index.html"><img src="../../assets/img/Cinestrenar Logo sin sombra.png" alt="Cinestrenar"
           class="CinestrenarLogo btn bg-transparent" /></a>
-      </div>
     </nav>
   </section>
 
   <div class="container-columnas-administracion d-flex position-relative">
     <!-- Panel de administracion -->
-    <section class="container-panel-lateral-oculto">
+    <!-- <section class="container-panel-lateral-oculto">
       <div class="d-flex justify-content-center align-items-center bg-danger p-2 gap-1">
         <div>
           <p class="head-nombre-panel"></p>
@@ -114,8 +116,9 @@
           <i class="fa-solid fa-circle-chevron-right"></i>
         </button>
       </div>
-    </section>
-    <section class="container-panel-lateral-expandido">
+    </section> -->
+    <!-- Lucas cano -->
+    <!-- <section class="container-panel-lateral-expandido">
       <div class="container-elementos-panel">
         <div class="d-flex justify-content-center align-items-center bg-danger p-2 gap-1">
           <div>
@@ -124,11 +127,11 @@
           <button id="btn-manipular-panel-izquierdo-expandido" class="btn btn-dark" type="button">
             <i class="fa-solid fa-circle-chevron-left"></i>
           </button>
-        </div>
+        </div> -->
 
-        <br />
-        <!-- Boton Administracion de contenidos -->
-        <div class="dropdown">
+    <!-- <br /> -->
+    <!-- Boton Administracion de contenidos -->
+    <!-- <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle btn-admin" type="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             <span>Sobre Contenidos</span>
@@ -142,9 +145,9 @@
             <li><a class="dropdown-item" href="#">Agregar nuevo contenido</a></li>
           </ul>
         </div>
-        <hr />
-        <!-- Boton Administracion de usuarios -->
-        <div class="dropdown">
+        <hr /> -->
+    <!-- Boton Administracion de usuarios -->
+    <!-- <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle btn-admin" type="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             Sobre Usuarios
@@ -159,7 +162,35 @@
           </ul>
         </div>
       </div>
-    </section>
+    </section> -->
+    <!-- Leo Balbastro -->
+    <!-- <button class="btn p-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+      aria-controls="offcanvasExample">
+      <i class="fa-solid fa-circle-chevron-right fs-1"></i>
+    </button>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists,
+          etc.
+        </div>
+        <div class="dropdown mt-3">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            Dropdown button
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> -->
 
     <!-- Tablas -->
     <section class="container-panel-derecho">
@@ -169,7 +200,7 @@
             > Home / Panel de administración
           </button>
         </div>
-        <h1 id="encabezado-tablas" class="text-center">Panel de administración</h1>
+        <h1 id="encabezado-tablas" class="text-center text-black">Panel de administración</h1>
 
         <div class="btn-principales d-flex justify-content-center gap-5 mt-5">
           <button id="btnAdminContenidos" type="button" class="btn btn-danger btn-lg"
