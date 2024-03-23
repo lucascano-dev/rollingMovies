@@ -24,14 +24,13 @@
         </div>
 
         <ul class="menu" id="menu">
-            <li><a href="#">PELICULAS</a></li>
+            <li><button class="bg-transparent border-0" href="#">PELICULAS</button></li>
             <li>
                 <button type="button" class="btn btn-primary bg-transparent text-black" id="registerButton"
                     data-bs-toggle="modal" data-bs-target="#modalLogin">
                     INGRESO
                 </button>
-                <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
+                <div class="modal" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -100,55 +99,64 @@
             <li id="AdminUser" style="display: none;"><a href="./pages/panel-admin/index.html">ADMINISTRACION</a></li>
         </ul>
 
-        <a href="./index.html"><img src="./assets/img/Cinestrenar Logo sin sombra.png" alt="Cinestrenar"
+        <a href="../index.html"><img src="../assets/img/Cinestrenar Logo sin sombra.png" alt="Cinestrenar"
                 class="CinestrenarLogo btn bg-transparent" /></a>
         </div>
     </nav>
     <!--NAVBAR-->
 
 
-    <div class="organizar404 main-container">
-        <div class="h1nombre">
+    <!-- Modal Reportes -->
+    <div>
+        <!-- Button trigger modal -->
 
-            <h1 id="404-titulo" class="titulo">Error 404</h1>
-            <p class="textoError">Pagina no encontrada, desea reportar el problema?</p>
-
-        </div>
-
-
-        <div class="d-flex justify-content-center gap-5">
-            <button id="volverInicio" type="button" class="boton-inicio btn btn-primary">Regresar</button>
-            <button id="miBoton" type="button" class="botonReportar btn btn-primary">Reportar</button>
-        </div>
-
-    </div>
-
-    <div id="miModal" class="modal">
-        <div class="modal-dialog ">
-            <div class="modal-content d-flex flex-column mb-3 justify-content-center">
-                <div class="modal-header d-flex flex-column">
-                    <h5>Titulo</h5>
-                    <input id="tituloContenido" class="tituloError" type="text">
-
+        <div id="error404" class="container-fluid d-flex justify-content-center align-items-center">
+            <div class="card" style="width: 30vw;">
+                <div class="card-body d-flex justify-content-center align-items-center">
+                    <h5 class="card-title p-1 mb-0">Error 404</h5>
+                    <p class="card-text p-1 mb-0">Ha ocurrido un error en el servidor.</p>
+                    <div class="container d-flex justify-content-center my-2">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" id="volverInicio"
+                            data-bs-target="#modalReporte">
+                            Volver a la pagina principal
+                        </button>
+                    </div>
                 </div>
-                <div class="modal-body d-flex flex-column">
-                    <h5>Descripcion</h5>
-                    <textarea id="areaUno" class="areaUno" cols="40" rows="10"></textarea>
+            </div>
 
-                </div>
-                <div class="modal-footer">
+            <!-- Modal -->
+            <div class="modal fade" id="modalReporte" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title text-dark fs-5" id="exampleModalLabel">REPORTES</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <form onsubmit="handleForm()">
+                                <div class="mb-3 px-3">
+                                    <label for="exampleInputEmail1" class="form-label text-dark fs-3">ASUNTO</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3 px-3">
+                                    <label for="exampleInputPassword1"
+                                        class="form-label text-dark fs-3">DESCRIPCION</label>
+                                    <textarea class="form-control" id="exampleInputPassword1"
+                                        aria-label="With textarea"></textarea>
 
-                    <button id="botonEnviar" type="button" class="btn btn-primary">Enviar informe</button>
-                    <span class="cerrar">&times;</span>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary" id="enviarFormulario">ENVIAR
+                                    REPORTE</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
-
 
     <!--FOOTER-->
     <footer class="FooterContainer">
