@@ -55,5 +55,22 @@ miImagen.forEach((imagen) => {
 })
 
 const adminHandler = () => {
-  window.location.href = "./pages/panel-admin/index.html"
+  if (window.location.href.includes('index')) {
+    window.location.href = "./pages/panel-admin/index.html"
+  }
+  if (window.location.href.includes('contacto') || window.location.href.includes('404') || window.location.href.includes('acercade')) {
+    window.location.href = "./panel-admin/index.html"
+  }
+}
+
+const to404 = () => {
+  if (window.location.href.includes('index')) {
+    window.location.href = "./pages/404.html"
+  }
+  if (window.location.href.includes('contacto') || window.location.href.includes('acercade')) {
+    window.location.href = "./404.html"
+  }
+  if (window.location.href.includes('admin') || window.location.href.includes('panel-admin')) {
+    window.location.href = "../404.html"
+  }
 }

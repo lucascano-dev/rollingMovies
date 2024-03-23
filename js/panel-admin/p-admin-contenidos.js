@@ -231,7 +231,7 @@ const publicarContenido = function (id) {
     iconoPublicado.classList.add('publicado');
 
     //Actualizo el valor de la propiedad "Publicado" del objeto
-    allMoviesIndex = allMovies.findIndex(function (movie) {
+    allMoviesIndex = allMovies.findIndex((movie) => {
       // console.log('MOVIE.ID=', movie.id, 'ID:', id);
       return movie.id === id;
     });
