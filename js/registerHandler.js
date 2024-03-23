@@ -2,7 +2,7 @@
 const regUser = document.getElementById("regUser");
 
 regUser.addEventListener("click", () => {
-    let arrayUsers = JSON.parse(localStorage.getItem("usuarios")) || [];
+    let arrayUsers = JSON.parse(localStorage.getItem("usuarios")) || [{ id: 0, nombre: "admin", correo: "admin@admin.com", pass: "admin", stateActivation: 1, userRol: 0 }];
     let userObject = {
         id: Date.now(),
         nombre: document.getElementById("name").value,
