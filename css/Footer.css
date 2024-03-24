@@ -115,7 +115,7 @@ body {
 .FooterContainer {
 	display: flex;
 	background-color: rgb(227, 227, 227);
-	padding: 10px;
+	padding: 1rem;
 	font-family: 'Roboto', sans-serif;
 	color: #333333;
 	font-style: normal;
@@ -123,20 +123,18 @@ body {
 
 .FooterContainer a:hover {
 	color: #ccc;
-	font-size: 13px;
 }
 
 .FooterSeccion {
 	text-align: center;
 	flex: 1;
-	padding: 1rem;
+	padding: 0.5rem;
 	font-size: 1rem;
 	margin: auto;
 }
 
 .FooterSeccion h3 {
 	font-size: 18px;
-	margin-top: 15px;
 }
 
 .FooterSeccion h2 {
@@ -177,6 +175,13 @@ a {
 		margin: 15px;
 	}
 
+	.FooterSeccion {
+		margin: 1rem;
+	}
+	.buttonclass {
+		margin: 0 !important;
+		width: 3.4rem;
+	}
 	.FooterSeccion a {
 		font-size: 11px;
 	}
@@ -193,7 +198,7 @@ a {
 		padding-top: 10px;
 	}
 }
-
+/*FOOTER*/
 .Navbar {
 	display: flex;
 	justify-content: space-between;
@@ -210,7 +215,7 @@ a {
 	color: black;
 	border: none;
 	font-size: 20px;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Roboto', sans-serif;
 
 	margin-top: 0px;
 }
@@ -222,7 +227,7 @@ a {
 	font-size: 30px;
 	color: black;
 
-	font-family: "Roboto", sans-serif;
+	font-family: 'Roboto', sans-serif;
 	margin-top: 0px;
 }
 
@@ -319,8 +324,6 @@ a {
 		margin-bottom: 10px;
 	}
 }
-
-/* FOOTER */
 /* PAGINA PRINCIPAL */
 .SlideButton {
 	border: 0;
@@ -342,7 +345,7 @@ a {
 	transition: color 0.3s !important;
 	border: none;
 	font-size: 20px;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Roboto', sans-serif;
 
 	margin-top: 0px;
 }
@@ -354,7 +357,7 @@ a {
 	color: #ccc !important;
 	font-size: 35px !important;
 
-	font-family: "Roboto", sans-serif;
+	font-family: 'Roboto', sans-serif;
 	margin-top: 0px;
 }
 
@@ -366,7 +369,7 @@ a {
 	transition: color 0.3s !important;
 	border: none;
 	font-size: 20px;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Roboto', sans-serif;
 
 	margin-top: 0px;
 }
@@ -377,7 +380,7 @@ a {
 	border: none;
 	color: #ccc !important;
 	font-size: 35px !important;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Roboto', sans-serif;
 	margin-top: 0px;
 }
 
@@ -389,7 +392,7 @@ a {
 	transition: color 0.3s !important;
 	border: none;
 	font-size: 20px;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Roboto', sans-serif;
 
 	margin-top: 0px;
 }
@@ -400,6 +403,13 @@ a {
 	border: none;
 	color: #ccc !important;
 	font-size: 35px !important;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Roboto', sans-serif;
 	margin-top: 0px;
 }
+/* MEDIA QUERY 
+@media screen and (max-width: 768px) {
+	.MovieCards {
+		flex-wrap: nowrap !important;
+	}
+}
+*/

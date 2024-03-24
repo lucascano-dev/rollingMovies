@@ -104,7 +104,7 @@ body {
 .FooterContainer {
 	display: flex;
 	background-color: rgb(227, 227, 227);
-	padding: 10px;
+	padding: 1rem;
 	font-family: 'Roboto', sans-serif;
 	color: #333333;
 	font-style: normal;
@@ -112,19 +112,22 @@ body {
 
 .FooterContainer a:hover {
 	color: #ccc;
-	font-size: 13px;
 }
+
 .FooterSeccion {
 	text-align: center;
 	flex: 1;
-	padding: 10px;
-	font-size: 12px;
+	padding: 0.5rem;
+	font-size: 1rem;
 	margin: auto;
 }
 
 .FooterSeccion h3 {
 	font-size: 18px;
-	margin-top: 15px;
+}
+
+.FooterSeccion h2 {
+	font-size: 1rem;
 }
 
 .Logo {
@@ -138,6 +141,11 @@ a {
 	text-decoration: none;
 }
 
+.FooterSeccion a {
+	color: inherit;
+	text-decoration: none;
+}
+
 .vertical-line {
 	border-left: 1px solid #ffffff;
 }
@@ -146,19 +154,31 @@ a {
 	.FooterContainer {
 		flex-direction: column;
 	}
+
 	.vertical-line {
 		border-left: none;
 	}
+
 	.Logo {
 		width: 30px;
 		margin: 15px;
 	}
+
+	.FooterSeccion {
+		margin: 1rem;
+	}
+	.buttonclass {
+		margin: 0 !important;
+		width: 3.4rem;
+	}
 	.FooterSeccion a {
 		font-size: 11px;
 	}
+
 	.FooterSeccion h3 {
 		font-size: 13px;
 	}
+
 	.FooterSeccion:nth-child(1)::after {
 		content: '';
 		display: block;
@@ -167,6 +187,7 @@ a {
 		padding-top: 10px;
 	}
 }
+/*FOOTER*/
 
 .Navbar {
 	display: flex;
@@ -181,6 +202,7 @@ a {
 .CinestrenarLogo {
 	width: 200px;
 	height: auto;
+	width: 15rem;
 }
 
 .Hamburguer {
@@ -263,7 +285,6 @@ a {
 		margin-bottom: 10px;
 	}
 }
-/* FOOTER */
 /*FORMULARIO DE CONTACTO*/
 
 .container {
@@ -298,6 +319,7 @@ a {
 	font-size: 20px;
 	font-family: 'Roboto', sans-serif;
 	font-style: normal;
+	padding: 15px;
 }
 
 .form-container label,
@@ -312,7 +334,6 @@ a {
 .form-container input[type='email'],
 .form-container input[type='tel'],
 .form-container textarea {
-	padding: 10px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
 }
