@@ -32,6 +32,34 @@
 						data-bs-toggle="modal" data-bs-target="#modalLogin">
 						INGRESO
 					</button>
+					<div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel"
+						aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h1 class="modal-title fs-5" id="exampleModalLabel">Ingreso</h1>
+									<button type="button" class="btn-close" data-bs-dismiss="modal"
+										aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<form action="" class="row" id="form">
+										<label for="user" class="col-4">Nombre/Correo Electronico: </label>
+										<input type="text" name="user" id="user" class="col-6 my-2" />
+										<label for="passUser" class="col-4">Contraseña</label>
+										<input type="password" name="passUser" id="passUser" class="col-6 my-2" />
+									</form>
+								</div>
+								<button onclick="location.href='./pages/404.html'" class="btn text-left text-primary">
+									Has olvidado tu contraseña? click aqui
+								</button>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary"
+										data-bs-dismiss="modal">Cancelar</button>
+									<button type="button" class="btn btn-primary" id="logUser">Ingresar!</button>
+								</div>
+							</div>
+						</div>
+					</div>
 				</li>
 				<li>
 					<!-- Button trigger modal -->
@@ -39,6 +67,37 @@
 						data-bs-toggle="modal" data-bs-target="#exampleModal">
 						REGISTRO
 					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+						aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h1 class="modal-title fs-5" id="exampleModalLabel">Registro</h1>
+									<button type="button" class="btn-close" data-bs-dismiss="modal"
+										aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<form action="" class="row" id="form">
+										<label for="name" class="col-4">Nombre: </label>
+										<input type="text" name="name" id="name" class="col-6 my-2" />
+										<label for="pass" class="col-4">Correo Electronico</label>
+										<input type="email" name="mail" id="mail" class="col-6 my-2" />
+										<label for="pass" class="col-4">Contraseña</label>
+										<input type="password" name="pass" id="pass" class="col-6 my-2" />
+										<label for="confirmPass" class="col-4">Confirmar Contraseña</label>
+										<input type="password" name="confirmPass" id="confirmPass" class="col-6 my-2" />
+									</form>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary"
+										data-bs-dismiss="modal">Cancelar</button>
+									<button type="button" class="btn btn-primary" id="regUser">Registrarse!</button>
+								</div>
+							</div>
+						</div>
+					</div>
 				</li>
 				<li id="AdminUser" style="display: none">
 					<button type="button" class="btn btn-primary bg-transparent text-black" id="navButton"
@@ -53,7 +112,7 @@
 		</nav>
 	</section>
 
-	<div class="container-columnas-administracion d-flex position-relative">
+	<div class="container-columnas-administracion">
 		<!-- Panel de administracion -->
 		<!-- <section class="container-panel-lateral-oculto">
       <div class="contenedor-head-titulo-panel d-flex justify-content-center align-items-center bg-danger p-2 gap-1">
@@ -110,17 +169,17 @@
 
 		<!-- Tablas -->
 		<section class="container-panel-derecho">
-			<div>
-				<button id="btn-volver" type="button" class="btn btn-primary btn-sm">
-					< Ir a Panel de administración </button>
-						<h1 id="encabezado-tablas" class="text-center text-black">
-							Administración de usuarios
-						</h1>
+			<div class="encabezado-titulo-botones d-flex justify-content-between flex-column">
+				<div>
+					<button id="btn-volver" type="button" class="btn btn-primary btn-sm">
+						< Ir a Panel de administración</button>
+							<h1 id="encabezado-tablas" class="text-center text-black">Administración de usuarios</h1>
+				</div>
 			</div>
 
-			<div class="container-tablas table-responsive">
-				<table class="table table-dark table-striped border">
-					<thead>
+			<div class="container-tablas table-responsive mb-2">
+				<table class="table table-dark table-striped border fs-6">
+					<thead class="table-light">
 						<tr>
 							<th class="border" scope="col">ID</th>
 							<th class="border" scope="col">Nombre</th>
@@ -181,9 +240,8 @@
 									<input type="password" class="form-control" id="inputPasswordUsuario" />
 								</div>
 								<div class="d-flex justify-content-end gap-2">
-									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-										Cancelar
-									</button>
+									<button type="button" class="btn btn-secondary"
+										data-bs-dismiss="modal">Cancelar</button>
 									<button id="btnActualizarUsuario" type="submit" data-bs-dismiss="modal"
 										class="btn btn-success">
 										Actualizar
@@ -197,97 +255,32 @@
 			</div>
 		</section>
 	</div>
-
-	<!-- Modal login -->
-	<div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h1 class="modal-title fs-5" id="exampleModalLabel">Ingreso</h1>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<form action="" class="row" id="form">
-						<div class="col-12">
-							<label for="user" class="form-label">Nombre/Correo Electrónico:</label>
-							<input type="text" name="user" id="user" class="form-control" />
-						</div>
-						<div class="col-12">
-							<label for="passUser" class="form-label">Contraseña:</label>
-							<input type="password" name="passUser" id="passUser" class="form-control" />
-						</div>
-					</form>
-					<button onclick="location.href='./pages/404.html'" class="btn text-start text-primary">
-						¿Olvidaste tu contraseña? Haz clic aquí
-					</button>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-					<button type="button" class="btn btn-primary" id="logUser">Ingresar</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Modal Registro -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h1 class="modal-title fs-5" id="exampleModalLabel">Registro</h1>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<form action="" class="row" id="form">
-						<label for="name" class="col-4">Nombre: </label>
-						<input type="text" name="name" id="name" class="col-6 my-2" />
-						<label for="pass" class="col-4">Correo Electronico</label>
-						<input type="email" name="mail" id="mail" class="col-6 my-2" />
-						<label for="pass" class="col-4">Contraseña</label>
-						<input type="password" name="pass" id="pass" class="col-6 my-2" />
-						<label for="confirmPass" class="col-4">Confirmar Contraseña</label>
-						<input type="password" name="confirmPass" id="confirmPass" class="col-6 my-2" />
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-						Cancelar
-					</button>
-					<button type="button" class="btn btn-primary" id="regUser">
-						Registrarse!
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
 	<!--FOOTER-->
 	<footer class="FooterContainer">
 		<div class="FooterSeccion">
 			<button class="btn bg-transparent p-0 m-0 buttonclass" href="https://www.instagram.com/"
 				style="text-decoration: none">
-				<img src="../../assets/img/Instagram Logo.png" alt="Instagram" class="Logo" />
+				<img src="/rollingMovies/assets/img/Instagram Logo.png" alt="Instagram" class="Logo" />
 			</button>
 
 			<button class="btn bg-transparent p-0 m-0 buttonclass" href="https://ar.linkedin.com//"
 				style="text-decoration: none">
-				<img src="../../assets/img/Linkedin Logo.png" alt="Linkedin" class="Logo" />
+				<img src="/rollingMovies/assets/img/Linkedin Logo.png" alt="Linkedin" class="Logo" />
 			</button>
 
 			<button class="btn bg-transparent p-0 m-0 buttonclass" href="https://twitter.com/"
 				style="text-decoration: none">
-				<img src="../../assets/img/X logo.png" alt="X" class="Logo" />
+				<img src="/rollingMovies/assets/img/X logo.png" alt="X" class="Logo" />
 			</button>
 
 			<button class="btn bg-transparent p-0 m-0 buttonclass" href="https://www.facebook.com/"
 				style="text-decoration: none">
-				<img src="../../assets/img/Facebook icon.png" alt="Facebook" class="Logo" />
+				<img src="/rollingMovies/assets/img/Facebook icon.png" alt="Facebook" class="Logo" />
 			</button>
 
 			<button class="btn bg-transparent p-0 m-0 buttonclass" href="https://www.youtube.com/"
 				style="text-decoration: none">
-				<img src="../../assets/img/Youtube Logo.png" alt="Youtube" class="Logo" />
+				<img src="/rollingMovies/assets/img/Youtube Logo.png" alt="Youtube" class="Logo" />
 			</button>
 		</div>
 

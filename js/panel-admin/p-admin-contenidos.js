@@ -53,25 +53,26 @@ function cargarContenido() {
   allMovies.map(function (movie) {
     const tr = document.createElement('tr');
     tr.innerHTML = `
-                <td class="border">${movie.id}</td>
-                <td class="border" style="width: 100px">${movie.nombre}</td>
-                <td class="border">${movie.categoria}</td>
-                <td class="border">
-                  <span class="d-inline-block text-truncate" style="width: 100px; text-overflow: ellipsis"
+                <td data-table="Código" class="border">${movie.id}</td>
+                <td data-table="Nombre" class="border nombre-movie">${movie.nombre}</td>
+                <td data-table="Categoría" class="border">${movie.categoria}</td>
+                <td data-table="Descripción" class="border">
+                  <span class="d-inline-block text-truncate" style="width: 200px; text-overflow: ellipsis"
                     >${movie.descripcion}</span
                   >
                 </td>
-                <td class="border">
+                <td data-table="URL Imagen" class="border">
                   <img
                     src="${movie.urlImagen}"
                     alt="${movie.descripcionImagen}"
                     width="60px"
                   />
                 </td>
-                <td class="border"><span class="d-inline-block text-truncate" style="width: 150px">${movie.urlVideo
-      }</span></td>
-                <td class="border">
-                  <div class="form-check form-switch">
+                <td data-table="URL Video" class="border"><span class="d-inline-block text-truncate" style="width: 150px">${
+                  movie.urlVideo
+                }</span></td>
+                <td data-table="Publicado" class="border">
+                  <div class="d-flex justify-content-end form-check form-switch">
                     <input
                       class="form-check-input"
                       type="checkbox"
@@ -89,25 +90,28 @@ function cargarContenido() {
                     </label>
                   </div>
                 </td>
-                <td class="border">
+                <td data-table="Acciones" class="border separador " style="width: 200px>
                   <div class="d-flex gap-1 flex-wrap">
                     <button id="btnEditar"
                       type="button"
-                      class="btn btn-warning btn-sm fs-6 btn-editar"
+                      class="btn btn-warning btn-sm btn-editar"
                       data-bs-toggle="modal" data-bs-target="#modalEditarContenido"
                       onclick="handleModalEditarMovie(${movie.id})">
                         <i class="fa-solid fa-pen-to-square"></i>
                     </button>
-                    <button type="button" class="btn btn-secondary btn-sm fs-6 btn-destacar" onclick="destacarMovie(${movie.id
-      })">
-                    ${movie.isDestacado
-        ? `<i id="icono-destacado-${movie.id}" class="fa-solid fa-star contenido-destacado"></i>`
-        : `<i id="icono-destacado-${movie.id}" class="fa-solid fa-star contenido-no-destacado"></i>`
-      }
+                    <button type="button" class="btn btn-secondary btn-sm fs-6 btn-destacar" onclick="destacarMovie(${
+                      movie.id
+                    })">
+                    ${
+                      movie.isDestacado
+                        ? `<i id="icono-destacado-${movie.id}" class="fa-solid fa-star contenido-destacado"></i>`
+                        : `<i id="icono-destacado-${movie.id}" class="fa-solid fa-star contenido-no-destacado"></i>`
+                    }
                       
                     </button>
-                    <button type="button" class="btn btn-danger btn-sm fs-6" onclick="eliminarContenido(${movie.id
-      })"><i class="fa-solid fa-trash-can"></i></button>
+                    <button type="button" class="btn btn-danger btn-sm fs-6" onclick="eliminarContenido(${
+                      movie.id
+                    })"><i class="fa-solid fa-trash-can"></i></button>
                   </div>
                 </td>`;
     tablaContenido.appendChild(tr);

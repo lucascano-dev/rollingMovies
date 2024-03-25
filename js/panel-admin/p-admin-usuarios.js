@@ -25,22 +25,23 @@ const cargaUsuarios = function () {
   usuariosRegistrados.map(function (usuario) {
     const tr = document.createElement('tr');
     tr.innerHTML = `
-        <td class="border" >${usuario.id}</td>
-        <td class="border" >${usuario.nombre}</td>
-        <td class="border" >${usuario.correo}</td>
-        <td class="border" >${usuario.pass}</td>
-        <td class="border" >
+        <td data-table="Código" class="border" >${usuario.id}</td>
+        <td data-table="Nombre" class="border" >${usuario.nombre}</td>
+        <td data-table="Email" class="border" >${usuario.email}</td>
+        <td data-table="Password" class="border" >${usuario.password}</td>
+        <td data-table="Estado" class="border" >
           <div class="d-flex justify-content-end">
             <div>
               <span id="estadoUsuario">
-                ${usuario.stateActivation === 0
-        ? 'Pendiente&nbsp'
-        : usuario.stateActivation === 1
-          ? 'Aprobado&nbsp'
-          : usuario.stateActivation === 2
-            ? 'Suspendido&nbsp'
-            : null
-      }
+                ${
+                  usuario.stateActivation === 0
+                    ? 'Pendiente&nbsp'
+                    : usuario.stateActivation === 1
+                    ? 'Aprobado&nbsp'
+                    : usuario.stateActivation === 2
+                    ? 'Suspendido&nbsp'
+                    : null
+                }
               </span>
             </div>
             <div class="btn-group">
@@ -63,7 +64,7 @@ const cargaUsuarios = function () {
             </div>
           </div>
         </td>
-        <td class="border" >
+        <td data-table="Rol" class="border" >
           <div class="d-flex justify-content-end">
           <div>
           ${usuario.userRol === 0 ? 'Administrador&nbsp' : usuario.userRol === 1 ? 'Suscriptor&nbsp' : null}
@@ -88,7 +89,7 @@ const cargaUsuarios = function () {
           </div>
           </div>
         </td>
-        <td class="d-flex justifyc-content-center align-items-center gap-2 boder border-secondary">
+        <td data-table="Acciones" class="border separador">
           <button
             id="btnEditar${usuario.id}"
             type="button"
@@ -192,8 +193,8 @@ function cambiarEstadoUsuario(idUsuario, estado) {
   usuarioIndex === -1
     ? console.log('ERROR')
     : estado === 'APROBADO'
-      ? (usuariosRegistrados[usuarioIndex].stateActivation = 1)
-      : (usuariosRegistrados[usuarioIndex].stateActivation = 2);
+    ? (usuariosRegistrados[usuarioIndex].stateActivation = 1)
+    : (usuariosRegistrados[usuarioIndex].stateActivation = 2);
 
   localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
   cargaUsuarios();
@@ -209,8 +210,8 @@ function cambiarRol(idUsuario, rolUsuario) {
   usuarioIndex === -1
     ? console.log('ERROR')
     : rolUsuario === 'ADMINISTRADOR'
-      ? (usuariosRegistrados[usuarioIndex].userRol = 0)
-      : (usuariosRegistrados[usuarioIndex].userRol = 1);
+    ? (usuariosRegistrados[usuarioIndex].userRol = 0)
+    : (usuariosRegistrados[usuarioIndex].userRol = 1);
 
   localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
   cargaUsuarios();
