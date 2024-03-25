@@ -10,7 +10,7 @@ body {
 	background: #303030;
 	background-image: linear-gradient(to bottom, #b7b7b7, #848484);
 	font-family: 'Roboto', sans-serif;
-	color: white;
+	/* color: white; */
 }
 
 /***** ENCABEZADO *****/
