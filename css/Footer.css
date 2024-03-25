@@ -406,8 +406,7 @@ a {
 	font-family: 'Roboto', sans-serif;
 	margin-top: 0px;
 }
-/* MEDIA QUERY 
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {
 	.MovieCards {
 		flex-wrap: nowrap !important;
 	}
