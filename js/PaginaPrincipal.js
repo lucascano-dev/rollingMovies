@@ -9,10 +9,9 @@ function toggleMenu() {
 const AdminUser = document.getElementById('AdminUser')
 
 if (localStorage.getItem('userLogged') !== undefined) {
-	const AdminLogged = JSON.parse(localStorage.getItem('userLogged'));
-
-	if (AdminLogged !== null) {
-		const isAdminLogged = AdminLogged.userRol == 0 ? true : false;
+	const userLogged = JSON.parse(localStorage.getItem('userLogged'));
+	if (userLogged !== null) {
+		const isAdminLogged = userLogged.userRol == 0 ? true : false;
 		if (isAdminLogged) {
 			AdminUser.style.display = 'block';
 		} else {

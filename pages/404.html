@@ -170,6 +170,69 @@
 		</div>
 	</div>
 
+	<!-- Modal login -->
+	<div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="exampleModalLabel">Ingreso</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form action="" class="row" id="form">
+						<div class="col-12">
+							<label for="user" class="form-label">Nombre/Correo Electrónico:</label>
+							<input type="text" name="user" id="user" class="form-control" />
+						</div>
+						<div class="col-12">
+							<label for="passUser" class="form-label">Contraseña:</label>
+							<input type="password" name="passUser" id="passUser" class="form-control" />
+						</div>
+					</form>
+					<button onclick="location.href='./pages/404.html'" class="btn text-start text-primary">
+						¿Olvidaste tu contraseña? Haz clic aquí
+					</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-primary" id="logUser">Ingresar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Registro -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="exampleModalLabel">Registro</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form action="" class="row" id="form">
+						<label for="name" class="col-4">Nombre: </label>
+						<input type="text" name="name" id="name" class="col-6 my-2" />
+						<label for="pass" class="col-4">Correo Electronico</label>
+						<input type="email" name="mail" id="mail" class="col-6 my-2" />
+						<label for="pass" class="col-4">Contraseña</label>
+						<input type="password" name="pass" id="pass" class="col-6 my-2" />
+						<label for="confirmPass" class="col-4">Confirmar Contraseña</label>
+						<input type="password" name="confirmPass" id="confirmPass" class="col-6 my-2" />
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+						Cancelar
+					</button>
+					<button type="button" class="btn btn-primary" id="regUser">
+						Registrarse!
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!--FOOTER-->
 	<footer class="FooterContainer">
 		<div class="FooterSeccion">
@@ -203,14 +266,14 @@
 		<div class="vertical-line"></div>
 
 		<div class="FooterSeccion">
-			<a href="./pages/acercade.html">
+			<a href="./acercade.html">
 				<h2 class="mb-0 fs-5">ACERCA DE NOSOTROS</h2>
 			</a>
 		</div>
 		<div class="vertical-line"></div>
 
 		<div class="FooterSeccion">
-			<a href="./pages/contacto.html">
+			<a href="./contacto.html">
 				<h2 class="mb-0 fs-5">CONTACTO</h2>
 			</a>
 		</div>
