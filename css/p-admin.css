@@ -6,7 +6,7 @@
 
 body {
 	background-color: rgb(100, 99, 99);
-	color: white;
+	/* color: white; */
 }
 
 .container-navbar {
@@ -61,6 +61,7 @@ body {
 	position: fixed;
 	z-index: 1;
 }
+
 /* ===== FIN MANEJAR VISIBILIDAD DE PANEL LATERAL IZQUIERDO =====*/
 
 .btn-admin {
@@ -135,7 +136,7 @@ body {
 	}
 }
 
-@media (width <= 820px) {
+@media (width <=820px) {
 	.container-panel-lateral-expandido {
 		width: 55%;
 	}
@@ -145,7 +146,7 @@ body {
 	}
 }
 
-@media (width <= 430px) {
+@media (width <=430px) {
 	.btn-principales {
 		display: flex;
 		flex-wrap: wrap;
@@ -235,10 +236,12 @@ a {
 	.FooterSeccion {
 		margin: 1rem;
 	}
+
 	.buttonclass {
 		margin: 0 !important;
 		width: 3.4rem;
 	}
+
 	.FooterSeccion a {
 		font-size: 11px;
 	}
@@ -255,4 +258,5 @@ a {
 		padding-top: 10px;
 	}
 }
+
 /*FOOTER*/
