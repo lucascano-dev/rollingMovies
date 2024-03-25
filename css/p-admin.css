@@ -6,7 +6,7 @@
 
 body {
   background-color: rgb(100, 99, 99);
-  color: white;
+  /* color: white; */
 }
 
 .container-navbar {
@@ -61,6 +61,7 @@ body {
   position: fixed;
   z-index: 1;
 }
+
 /* ===== FIN MANEJAR VISIBILIDAD DE PANEL LATERAL IZQUIERDO =====*/
 
 .btn-admin {
@@ -130,15 +131,29 @@ thead tr th {
   background-color: #ffffff;
 }
 
-@media (width <= 768px) {
-  .btn-principales {
-    flex-direction: column;
-    margin: 20px;
+@media (width <=820px) {
+  .container-panel-lateral-expandido {
+    width: 55%;
+  }
+
+  .container-elementos-panel {
+    width: 50%;
+  }
+
+  @media (width <=768px) {
+    .btn-principales {
+      flex-direction: column;
+      margin: 20px;
+    }
   }
 }
 
+.separador {
+  /* border-bottom: 10px solid rgb(239, 174, 174) !important; */
+}
+
 /* TABLAS RESPONSIVE */
-@media (width <= 440px) {
+@media (width <=440px) {
   #tablaContenido,
   #tablaUsuarios {
     width: 100%;
@@ -151,18 +166,6 @@ thead tr th {
 
   .separador {
     /* border-bottom: 10px solid rgb(239, 174, 174) !important; */
-  }
-
-  .nombre-movie {
-    width: 100%;
-  }
-
-  table {
-    width: 100%;
-  }
-
-  tr td {
-    width: 100%;
   }
 
   tr {
@@ -191,12 +194,52 @@ thead tr th {
   tbody tr:nth-child {
     background-color: aquamarine !important;
   }
+  .nombre-movie {
+    width: 100%;
+  }
+  table {
+    width: 100%;
+  }
+
+  tr td {
+    width: 100%;
+  }
+
+  table thead tr {
+    display: none;
+  }
+
+  table tr {
+    display: block;
+  }
+
+  table th,
+  table td {
+    padding: 0.5em;
+  }
+
+  table td {
+    text-align: right;
+    display: block;
+    font-size: 1.1em;
+  }
+
+  table td::before {
+    content: attr(data-table) ': ';
+    float: left;
+  }
+
+  tbody tr:nth-child {
+    background-color: aquamarine !important;
+  }
 
   .botones-accion {
     display: flex !important;
     justify-content: end !important;
   }
-} /* TABLAS RESPONSIVE */
+}
+
+/* TABLAS RESPONSIVE */
 
 @media (width > 441px) {
   .nombre-movie {
@@ -285,10 +328,12 @@ a {
   .FooterSeccion {
     margin: 1rem;
   }
+
   .buttonclass {
     margin: 0 !important;
     width: 3.4rem;
   }
+
   .FooterSeccion a {
     font-size: 11px;
   }
@@ -305,4 +350,5 @@ a {
     padding-top: 10px;
   }
 }
+
 /*FOOTER*/

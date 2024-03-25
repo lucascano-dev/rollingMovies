@@ -16,11 +16,11 @@
 }
 
 .card-title {
-	font-size: 6vw;
+	font-size: 3vw;
 }
 
 .card-text {
-	font-size: 1.5vw;
+	font-size: 1vw;
 }
 
 .card {
@@ -131,3 +131,22 @@ a {
 	}
 }
 /*FOOTER*/
+
+@media (max-width: 767px) {
+	#error404 {
+		height: 40vh;
+	}
+	.card {
+		width: 10rem !important;
+		height: 10rem !important;
+	}
+	.card-title {
+		font-size: 1.4rem;
+	}
+	.card-text {
+		font-size: 0.5rem;
+	}
+	.buttonerror {
+		font-size: 2.5vw !important;
+	}
+}
