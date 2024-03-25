@@ -1,7 +1,7 @@
 
 function toggleMenu() {
-	var menu = document.getElementById('menu');
-	menu.classList.toggle('active');
+	var menu = document.getElementById("menu");
+	menu.classList.toggle("active");
 }
 
 
@@ -9,16 +9,18 @@ function toggleMenu() {
 const AdminUser = document.getElementById('AdminUser')
 
 if (localStorage.getItem('userLogged') !== undefined) {
-	const userLogged = JSON.parse(localStorage.getItem('userLogged'));
-	if (userLogged !== null) {
-		const isAdminLogged = userLogged.userRol == 0 ? true : false;
+	const AdminLogged = JSON.parse(localStorage.getItem('userLogged'));
+
+	if (AdminLogged !== null) {
+		const isAdminLogged = AdminLogged.userRol == 0 ? true : false;
 		if (isAdminLogged) {
-			AdminUser.style.display = 'block';
+			AdminUser.style.display = "block";
 		} else {
-			AdminUser.style.display = 'none';
+			AdminUser.style.display = "none";
 		}
 	}
-}
+};
+
 
 
 
@@ -113,31 +115,21 @@ miImagen.forEach((imagen) => {
 
 const adminHandler = () => {
 	if (window.location.href.includes('index')) {
-		window.location.href = './pages/panel-admin/index.html';
+		window.location.href = "./pages/panel-admin/index.html"
 	}
-	if (
-		window.location.href.includes('contacto') ||
-		window.location.href.includes('404') ||
-		window.location.href.includes('acercade')
-	) {
-		window.location.href = './panel-admin/index.html';
+	if (window.location.href.includes('contacto') || window.location.href.includes('404') || window.location.href.includes('acercade')) {
+		window.location.href = "./panel-admin/index.html"
 	}
-};
+}
 
 const to404 = () => {
 	if (window.location.href.includes('index')) {
-		window.location.href = './pages/404.html';
+		window.location.href = "./pages/404.html"
 	}
-	if (
-		window.location.href.includes('contacto') ||
-		window.location.href.includes('acercade')
-	) {
-		window.location.href = './404.html';
+	if (window.location.href.includes('contacto') || window.location.href.includes('acercade')) {
+		window.location.href = "./404.html"
 	}
-	if (
-		window.location.href.includes('admin') ||
-		window.location.href.includes('panel-admin')
-	) {
-		window.location.href = '../404.html';
+	if (window.location.href.includes('admin') || window.location.href.includes('panel-admin')) {
+		window.location.href = "../404.html"
 	}
-};
+}
