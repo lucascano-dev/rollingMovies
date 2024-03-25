@@ -35,6 +35,11 @@ miImagen.forEach((imagen) => {
     let modalInfo = document.getElementById('modal-body')
     let modalContent = document.getElementById('bg-image')
     let buttonClose = document.createElement('button');
+    let divBodyMovieDetail = document.createElement('div');
+    let divInnerModalMovieDetail = document.createElement('div')
+    let h1 = document.createElement('h1')
+    let spanDescription = document.createElement('p')
+    let videoLink = movieFound.urlVideo.substr(32)
 
     buttonClose.type = "button"
     buttonClose.className = "btn-close mt-3 me-3"
@@ -51,22 +56,19 @@ miImagen.forEach((imagen) => {
 
     if (movieFound !== undefined) {
       modalInfo.className = "container-fluid d-flex align-items-center m-auto h-100 w-100 p-0"
-      let divBodyMovieDetail = document.createElement('div');
-      let divInnerModalMovieDetail = document.createElement('div')
-      let h1 = document.createElement('h1')
-      let spanDescription = document.createElement('p')
-      let videoLink = movieFound.urlVideo.substr(32)
+
       let video = `<iframe id="miVideo" src="https://www.youtube.com/embed/${videoLink}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
       divBodyMovieDetail.className = "modal-title"
       video.id = "video"
       h1.textContent = `${title.toUpperCase()}`
       h1.style.textAlign = "center"
       // h1.style.margin = "1rem";
-      h1.style.padding = "1rem"
+      h1.style.marginBottom = "1rem"
+      h1.style.textDecoration = "underline"
       spanDescription.textContent = `${movieFound.descripcion}`
       spanDescription.id = "descripcion"
       spanDescription.className = "d-none d-md-block"
-      divInnerModalMovieDetail.className = "container-fluid"
+      divInnerModalMovieDetail.className = "container-fluid p-5"
       divInnerModalMovieDetail.style.backgroundColor = "rgba(0,0,0,0.7)"
       divInnerModalMovieDetail.style.height = "100%"
       divBodyMovieDetail.style.color = "White"
@@ -93,13 +95,19 @@ miImagen.forEach((imagen) => {
       modalContent.appendChild(modalInfo)
 
 
+      // let isDetallePeliculaActivo = detallePelicula ? true : false;
+
+      // Escuchar el evento hidden.bs.modal del modal
+      document.getElementById('detallePelicula').addEventListener('hidden.bs.modal', function () {
+        // Obtener el elemento de video
+        let videoElement = document.getElementById('miVideo');
+        // Verificar si el elemento de video existe
+        if (videoElement) {
+          // Eliminar el elemento de video del DOM
+          videoElement.parentNode.removeChild(videoElement);
+        }
+      });
     }
-    document.getElementById('detallePelicula').addEventListener('hidden.bs.modal', function () {
-      // Obtener el elemento de video
-      let videoElement = document.getElementById('miVideo');
-      // Eliminar el elemento de video del DOM
-      videoElement.parentNode.removeChild(videoElement);
-    });
   })
   imagen.setAttribute('data-bs-toggle', 'modal')
   imagen.setAttribute('data-bs-target', '#detallePelicula')
