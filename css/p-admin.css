@@ -129,21 +129,28 @@ thead tr th {
   background-color: #ffffff;
 }
 
-@media (width >= 769px) {
+@media (width > 441px) {
   .nombre-movie {
     width: 200px;
+  }
+
+  #tablaContenido,
+  #tablaUsuarios {
+    width: 100%;
+    font-size: 0.8rem;
   }
 }
 
 /* TABLAS RESPONSIVE */
-@media (width <= 768px) {
-  #tablaContenido {
+@media (width <= 440px) {
+  #tablaContenido,
+  #tablaUsuarios {
     width: 100%;
-    font-size: small;
+    font-size: 0.8rem;
   }
 
   .container-panel-derecho {
-    padding: 100px;
+    /* padding: 100px; */
   }
 
   .separador {
