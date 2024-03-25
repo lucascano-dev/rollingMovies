@@ -150,7 +150,7 @@ thead tr th {
   }
 
   .separador {
-    border-bottom: 10px solid rgb(239, 174, 174) !important;
+    /* border-bottom: 10px solid rgb(239, 174, 174) !important; */
   }
 
   .nombre-movie {
@@ -163,6 +163,10 @@ thead tr th {
 
   tr td {
     width: 100%;
+  }
+
+  tr {
+    margin-bottom: 1rem;
   }
 
   table thead tr {
