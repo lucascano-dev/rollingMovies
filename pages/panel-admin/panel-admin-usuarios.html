@@ -1,201 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-			crossorigin="anonymous"
-		/>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-			crossorigin="anonymous"
-		></script>
-		<link rel="stylesheet" href="../../css/p-admin.css" />
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-			integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		/>
-		<title>Administración de usuarios</title>
-	</head>
 
-	<body>
-		<section class="container-navbar">
-			<nav class="Navbar">
-				<div class="Hamburguer" onclick="toggleMenu()">
-					<div class="line"></div>
-					<div class="line"></div>
-					<div class="line"></div>
-				</div>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="../../css/p-admin.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+		integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>Administración de usuarios</title>
+</head>
 
-				<ul class="menu" id="menu">
-					<!-- <li><button type="button" class="btn bg-transparent">PELICULAS</button></li> -->
-					<li>
-						<button
-							type="button"
-							class="btn btn-primary bg-transparent text-black"
-							id="loginButton"
-							data-bs-toggle="modal"
-							data-bs-target="#modalLogin"
-						>
-							INGRESO
-						</button>
-						<div
-							class="modal fade"
-							id="modalLogin"
-							tabindex="-1"
-							aria-labelledby="exampleModalLabel"
-							aria-hidden="true"
-						>
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h1 class="modal-title fs-5" id="exampleModalLabel">Ingreso</h1>
-										<button
-											type="button"
-											class="btn-close"
-											data-bs-dismiss="modal"
-											aria-label="Close"
-										></button>
-									</div>
-									<div class="modal-body">
-										<form action="" class="row" id="form">
-											<label for="user" class="col-4"
-												>Nombre/Correo Electronico:
-											</label>
-											<input type="text" name="user" id="user" class="col-6 my-2" />
-											<label for="passUser" class="col-4">Contraseña</label>
-											<input
-												type="password"
-												name="passUser"
-												id="passUser"
-												class="col-6 my-2"
-											/>
-										</form>
-									</div>
-									<button
-										onclick="location.href='./pages/404.html'"
-										class="btn text-left text-primary"
-									>
-										Has olvidado tu contraseña? click aqui
-									</button>
-									<div class="modal-footer">
-										<button
-											type="button"
-											class="btn btn-secondary"
-											data-bs-dismiss="modal"
-										>
-											Cancelar
-										</button>
-										<button type="button" class="btn btn-primary" id="logUser">
-											Ingresar!
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<!-- Button trigger modal -->
-						<button
-							type="button"
-							class="btn btn-primary bg-transparent text-black"
-							id="registerButton"
-							data-bs-toggle="modal"
-							data-bs-target="#exampleModal"
-						>
-							REGISTRO
-						</button>
+<body>
+	<section class="container-navbar">
+		<nav class="Navbar">
+			<div class="Hamburguer" onclick="toggleMenu()">
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+			</div>
 
-						<!-- Modal -->
-						<div
-							class="modal fade"
-							id="exampleModal"
-							tabindex="-1"
-							aria-labelledby="exampleModalLabel"
-							aria-hidden="true"
-						>
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h1 class="modal-title fs-5" id="exampleModalLabel">Registro</h1>
-										<button
-											type="button"
-											class="btn-close"
-											data-bs-dismiss="modal"
-											aria-label="Close"
-										></button>
-									</div>
-									<div class="modal-body">
-										<form action="" class="row" id="form">
-											<label for="name" class="col-4">Nombre: </label>
-											<input type="text" name="name" id="name" class="col-6 my-2" />
-											<label for="pass" class="col-4">Correo Electronico</label>
-											<input type="email" name="mail" id="mail" class="col-6 my-2" />
-											<label for="pass" class="col-4">Contraseña</label>
-											<input
-												type="password"
-												name="pass"
-												id="pass"
-												class="col-6 my-2"
-											/>
-											<label for="confirmPass" class="col-4"
-												>Confirmar Contraseña</label
-											>
-											<input
-												type="password"
-												name="confirmPass"
-												id="confirmPass"
-												class="col-6 my-2"
-											/>
-										</form>
-									</div>
-									<div class="modal-footer">
-										<button
-											type="button"
-											class="btn btn-secondary"
-											data-bs-dismiss="modal"
-										>
-											Cancelar
-										</button>
-										<button type="button" class="btn btn-primary" id="regUser">
-											Registrarse!
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li id="AdminUser" style="display: none">
-						<button
-							type="button"
-							class="btn btn-primary bg-transparent text-black"
-							id="navButton"
-							onclick="adminHandler()"
-						>
-							ADMINISTRACION
-						</button>
-					</li>
-				</ul>
+			<ul class="menu" id="menu">
+				<!-- <li><button type="button" class="btn bg-transparent">PELICULAS</button></li> -->
+				<li>
+					<button type="button" class="btn btn-primary bg-transparent text-black" id="loginButton"
+						data-bs-toggle="modal" data-bs-target="#modalLogin">
+						INGRESO
+					</button>
+				</li>
+				<li>
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary bg-transparent text-black" id="registerButton"
+						data-bs-toggle="modal" data-bs-target="#exampleModal">
+						REGISTRO
+					</button>
+				</li>
+				<li id="AdminUser" style="display: none">
+					<button type="button" class="btn btn-primary bg-transparent text-black" id="navButton"
+						onclick="adminHandler()">
+						ADMINISTRACION
+					</button>
+				</li>
+			</ul>
 
-				<a href="../../index.html"
-					><img
-						src="../../assets/img/Cinestrenar Logo sin sombra.png"
-						alt="Cinestrenar"
-						class="CinestrenarLogo btn bg-transparent"
-				/></a>
-			</nav>
-		</section>
+			<a href="./index.html"><img src="./assets/img/Cinestrenar Logo sin sombra.png" alt="Cinestrenar"
+					class="CinestrenarLogo btn bg-transparent" /></a>
+		</nav>
+	</section>
 
-		<div class="container-columnas-administracion d-flex position-relative">
-			<!-- Panel de administracion -->
-			<!-- <section class="container-panel-lateral-oculto">
+	<div class="container-columnas-administracion d-flex position-relative">
+		<!-- Panel de administracion -->
+		<!-- <section class="container-panel-lateral-oculto">
       <div class="contenedor-head-titulo-panel d-flex justify-content-center align-items-center bg-danger p-2 gap-1">
         <div>
           <p class="head-nombre-panel"></p>
@@ -214,8 +74,8 @@
           </button>
         </div>
         <br /> -->
-			<!-- Boton Administracion de contenidos -->
-			<!-- <div class="dropdown">
+		<!-- Boton Administracion de contenidos -->
+		<!-- <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle btn-admin" type="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             <span>Sobre Contenidos</span>
@@ -230,8 +90,8 @@
           </ul>
         </div>
         <hr /> -->
-			<!-- Boton Administracion de usuarios -->
-			<!-- <div class="dropdown">
+		<!-- Boton Administracion de usuarios -->
+		<!-- <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle btn-admin" type="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             Sobre Usuarios
@@ -245,221 +105,223 @@
             <li><a class="dropdown-item" href="#">Agregar nuevo usuario</a></li>
           </ul>
         </div> -->
-			<!-- </div>
+		<!-- </div>
     </section> -->
 
-			<!-- Tablas -->
-			<section class="container-panel-derecho">
-				<div>
-					<button id="btn-volver" type="button" class="btn btn-primary btn-sm">
-						< Ir a Panel de administración
-					</button>
-					<h1 id="encabezado-tablas" class="text-center text-black">
-						Administración de usuarios
-					</h1>
-				</div>
+		<!-- Tablas -->
+		<section class="container-panel-derecho">
+			<div>
+				<button id="btn-volver" type="button" class="btn btn-primary btn-sm">
+					< Ir a Panel de administración </button>
+						<h1 id="encabezado-tablas" class="text-center text-black">
+							Administración de usuarios
+						</h1>
+			</div>
 
-				<div class="container-tablas table-responsive">
-					<table class="table table-dark table-striped border">
-						<thead>
-							<tr>
-								<th class="border" scope="col">ID</th>
-								<th class="border" scope="col">Nombre</th>
-								<th class="border" scope="col">Email</th>
-								<th class="border" scope="col">Password</th>
-								<th class="border" scope="col">Estado</th>
-								<th class="border" scope="col">Rol</th>
-								<th class="border" scope="col">Acción</th>
-							</tr>
-						</thead>
-						<tbody id="tablaUsuarios">
-							<!-- Se crea aqui el contenido de la tabla mediante JS -->
-						</tbody>
-					</table>
-				</div>
+			<div class="container-tablas table-responsive">
+				<table class="table table-dark table-striped border">
+					<thead>
+						<tr>
+							<th class="border" scope="col">ID</th>
+							<th class="border" scope="col">Nombre</th>
+							<th class="border" scope="col">Email</th>
+							<th class="border" scope="col">Password</th>
+							<th class="border" scope="col">Estado</th>
+							<th class="border" scope="col">Rol</th>
+							<th class="border" scope="col">Acción</th>
+						</tr>
+					</thead>
+					<tbody id="tablaUsuarios">
+						<!-- Se crea aqui el contenido de la tabla mediante JS -->
+					</tbody>
+				</table>
+			</div>
 
-				<!-- Botones de paginacion -->
-				<nav aria-label="Page navigation example">
-					<ul class="pagination justify-content-center">
-						<li class="page-item disabled">
-							<a class="page-link">Anterior</a>
-						</li>
-						<li class="page-item"><a class="page-link" href="#">1</a></li>
-						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item"><a class="page-link" href="#">3</a></li>
-						<li class="page-item">
-							<a class="page-link" href="#">Siguiente</a>
-						</li>
-					</ul>
-				</nav>
+			<!-- Botones de paginacion -->
+			<nav aria-label="Page navigation example">
+				<ul class="pagination justify-content-center">
+					<li class="page-item disabled">
+						<a class="page-link">Anterior</a>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">1</a></li>
+					<li class="page-item"><a class="page-link" href="#">2</a></li>
+					<li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item">
+						<a class="page-link" href="#">Siguiente</a>
+					</li>
+				</ul>
+			</nav>
 
-				<!-- MODAL EDITAR USUARIO -->
+			<!-- MODAL EDITAR USUARIO -->
 
-				<!-- Modal -->
-				<div
-					class="modal fade"
-					id="modalEditarUsuario"
-					tabindex="-1"
-					aria-labelledby="modalEditarUsuario"
-					aria-hidden="true"
-				>
-					<div class="modal-dialog modal-dialog-centered text-black">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h1 class="modal-title fs-5" id="exampleModalLabel">
-									Editar usuario <span id="idUsuarioEditar">123</span>
-								</h1>
-								<button
-									type="button"
-									class="btn-close"
-									data-bs-dismiss="modal"
-									aria-label="Close"
-								></button>
-							</div>
-							<div class="modal-body">
-								<form id="formularioEditarUsuario">
-									<div class="mb-3">
-										<label for="inputNombreUsuario" class="form-label">Nombre</label>
-										<input
-											type="text"
-											class="form-control"
-											id="inputNombreUsuario"
-											aria-describedby="nombre"
-										/>
-									</div>
-									<div class="mb-3">
-										<label for="inputEmailUsuario" class="form-label">Email</label>
-										<input
-											type="email"
-											class="form-control"
-											id="inputEmailUsuario"
-										/>
-									</div>
-									<div class="mb-3">
-										<label for="inputPasswordUsuario" class="form-label"
-											>Password</label
-										>
-										<input
-											type="password"
-											class="form-control"
-											id="inputPasswordUsuario"
-										/>
-									</div>
-									<div class="d-flex justify-content-end gap-2">
-										<button
-											type="button"
-											class="btn btn-secondary"
-											data-bs-dismiss="modal"
-										>
-											Cancelar
-										</button>
-										<button
-											id="btnActualizarUsuario"
-											type="submit"
-											data-bs-dismiss="modal"
-											class="btn btn-success"
-										>
-											Actualizar
-										</button>
-									</div>
-								</form>
-							</div>
-							<!-- <div class="modal-footer"></div> -->
+			<!-- Modal -->
+			<div class="modal fade" id="modalEditarUsuario" tabindex="-1" aria-labelledby="modalEditarUsuario"
+				aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered text-black">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h1 class="modal-title fs-5" id="exampleModalLabel">
+								Editar usuario <span id="idUsuarioEditar">123</span>
+							</h1>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
+						<div class="modal-body">
+							<form id="formularioEditarUsuario">
+								<div class="mb-3">
+									<label for="inputNombreUsuario" class="form-label">Nombre</label>
+									<input type="text" class="form-control" id="inputNombreUsuario"
+										aria-describedby="nombre" />
+								</div>
+								<div class="mb-3">
+									<label for="inputEmailUsuario" class="form-label">Email</label>
+									<input type="email" class="form-control" id="inputEmailUsuario" />
+								</div>
+								<div class="mb-3">
+									<label for="inputPasswordUsuario" class="form-label">Password</label>
+									<input type="password" class="form-control" id="inputPasswordUsuario" />
+								</div>
+								<div class="d-flex justify-content-end gap-2">
+									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+										Cancelar
+									</button>
+									<button id="btnActualizarUsuario" type="submit" data-bs-dismiss="modal"
+										class="btn btn-success">
+										Actualizar
+									</button>
+								</div>
+							</form>
+						</div>
+						<!-- <div class="modal-footer"></div> -->
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
+	</div>
+
+	<!-- Modal login -->
+	<div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="exampleModalLabel">Ingreso</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form action="" class="row" id="form">
+						<div class="col-12">
+							<label for="user" class="form-label">Nombre/Correo Electrónico:</label>
+							<input type="text" name="user" id="user" class="form-control" />
+						</div>
+						<div class="col-12">
+							<label for="passUser" class="form-label">Contraseña:</label>
+							<input type="password" name="passUser" id="passUser" class="form-control" />
+						</div>
+					</form>
+					<button onclick="location.href='./pages/404.html'" class="btn text-start text-primary">
+						¿Olvidaste tu contraseña? Haz clic aquí
+					</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-primary" id="logUser">Ingresar</button>
+				</div>
+			</div>
 		</div>
-		<!--FOOTER-->
-		<footer class="FooterContainer">
-			<div class="FooterSeccion">
-				<button
-					class="btn bg-transparent p-0 m-0 buttonclass"
-					href="https://www.instagram.com/"
-					style="text-decoration: none"
-				>
-					<img
-						src="/rollingMovies/assets/img/Instagram Logo.png"
-						alt="Instagram"
-						class="Logo"
-					/>
-				</button>
+	</div>
 
-				<button
-					class="btn bg-transparent p-0 m-0 buttonclass"
-					href="https://ar.linkedin.com//"
-					style="text-decoration: none"
-				>
-					<img
-						src="/rollingMovies/assets/img/Linkedin Logo.png"
-						alt="Linkedin"
-						class="Logo"
-					/>
-				</button>
-
-				<button
-					class="btn bg-transparent p-0 m-0 buttonclass"
-					href="https://twitter.com/"
-					style="text-decoration: none"
-				>
-					<img src="/rollingMovies/assets/img/X logo.png" alt="X" class="Logo" />
-				</button>
-
-				<button
-					class="btn bg-transparent p-0 m-0 buttonclass"
-					href="https://www.facebook.com/"
-					style="text-decoration: none"
-				>
-					<img
-						src="/rollingMovies/assets/img/Facebook icon.png"
-						alt="Facebook"
-						class="Logo"
-					/>
-				</button>
-
-				<button
-					class="btn bg-transparent p-0 m-0 buttonclass"
-					href="https://www.youtube.com/"
-					style="text-decoration: none"
-				>
-					<img
-						src="/rollingMovies/assets/img/Youtube Logo.png"
-						alt="Youtube"
-						class="Logo"
-					/>
-				</button>
+	<!-- Modal Registro -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="exampleModalLabel">Registro</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form action="" class="row" id="form">
+						<label for="name" class="col-4">Nombre: </label>
+						<input type="text" name="name" id="name" class="col-6 my-2" />
+						<label for="pass" class="col-4">Correo Electronico</label>
+						<input type="email" name="mail" id="mail" class="col-6 my-2" />
+						<label for="pass" class="col-4">Contraseña</label>
+						<input type="password" name="pass" id="pass" class="col-6 my-2" />
+						<label for="confirmPass" class="col-4">Confirmar Contraseña</label>
+						<input type="password" name="confirmPass" id="confirmPass" class="col-6 my-2" />
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+						Cancelar
+					</button>
+					<button type="button" class="btn btn-primary" id="regUser">
+						Registrarse!
+					</button>
+				</div>
 			</div>
+		</div>
+	</div>
 
-			<div class="vertical-line"></div>
-			<div class="vertical-line"></div>
 
-			<div class="FooterSeccion">
-				<a href="./pages/acercade.html">
-					<h2 class="mb-0 fs-5">ACERCA DE NOSOTROS</h2>
-				</a>
-			</div>
-			<div class="vertical-line"></div>
+	<!--FOOTER-->
+	<footer class="FooterContainer">
+		<div class="FooterSeccion">
+			<button class="btn bg-transparent p-0 m-0 buttonclass" href="https://www.instagram.com/"
+				style="text-decoration: none">
+				<img src="/rollingMovies/assets/img/Instagram Logo.png" alt="Instagram" class="Logo" />
+			</button>
 
-			<div class="FooterSeccion">
-				<a href="./pages/contacto.html">
-					<h2 class="mb-0 fs-5">CONTACTO</h2>
-				</a>
-			</div>
+			<button class="btn bg-transparent p-0 m-0 buttonclass" href="https://ar.linkedin.com//"
+				style="text-decoration: none">
+				<img src="/rollingMovies/assets/img/Linkedin Logo.png" alt="Linkedin" class="Logo" />
+			</button>
 
-			<div class="vertical-line"></div>
+			<button class="btn bg-transparent p-0 m-0 buttonclass" href="https://twitter.com/"
+				style="text-decoration: none">
+				<img src="/rollingMovies/assets/img/X logo.png" alt="X" class="Logo" />
+			</button>
 
-			<div class="FooterSeccion">
-				<h3 class="mb-0 fs-5">Proyecto Creado Para Rolling Code</h3>
-			</div>
-		</footer>
-		<!--FOOTER-->
-		<script src="../../js/panel-admin/p-admin-usuarios.js"></script>
-		<script src="../../js/panel-admin/p-admin-control-panel.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-		<script src="../../js/PaginaPrincipal.js"></script>
-		<script src="../../js/loginHandler.js"></script>
-		<script src="../../js/registerHandler.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-		<link rel="stylesheet" href="../../css/Footer.css" />
-	</body>
+			<button class="btn bg-transparent p-0 m-0 buttonclass" href="https://www.facebook.com/"
+				style="text-decoration: none">
+				<img src="/rollingMovies/assets/img/Facebook icon.png" alt="Facebook" class="Logo" />
+			</button>
+
+			<button class="btn bg-transparent p-0 m-0 buttonclass" href="https://www.youtube.com/"
+				style="text-decoration: none">
+				<img src="/rollingMovies/assets/img/Youtube Logo.png" alt="Youtube" class="Logo" />
+			</button>
+		</div>
+
+		<div class="vertical-line"></div>
+		<div class="vertical-line"></div>
+
+		<div class="FooterSeccion">
+			<a href="./pages/acercade.html">
+				<h2 class="mb-0 fs-5">ACERCA DE NOSOTROS</h2>
+			</a>
+		</div>
+		<div class="vertical-line"></div>
+
+		<div class="FooterSeccion">
+			<a href="./pages/contacto.html">
+				<h2 class="mb-0 fs-5">CONTACTO</h2>
+			</a>
+		</div>
+
+		<div class="vertical-line"></div>
+
+		<div class="FooterSeccion">
+			<h3 class="mb-0 fs-5">Proyecto Creado Para Rolling Code</h3>
+		</div>
+	</footer>
+	<!--FOOTER-->
+	<script src="../../js/panel-admin/p-admin-usuarios.js"></script>
+	<script src="../../js/panel-admin/p-admin-control-panel.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="../../js/PaginaPrincipal.js"></script>
+	<script src="../../js/loginHandler.js"></script>
+	<script src="../../js/registerHandler.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<link rel="stylesheet" href="../../css/Footer.css" />
+</body>
+
 </html>
