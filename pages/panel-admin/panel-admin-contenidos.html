@@ -206,16 +206,24 @@
             <button id="btn-volver" type="button" class="btn btn-primary btn-sm">< Ir a Panel de administración</button>
           </div>
           <h1 id="encabezado-tablas" class="text-center text-black">Administración de contenidos</h1>
-          <div class="d-flex justify-content-end">
-            <button
-              id="btn-agregarContenido"
-              type="button"
-              data-bs-toggle="modal"
-              data-bs-target="#modalAgregarContenido"
-              class="btn btn-success btn-sm fs-5"
-            >
-              <i class="fa-solid fa-file-import"></i>&nbsp;Agregar nuevo contenido
-            </button>
+          <div class="d-flex justify-content-md-between flex-column-reverse gap-3 flex-sm-row">
+            <div class="input mb-3 d-flex justify-content-start">
+              <input type="text" class="form-control inputFilterContenido" placeholder="Buscar contenido" />
+              <button class="btn btn-danger searchFilterContenido" type="button" id="button-addon2">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+            <div>
+              <button
+                id="btn-agregarContenido"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#modalAgregarContenido"
+                class="btn btn-success btn-sm fs-5"
+              >
+                <i class="fa-solid fa-file-import"></i>&nbsp;Agregar nuevo contenido
+              </button>
+            </div>
           </div>
         </div>
 

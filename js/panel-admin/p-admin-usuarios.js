@@ -9,6 +9,9 @@ const modalEditar = document.getElementById('');
 const formularioEditarUsuario = document.getElementById('formularioEditarUsuario');
 const modalEditarUsuario = document.getElementById('modalEditarUsuario');
 const estadoUsuario = document.getElementById('estadoUsuario');
+const searchFilterUser = document.querySelector('.searchFilterUser');
+const inputSearch = document.querySelector('.inputFilterUser');
+
 let usuariosRegistrados = JSON.parse(localStorage.getItem('usuarios')) || [];
 
 // dropItem.addEventListener('click', (event) => {
@@ -20,11 +23,36 @@ btnVolver.addEventListener('click', () => {
   window.location.href = 'index.html';
 });
 
-const cargaUsuarios = function () {
+// searchFilterUser.addEventListener('click', () => {
+inputSearch.addEventListener('input', () => {
+  const datoABuscar = document.querySelector('.inputFilterUser').value.toLowerCase();
+  if (datoABuscar.length > 0) {
+    const usuarioEncontrado = usuariosRegistrados.filter(function (usuario) {
+      return (
+        String(usuario.id).includes(datoABuscar) ||
+        usuario.nombre.toLowerCase().includes(datoABuscar) ||
+        usuario.email.toLowerCase().includes(datoABuscar)
+      );
+    });
+    cargaUsuarios(usuarioEncontrado);
+    console.log('DATO ENCONTRADO: ', usuarioEncontrado);
+  } else {
+    cargaUsuarios(0);
+  }
+});
+
+const cargaUsuarios = function (usuariosFiltrados) {
+  let arrayUsuarios = [];
+  usuariosFiltrados.length > 0 ? (arrayUsuarios = usuariosFiltrados) : (arrayUsuarios = usuariosRegistrados);
   tablaUsuarios.innerHTML = '';
-  usuariosRegistrados.map(function (usuario) {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
+  arrayUsuarios.map(function (usuario) {
+    tablaHTML(usuario);
+  });
+};
+
+const tablaHTML = function (usuario) {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
         <td data-table="Código" class="border" >${usuario.id}</td>
         <td data-table="Nombre" class="border" >${usuario.nombre}</td>
         <td data-table="Email" class="border" >${usuario.email}</td>
@@ -109,10 +137,9 @@ const cargaUsuarios = function () {
           </button>
         </td>
         `;
-    tablaUsuarios.appendChild(tr);
-  });
+  tablaUsuarios.appendChild(tr);
 };
-cargaUsuarios();
+cargaUsuarios(0);
 
 const handleModalEditarUsuario = function (idUsuario) {
   const tituloModal = document.querySelector('#idUsuarioEditar');
@@ -164,7 +191,7 @@ function editarUsuario(e) {
   //Se carga el nuevo array usuariosRegistrados en localStorage
   console.log(usuariosRegistrados);
   localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
-  cargaUsuarios();
+  cargaUsuarios(0);
 }
 
 function eliminarUsuario(idUsuario) {
@@ -172,7 +199,7 @@ function eliminarUsuario(idUsuario) {
     return usuario.id !== idUsuario;
   });
   localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
-  cargaUsuarios();
+  cargaUsuarios(0);
 }
 
 function controlEstado(checkbox) {
@@ -197,7 +224,7 @@ function cambiarEstadoUsuario(idUsuario, estado) {
     : (usuariosRegistrados[usuarioIndex].stateActivation = 2);
 
   localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
-  cargaUsuarios();
+  cargaUsuarios(0);
 }
 
 function cambiarRol(idUsuario, rolUsuario) {
@@ -214,5 +241,5 @@ function cambiarRol(idUsuario, rolUsuario) {
     : (usuariosRegistrados[usuarioIndex].userRol = 1);
 
   localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
-  cargaUsuarios();
+  cargaUsuarios(0);
 }
