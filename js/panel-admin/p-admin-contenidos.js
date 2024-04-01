@@ -9,6 +9,8 @@ const tabla = document.querySelector('#tabla');
 const btnVolver = document.getElementById('btn-volver');
 const submitAgregarContenido = document.getElementById('formularioAdminContenido');
 const formularioEditarContenido = document.getElementById('formularioEditarContenido');
+const searchFilterContenido = document.querySelector('.searchFilterContenido');
+const inputSearch = document.querySelector('.inputFilterContenido');
 let allMovies = JSON.parse(localStorage.getItem('movies')) || [];
 
 class ContenidoStreaming {
@@ -23,6 +25,12 @@ class ContenidoStreaming {
     this.isDestacado = isDestacado;
   }
 }
+
+inputSearch.addEventListener('input', () => {
+  if (inputSearch.value.length === 0) {
+    cargarContenido(0);
+  }
+});
 
 console.log(titulo.textContent);
 
@@ -45,14 +53,40 @@ function agregarContenidoNuevo(e) {
   const nuevoContenido = new ContenidoStreaming(id, nombre, categoria, descripcion, urlImagen, urlVideo, false, false);
   allMovies.push(nuevoContenido);
   localStorage.setItem('movies', JSON.stringify(allMovies));
-  cargarContenido();
+  cargarContenido(0);
 }
 
-function cargarContenido() {
+// searchFilterContenido.addEventListener('click', () => {
+inputSearch.addEventListener('input', () => {
+  const datoABuscar = document.querySelector('.inputFilterContenido').value.toLowerCase();
+  if (datoABuscar.length > 0) {
+    const contenidoEncontrado = allMovies.filter(function (movie) {
+      return (
+        String(movie.id).includes(datoABuscar) ||
+        movie.nombre.toLowerCase().includes(datoABuscar) ||
+        movie.categoria.toLowerCase().includes(datoABuscar) ||
+        movie.descripcion.toLowerCase().includes(datoABuscar)
+      );
+    });
+    cargarContenido(contenidoEncontrado);
+    console.log('DATO ENCONTRADO: ', contenidoEncontrado);
+  } else {
+    cargarContenido(0);
+  }
+});
+
+function cargarContenido(contenidosFiltrados) {
+  let arrayContenido = [];
+  contenidosFiltrados.length > 0 ? (arrayContenido = contenidosFiltrados) : (arrayContenido = allMovies);
   tablaContenido.innerHTML = '';
-  allMovies.map(function (movie) {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
+  arrayContenido.map(function (movie) {
+    tablaHTML(movie);
+  });
+}
+
+const tablaHTML = function (movie) {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
                 <td data-table="Código" class="border">${movie.id}</td>
                 <td data-table="Nombre" class="border nombre-movie">${movie.nombre}</td>
                 <td data-table="Categoría" class="border">${movie.categoria}</td>
@@ -114,10 +148,9 @@ function cargarContenido() {
                     })"><i class="fa-solid fa-trash-can"></i></button>
                   </div>
                 </td>`;
-    tablaContenido.appendChild(tr);
-  });
-}
-cargarContenido();
+  tablaContenido.appendChild(tr);
+};
+cargarContenido(0);
 
 /** Boton Volver */
 btnVolver.addEventListener('click', () => {
@@ -176,7 +209,7 @@ function editarContenido(e) {
   //Se carga el nuevo array allMovies en localStorage
   console.log(allMovies);
   localStorage.setItem('movies', JSON.stringify(allMovies));
-  cargarContenido();
+  cargarContenido(0);
 }
 
 /** Boton Destacar */
@@ -220,7 +253,7 @@ const destacarMovie = function (id) {
     return;
   }
 };
-cargarContenido();
+cargarContenido(0);
 
 /** Switch Publicado */
 
@@ -268,5 +301,5 @@ function eliminarContenido(id) {
     return movie.id !== id;
   });
   localStorage.setItem('movies', JSON.stringify(allMovies));
-  cargarContenido();
+  cargarContenido(0);
 }
