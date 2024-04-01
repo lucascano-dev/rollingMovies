@@ -1,82 +1,325 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-  background-color: rgb(100, 99, 99);
-  color: white;
+	background-color: rgb(100, 99, 99);
+	/* color: white; */
+}
+
+.container-navbar {
+	width: 100%;
+	z-index: 1;
 }
 
 .navbar li a {
-  color: white !important;
+	color: white !important;
 }
 
 .container-panel-lateral-expandido {
-  width: 25%;
-  background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
-  padding: 10px;
-  height: 100vh;
-  display: block;
+	width: 21%;
+	background-color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+	padding: 10px;
+	height: 100%;
+	/* display: block; */
+	position: fixed;
+	z-index: 1;
+	/* border: 1px solid rgb(255, 255, 255); */
+}
+
+.container-elementos-panel {
+	width: 19%;
+	position: fixed;
+	/* border: 1px solid rgb(222, 7, 182); */
+}
+
+.seccion-admin-usuario {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+/* ===== INICIO MANEJAR VISIBILIDAD DE PANEL LATERAL IZQUIERDO ===== */
+.container-panel-lateral-expandido {
+	/* display: block; */
 }
 
 .contenedor-head-titulo-panel {
-  visibility: hide;
+	width: 15px;
+	padding: 0.5;
 }
 
-btn-manipular-panel-izquierdo-oculto {
-  display: block;
+.container-panel-lateral-oculto {
+	padding-top: 10px;
+	/* display: none; */
+	width: 15px;
+	height: 100%;
+	background-color: black;
+	position: fixed;
+	z-index: 1;
 }
 
-/* @media (width >= 600px) and (width <= 3400px) {
-  .container-panel-lateral-expandido {
-    width: 15%;
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    padding: 10px;
-    height: 100vh;
-  }
-} */
+/* ===== FIN MANEJAR VISIBILIDAD DE PANEL LATERAL IZQUIERDO =====*/
 
 .btn-admin {
-  width: 100%;
-  height: auto;
+	width: 100%;
+	height: auto;
+}
+
+.container-panel-derecho {
+	width: 100%;
+	padding: 30px;
+	background-color: gray;
+
+	flex-direction: column;
+	/* border: red 1px solid; */
 }
 
 .container-tablas {
-  margin: 20px;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  width: 100%;
+	width: 100%;
+	height: 350px;
+	border: redx 1px solid;
 }
 
 .ancho-descripcion {
-  width: 1px;
+	width: 1px;
 }
 
-@media (width <=1366px) {
-  table {
-    font-size: small;
-  }
+.container-columnas-administracion {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+
+.encabezado-titulo-botones {
+	margin-bottom: 20px;
+	width: 100%;
+	/* border: 1px solid rgb(255, 255, 255); */
+	display: flex;
+	justify-content: center;
+	/* flex-direction: column; */
+	flex-wrap: wrap;
 }
 
 .contenido-destacado {
-  color: yellow;
+	color: yellow;
 }
 
 .contenido-no-destacado {
-  color: rgb(202, 202, 202);
+	color: rgb(202, 202, 202);
 }
 
 .dropdown-toggle-opcion-tabla::after {
-  /** Quitar flechas de dropdown de bootstrap*/
-  content: none;
+	/** Quitar flechas de dropdown de bootstrap*/
+	content: none;
 }
 
 .dropdown-toggle-opcion-tabla {
-  font-size: 12px;
-  width: 10px;
+	font-size: 12px;
+	width: 10px;
 }
+
+/*ENCABEZADO FIJO */
+thead tr th {
+	position: sticky;
+	top: -2px;
+	z-index: 1;
+	background-color: #ffffff;
+}
+
+@media (width <=820px) {
+	.container-panel-lateral-expandido {
+		width: 55%;
+	}
+
+	.container-elementos-panel {
+		width: 50%;
+	}
+
+	@media (width <=768px) {
+		.btn-principales {
+			flex-direction: column;
+			margin: 20px;
+		}
+	}
+
+	/* TABLAS RESPONSIVE */
+	@media (width <=440px) {
+
+		#tablaContenido,
+		#tablaUsuarios {
+			width: 100%;
+			font-size: 0.8rem;
+		}
+
+		.container-panel-derecho {
+			/* padding: 100px; */
+		}
+
+		.separador {
+			border-bottom: 10px solid rgb(239, 174, 174) !important;
+		}
+
+		.nombre-movie {
+			width: 100%;
+		}
+
+		table {
+			width: 100%;
+		}
+
+		tr td {
+			width: 100%;
+		}
+
+		table thead tr {
+			display: none;
+		}
+
+		table tr {
+			display: block;
+		}
+
+		table th,
+		table td {
+			padding: 0.5em;
+		}
+
+		table td {
+			text-align: right;
+			display: block;
+			font-size: 1.1em;
+		}
+
+		table td::before {
+			content: attr(data-table) ': ';
+			float: left;
+		}
+
+		tbody tr:nth-child {
+			background-color: aquamarine !important;
+		}
+
+		.botones-accion {
+			display: flex !important;
+			justify-content: end !important;
+		}
+	}
+
+	/* TABLAS RESPONSIVE */
+
+	@media (width > 441px) {
+		.nombre-movie {
+			width: 200px;
+		}
+
+		#tablaContenido,
+		#tablaUsuarios {
+			width: 100%;
+			font-size: 0.8rem;
+		}
+	}
+
+	@media (width > 1540px) {
+		.container-tablas {
+			/* width: 100%; */
+			height: 550px;
+			/* border: redx 1px solid; */
+		}
+	}
+
+	/* FOOTER */
+	.FooterContainer {
+		display: flex;
+		background-color: rgb(227, 227, 227);
+		padding: 1rem;
+		font-family: 'Roboto', sans-serif;
+		color: #333333;
+		font-style: normal;
+	}
+
+	.FooterContainer a:hover {
+		color: #ccc;
+	}
+
+	.FooterSeccion {
+		text-align: center;
+		flex: 1;
+		padding: 0.5rem;
+		font-size: 1rem;
+		margin: auto;
+	}
+
+	.FooterSeccion h3 {
+		font-size: 18px;
+	}
+
+	.FooterSeccion h2 {
+		font-size: 1rem;
+	}
+
+	.Logo {
+		width: 30px;
+		height: auto;
+		margin: 21px;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.FooterSeccion a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.vertical-line {
+		border-left: 1px solid #ffffff;
+	}
+
+	@media (max-width: 768px) {
+		.FooterContainer {
+			flex-direction: column;
+		}
+
+		.vertical-line {
+			border-left: none;
+		}
+
+		.Logo {
+			width: 30px;
+			margin: 15px;
+		}
+
+		.FooterSeccion {
+			margin: 1rem;
+		}
+
+		.buttonclass {
+			margin: 0 !important;
+			width: 3.4rem;
+		}
+
+		.FooterSeccion a {
+			font-size: 11px;
+		}
+
+		.FooterSeccion h3 {
+			font-size: 13px;
+		}
+
+		.FooterSeccion:nth-child(1)::after {
+			content: '';
+			display: block;
+			border-top: 1px solid #ccc;
+			margin-top: 10px;
+			padding-top: 10px;
+		}
+	}
+
+	/*FOOTER*/

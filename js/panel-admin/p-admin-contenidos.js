@@ -26,12 +26,12 @@ class ContenidoStreaming {
 
 console.log(titulo.textContent);
 
-dropItem.addEventListener('click', (event) => {
-  event.preventDefault();
-  console.log('Click');
-});
+// dropItem.addEventListener('click', (event) => {
+//   event.preventDefault();
+//   console.log('Click');
+// });
 
-formularioAdminContenido.addEventListener('submit', agregarContenidoNuevo);
+submitAgregarContenido.addEventListener('submit', agregarContenidoNuevo);
 
 function agregarContenidoNuevo(e) {
   e.preventDefault();
@@ -53,26 +53,26 @@ function cargarContenido() {
   allMovies.map(function (movie) {
     const tr = document.createElement('tr');
     tr.innerHTML = `
-                <td class="border">${movie.id}</td>
-                <td class="border" style="width: 100px">${movie.nombre}</td>
-                <td class="border">${movie.categoria}</td>
-                <td class="border">
-                  <span class="d-inline-block text-truncate" style="width: 100px; text-overflow: ellipsis"
+                <td data-table="Código" class="border">${movie.id}</td>
+                <td data-table="Nombre" class="border nombre-movie">${movie.nombre}</td>
+                <td data-table="Categoría" class="border">${movie.categoria}</td>
+                <td data-table="Descripción" class="border">
+                  <span class="d-inline-block text-truncate" style="width: 200px; text-overflow: ellipsis"
                     >${movie.descripcion}</span
                   >
                 </td>
-                <td class="border">
+                <td data-table="URL Imagen" class="border">
                   <img
                     src="${movie.urlImagen}"
                     alt="${movie.descripcionImagen}"
                     width="60px"
                   />
                 </td>
-                <td class="border"><span class="d-inline-block text-truncate" style="width: 150px">${
+                <td data-table="URL Video" class="border"><span class="d-inline-block text-truncate" style="width: 150px">${
                   movie.urlVideo
                 }</span></td>
-                <td class="border">
-                  <div class="form-check form-switch">
+                <td data-table="Publicado" class="border">
+                  <div class="d-flex justify-content-end form-check form-switch">
                     <input
                       class="form-check-input"
                       type="checkbox"
@@ -90,11 +90,11 @@ function cargarContenido() {
                     </label>
                   </div>
                 </td>
-                <td class="border">
+                <td data-table="Acciones" class="border separador " style="width: 200px>
                   <div class="d-flex gap-1 flex-wrap">
                     <button id="btnEditar"
                       type="button"
-                      class="btn btn-warning btn-sm fs-6 btn-editar"
+                      class="btn btn-warning btn-sm btn-editar"
                       data-bs-toggle="modal" data-bs-target="#modalEditarContenido"
                       onclick="handleModalEditarMovie(${movie.id})">
                         <i class="fa-solid fa-pen-to-square"></i>
@@ -235,7 +235,7 @@ const publicarContenido = function (id) {
     iconoPublicado.classList.add('publicado');
 
     //Actualizo el valor de la propiedad "Publicado" del objeto
-    allMoviesIndex = allMovies.findIndex(function (movie) {
+    allMoviesIndex = allMovies.findIndex((movie) => {
       // console.log('MOVIE.ID=', movie.id, 'ID:', id);
       return movie.id === id;
     });

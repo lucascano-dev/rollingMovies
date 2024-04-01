@@ -11,12 +11,9 @@ const modalEditarUsuario = document.getElementById('modalEditarUsuario');
 const estadoUsuario = document.getElementById('estadoUsuario');
 let usuariosRegistrados = JSON.parse(localStorage.getItem('usuarios')) || [];
 
-console.log(titulo.textContent);
-console.log(usuariosRegistrados);
-
-dropItem.addEventListener('click', (event) => {
-  event.preventDefault();
-});
+// dropItem.addEventListener('click', (event) => {
+//   event.preventDefault();
+// });
 
 /** Boton Volver */
 btnVolver.addEventListener('click', () => {
@@ -28,11 +25,11 @@ const cargaUsuarios = function () {
   usuariosRegistrados.map(function (usuario) {
     const tr = document.createElement('tr');
     tr.innerHTML = `
-        <td class="border" >${usuario.id}</td>
-        <td class="border" >${usuario.nombre}</td>
-        <td class="border" >${usuario.email}</td>
-        <td class="border" >${usuario.password}</td>
-        <td class="border" >
+        <td data-table="Código" class="border" >${usuario.id}</td>
+        <td data-table="Nombre" class="border" >${usuario.nombre}</td>
+        <td data-table="Email" class="border" >${usuario.email}</td>
+        <td data-table="Password" class="border" >${usuario.password}</td>
+        <td data-table="Estado" class="border" >
           <div class="d-flex justify-content-end">
             <div>
               <span id="estadoUsuario">
@@ -67,7 +64,7 @@ const cargaUsuarios = function () {
             </div>
           </div>
         </td>
-        <td class="border" >
+        <td data-table="Rol" class="border" >
           <div class="d-flex justify-content-end">
           <div>
           ${usuario.userRol === 0 ? 'Administrador&nbsp' : usuario.userRol === 1 ? 'Suscriptor&nbsp' : null}
@@ -92,7 +89,7 @@ const cargaUsuarios = function () {
           </div>
           </div>
         </td>
-        <td class="d-flex justifyc-content-center align-items-center gap-2 boder border-secondary">
+        <td data-table="Acciones" class="border separador">
           <button
             id="btnEditar${usuario.id}"
             type="button"
@@ -127,11 +124,11 @@ const handleModalEditarUsuario = function (idUsuario) {
     return usuario.id == idUsuario;
   });
 
-  console.log('MI USUARIO:', usuarioSeleccionado);
+  // console.log('MI USUARIO:', usuarioSeleccionado);
 
   tituloModal.textContent = usuarioSeleccionado.id;
   nombreModal.value = usuarioSeleccionado.nombre;
-  emailModal.value = usuarioSeleccionado.email;
+  emailModal.value = usuarioSeleccionado.correo;
   passowrdModal.value = usuarioSeleccionado.password;
 
   formularioEditarUsuario.setAttribute(

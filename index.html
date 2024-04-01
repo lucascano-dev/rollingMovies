@@ -2,18 +2,14 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rolling Movies</title>
-
-    <link rel="stylesheet" href="css/Footer.css">
-
-
-
-
+    <link rel="stylesheet" href="css/Footer.css" />
 </head>
 
 <body>
+    <!--NAVBAR-->
     <nav class="Navbar">
         <div class="Hamburguer" onclick="toggleMenu()">
             <div class="line"></div>
@@ -22,171 +18,602 @@
         </div>
 
         <ul class="menu" id="menu">
-            <li><a href="#">PELICULAS</a></li>
-            <li><a href="#">LOGIN</a></li>
-            <li><!-- Button trigger modal -->
+            <!-- <li><button type="button" class="btn bg-transparent">PELICULAS</button></li> -->
+            <li>
+                <button type="button" class="btn btn-primary bg-transparent text-black" id="loginButton"
+                    data-bs-toggle="modal" data-bs-target="#modalLogin">
+                    INGRESO
+                </button>
+            </li>
+            <li>
+                <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary bg-transparent text-black" id="registerButton"
                     data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    REGISTER
+                    REGISTRO
                 </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="" class="row" id="form">
-                                    <label for="name" class="col-4">Nombre: </label>
-                                    <input type="text" name="name" id="name" class="col-6 my-2">
-                                    <label for="pass" class="col-4">Correo Electronico</label>
-                                    <input type="email" name="mail" id="mail" class="col-6 my-2">
-                                    <label for="pass" class="col-4">Contraseña</label>
-                                    <input type="password" name="pass" id="pass" class="col-6 my-2">
-                                    <label for="confirmPass" class="col-4">Confirmar Contraseña</label>
-                                    <input type="password" name="confirmPass" id="confirmPass" class="col-6 my-2">
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn btn-primary" id="regUser">Register!</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </li>
-            <li id="AdminUser" style="display: none;"><a href="#">ADMINISTRACION</a></li>
+            <li id="AdminUser" style="display: none">
+                <button type="button" class="btn btn-primary bg-transparent text-black" id="navButton"
+                    onclick="adminHandler()">
+                    ADMINISTRACION
+                </button>
+            </li>
         </ul>
 
-        <div class="CinestrenarLogo">
-            <img src="./assets/img/Cinestrenar Logo.png" alt="Cinestrenar" class="CinestrenarLogo">
-        </div>
+        <a href="./index.html"><img src="./assets/img/Cinestrenar Logo sin sombra.png" alt="Cinestrenar"
+                class="CinestrenarLogo btn bg-transparent" /></a>
     </nav>
 
-    <footer class="FooterContainer">
-
-        <div class="FooterSeccion">
-
-            <a href="https://www.instagram.com/" style="text-decoration: none;">
-                <img src="./assets/img/Instagram Logo.png" alt="Instagram" class="Logo">
-            </a>
-
-            <a href="https://ar.linkedin.com//" style="text-decoration: none;">
-                <img src="./assets/img/Linkedin Logo.png" alt="Linkedin" class="Logo">
-            </a>
-
-            <a href="https://twitter.com/" style="text-decoration: none;">
-                <img src="./assets/img/X Logo.png" alt="X" class="Logo">
-            </a>
-
-            <a href="https://www.facebook.com/" style="text-decoration: none;">
-                <img src="./assets/img/Facebook icon.png" alt="Facebook" class="Logo">
-            </a>
-
-            <a href="https://www.youtube.com/" style="text-decoration: none;">
-                <img src="./assets/img/Youtube Logo.png" alt="Youtube" class="Logo">
-            </a>
-        </div>
-
-        <div class="vertical-line"></div>
-
-        <div class="FooterSeccion">
-            <a href="#">
-                <h2>ACERCA DE NOSOTROS</h2>
-            </a>
-
-
-        </div>
-
-        <div class="vertical-line"></div>
-
-    <div class="FooterSeccion">
-        <a href="#">
-            <h2>ACERCA DE NOSOTROS</h2>
-        </a>
-        
-    </div>
-
-    <div class="vertical-line"></div>
-
-    <div class="FooterSeccion">
-        <a href="#">
-            <h2>CONTACTO</h2>
-        </a>
-        
-    </div>
-
-    <div class="vertical-line"></div>
-
-    <div class="FooterSeccion">
-    
-    <h3>Proyecto Creado Para Rolling Code</h3>
-      
-        
-    </div>
-
-
-   </footer>
-   <style>
-        .img-100 {
-            max-width: 100%;
-            max-height: 100%;
-        }
-        .iframe-100{
-            max-width: 100%;
-            max-height: 100%;
-        }
-    </style>
-    <a href="#modalArticulo" role="button" class="btn btn-primary" data-toggle="modal">Detalles</a>
-    <div id="modalArticulo" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <img src="./assets/img/mos_glyph_hires-1.jpg" class="img-100">
-
-                <button id = "reproducirBtn">Reproducir</button>
-                
-                
-                <p>El hombre de acero (en inglés, Man of Steel) es una película británico estadounidense​ de superhéroes de 2013 basada en el personaje Superman de DC Comics.</p>
-
-                <h5>Elenco: Henry Cavill, Amy Adams, Russel Crowe, Diane Lane, Kevin Costner, Michael Shanon</h5>
-
-                <!-- Otra imagen -->
-                <!-- <img src="../images/Imagen1200x1200.jpg" class="img-100"> -->
+    <!--PAGINA PRINCIPAL-->
+    <!-- seccion peliculas destacadas -->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <button type="button" class="SlideButton">
+                    <img class="img-fluid imgButton" style="width: 100vw" src="./assets/img/Interstellar.png"
+                        alt="Interstellar" />
+                </button>
+            </div>
+            <div class="carousel-item">
+                <button type="button" class="SlideButton">
+                    <img class="img-fluid imgButton" style="width: 100vw" src="./assets/img/Scarface.png"
+                        alt="Scarface" />
+                </button>
+            </div>
+            <div class="carousel-item">
+                <button type="button" class="SlideButton">
+                    <img class="img-fluid imgButton" style="width: 100vw" src="./assets/img/Breaking-Bad.png"
+                        alt="Breaking-Bad" />
+                </button>
             </div>
         </div>
     </div>
-    <script>
-        const reproducirBtn = document.getElementById('reproducirBtn');
-        reproducirBtn.addEventListener('click', () => {
-            window.location.href = '404.html'; // Cambia la ruta según la ubicación de tu archivo HTML
-        });
-    </script>
+    <!-- seccion peliculas destacadas -->
+    <!-- SECCION DE CARRUSELES POR CATEGORIA -->
+    <!-- carrusel comedia -->
+    <div id="carouselComedia" class="carousel slide d-none d-md-block">
+        <h2 class="pt-3 text-center fs-3 mb-0">COMEDIA</h2>
+        <div class="carousel-inner">
+            <div class="carousel-item active d-none d-md-block">
+                <div class="row row-cols-5 p-3 row-cols-md-5 g-4">
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/Espia y medio.png" alt="Espia y medio"
+                                class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/kickass.png" alt="kickass" class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/jack y jill.png" alt="jack y jill"
+                                class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/malditos vecinos.png" alt="malditos vecinos"
+                                class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/Ted.png" alt="Ted" class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row row-cols-5 p-3 row-cols-md-5 g-4">
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/BayWatch.png" alt="BayWatch"
+                                class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/son como niños.png" alt="son como niños"
+                                class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/Superbad.png" alt="Superbad"
+                                class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/vacaciones.png" alt="vacaciones"
+                                class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/un viernes de locos.png" alt="un viernes de locos"
+                                class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <script src="./js/app.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
-    <script src="./js/PaginaPrincipal.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <button type="button" class="carousel-control-prev pt-5" style="width: 2rem" type="button"
+            data-bs-target="#carouselComedia" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-black rounded-circle" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button type="button" class="carousel-control-next pt-5" style="width: 2rem" type="button"
+            data-bs-target="#carouselComedia" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-black rounded-circle" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div id="carouselComedia2" class="carousel slide d-block d-md-none">
+        <h2 class="pt-3 text-center fs-3 mb-0">COMEDIA</h2>
+        <div class="carousel-inner">
+            <div class="carousel-item p-3 active"><img src="./assets/img/Espia y medio.png" alt="Espia y medio"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" /></div>
+            <div class="carousel-item p-3"><img src="./assets/img/kickass.png" alt="kickass"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" /></div>
+            <div class="carousel-item p-3"><img src="./assets/img/jack y jill.png" alt="jack y jill"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" /></div>
+            <div class="carousel-item p-3"><img src="./assets/img/malditos vecinos.png" alt="malditos vecinos"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" /></div>
+            <div class="carousel-item p-3"><img src="./assets/img/Ted.png" alt="Ted"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" /></div>
+            <div class="carousel-item p-3"><img src="./assets/img/BayWatch.png" alt="BayWatch"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" /></div>
+            <div class="carousel-item p-3"><img src="./assets/img/son como niños.png" alt="son como niños"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" /></div>
+            <div class="carousel-item p-3"><img src="./assets/img/Superbad.png" alt="Superbad"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" /></div>
+            <div class="carousel-item p-3"><img src="./assets/img/vacaciones.png" alt="vacaciones"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" /></div>
+            <div class="carousel-item p-3"><img src="./assets/img/un viernes de locos.png" alt="un viernes de locos"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" /></div>
+        </div>
+        <button type="button" class="carousel-control-prev pt-5" style="width: 2rem" type="button"
+            data-bs-target="#carouselComedia2" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-black rounded-circle" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button type="button" class="carousel-control-next pt-5" style="width: 2rem" type="button"
+            data-bs-target="#carouselComedia2" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-black rounded-circle" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- carrusel comedia -->
+
+
+    <!-- carrusel terror -->
+    <div id="carouselTerror" class="carousel slide d-none d-md-block">
+        <h2 class="pt-3 text-center fs-3 mb-0">TERROR</h2>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row row-cols-5 p-3 row-cols-md-5 g-4">
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/Dahmer.png" alt="Dahmer" class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/Martirs.png" alt="Martirs" class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/Saw X.png" alt="Saw X" class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/Silent Hill.png" alt="Silent Hill"
+                                class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/La Purga.png" alt="La Purga"
+                                class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row row-cols-5 p-3 row-cols-md-5 g-4">
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/El Conjuro.png" class="btn border-0 p-0 m-0 imgButton"
+                                alt="El Conjuro" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/El Resplandor.png" alt="El Resplandor"
+                                class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/La bruja de Blair.png" alt="La bruja de Blair"
+                                class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/It.png" alt="It" class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/Terrifier.png" alt="Terrifier"
+                                class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="carousel-control-prev pt-5" style="width: 2rem" type="button"
+            data-bs-target="#carouselTerror" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-black rounded-circle" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button type="button" class="carousel-control-next pt-5" style="width: 2rem" type="button"
+            data-bs-target="#carouselTerror" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-black rounded-circle" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div id="carouselComedia2" class="carousel slide d-block d-md-none">
+        <h2 class="pt-3 text-center fs-3 mb-0">TERROR</h2>
+        <div class="carousel-inner">
+            <div class="carousel-item p-3 active">
+                <img src="./assets/img/Dahmer.png" alt="Dahmer"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" />
+            </div>
+            <div class="carousel-item p-3">
+                <img src="./assets/img/Martirs.png" alt="Martirs"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" />
+            </div>
+            <div class="carousel-item p-3">
+                <img src="./assets/img/Saw X.png" alt="Saw X"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" />
+            </div>
+            <div class="carousel-item p-3">
+                <img src="./assets/img/Silent Hill.png" alt="Silent Hill"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" />
+            </div>
+            <div class="carousel-item p-3">
+                <img src="./assets/img/La Purga.png" alt="La Purga"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" />
+            </div>
+            <div class="carousel-item p-3">
+                <img src="./assets/img/El Conjuro.png" class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto"
+                    alt="El Conjuro" />
+            </div>
+            <div class="carousel-item p-3">
+                <img src="./assets/img/El Resplandor.png" alt="El Resplandor"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" />
+            </div>
+            <div class="carousel-item p-3">
+                <img src="./assets/img/La bruja de Blair.png" alt="La bruja de Blair"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" />
+            </div>
+            <div class="carousel-item p-3">
+                <img src="./assets/img/It.png" alt="It" class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" />
+            </div>
+            <div class="carousel-item p-3">
+                <img src="./assets/img/Terrifier.png" alt="Terrifier"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" />
+            </div>
+        </div>
+        <button type="button" class="carousel-control-prev pt-5" style="width: 2rem" type="button"
+            data-bs-target="#carouselComedia2" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-black rounded-circle" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button type="button" class="carousel-control-next pt-5" style="width: 2rem" type="button"
+            data-bs-target="#carouselComedia2" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-black rounded-circle" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- carrusel terror -->
+
+    <!-- carrusel scifi -->
+    <div id="carouselCienciaFiccion" class="carousel slide d-none d-md-block">
+        <h2 class="pt-3 text-center fs-3 mb-0">CIENCIA FICCION</h2>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row row-cols-5 p-3 row-cols-md-5 g-4">
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/1 Origen.png" alt="Origen" class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/2 Matrix.png" alt="Matrix" class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/5-Blade Runner.png" class="btn border-0 p-0 imgButton m-0"
+                                alt="Blade Runner" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/8-tenet.png" alt="Tenet" class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/4-el creador.png" alt="El Creador"
+                                class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row row-cols-5 p-3 row-cols-md-5 g-4">
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/10-godzilla.png" alt="Godzilla"
+                                class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/6-tron.png" alt="Tron" class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/7-Loki.png" alt="Loki" class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/9-la llegada.png" alt="La llegada"
+                                class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./assets/img/3 Alien.png" alt="Alien" class="btn border-0 p-0 m-0 imgButton" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="carousel-control-prev pt-5" style="width: 2rem" type="button"
+            data-bs-target="#carouselCienciaFiccion" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-black rounded-circle" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button type="button" class="carousel-control-next pt-5" style="width: 2rem" type="button"
+            data-bs-target="#carouselCienciaFiccion" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-black rounded-circle" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div id="carouselCienciaFiccion2" class="carousel slide d-block d-md-none" data-bs-ride="carousel">
+        <h2 class="pt-3 text-center fs-3 mb-0">CIENCIA FICCION</h2>
+        <div class="carousel-inner">
+            <div class="carousel-item p-3 active">
+                <img src="./assets/img/1 Origen.png" alt="Origen"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" />
+            </div>
+            <div class="carousel-item p-3">
+                <img src="./assets/img/2 Matrix.png" alt="Matrix"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" />
+            </div>
+            <div class="carousel-item p-3">
+                <img src="./assets/img/5-Blade Runner.png" class="btn border-0 p-0 imgButton m-0 w-100 mh-75 m-auto"
+                    alt="Blade Runner" />
+            </div>
+            <div class="carousel-item p-3">
+                <img src="./assets/img/8-tenet.png" alt="Tenet"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" />
+            </div>
+            <div class="carousel-item p-3">
+                <img src="./assets/img/4-el creador.png" alt="El Creador"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" />
+            </div>
+            <div class="carousel-item p-3">
+                <img src="./assets/img/10-godzilla.png" alt="Godzilla"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" />
+            </div>
+            <div class="carousel-item p-3">
+                <img src="./assets/img/6-tron.png" alt="Tron"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" />
+            </div>
+            <div class="carousel-item p-3">
+                <img src="./assets/img/7-Loki.png" alt="Loki"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" />
+            </div>
+            <div class="carousel-item p-3">
+                <img src="./assets/img/9-la llegada.png" alt="La llegada"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" />
+            </div>
+            <div class="carousel-item p-3">
+                <img src="./assets/img/3 Alien.png" alt="Alien"
+                    class="btn border-0 p-0 m-0 imgButton w-100 mh-75 m-auto" />
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselCienciaFiccion2"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselCienciaFiccion2"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- carrusel scifi -->
+    <!-- SECCION DE CARRUSELES POR CATEGORIA -->
+    <!--PAGINA PRINCIPAL-->
+
+    <!-- Experimento -->
+
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="detallePelicula" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg h-100 d-flex justify-content-center align-items-center" id="contenedorModal">
+            <!-- Agregamos la clase modal-lg para que el modal sea grande y le añadimos un margen en la parte superior del 10% del alto de la pantalla -->
+            <div class="modal-content" id="bg-image">
+                <!-- <div class="modal-header">
+                     <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Modal title</h1>
+                    </div> -->
+                <div class="modal-body" id="modal-body">
+                    <!-- <button type="button" class="btn-close mt-3 me-3" data-bs-dismiss="modal" aria-label="Close"
+                        style="position: absolute; top: 0; right: 0; z-index: 3; "></button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal login -->
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Ingreso</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="row" id="form">
+                        <div class="col-12">
+                            <label for="user" class="form-label">Nombre/Correo Electrónico:</label>
+                            <input type="text" name="user" id="user" class="form-control" />
+                        </div>
+                        <div class="col-12">
+                            <label for="passUser" class="form-label">Contraseña:</label>
+                            <input type="password" name="passUser" id="passUser" class="form-control" />
+                        </div>
+                    </form>
+                    <button onclick="location.href='./pages/404.html'" class="btn text-start text-primary">
+                        ¿Olvidaste tu contraseña? Haz clic aquí
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="logUser">Ingresar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Registro -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Registro</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="row" id="form">
+                        <label for="name" class="col-4">Nombre: </label>
+                        <input type="text" name="name" id="name" class="col-6 my-2" />
+                        <label for="pass" class="col-4">Correo Electronico</label>
+                        <input type="email" name="mail" id="mail" class="col-6 my-2" />
+                        <label for="pass" class="col-4">Contraseña</label>
+                        <input type="password" name="pass" id="pass" class="col-6 my-2" />
+                        <label for="confirmPass" class="col-4">Confirmar Contraseña</label>
+                        <input type="password" name="confirmPass" id="confirmPass" class="col-6 my-2" />
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <button type="button" class="btn btn-primary" id="regUser">
+                        Registrarse!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--FOOTER-->
+    <footer class="FooterContainer">
+        <div class="FooterSeccion">
+            <a class="btn bg-transparent p-0 m-0 buttonclass" href="./pages/404.html" style="text-decoration: none">
+                <img src="./assets/img/Instagram Logo.png" alt="Instagram" class="Logo" />
+            </a>
+
+            <a class="btn bg-transparent p-0 m-0 buttonclass" href="./pages/404.html" style="text-decoration: none">
+                <img src="./assets/img/Linkedin Logo.png" alt="Linkedin" class="Logo" />
+            </a>
+
+            <a class="btn bg-transparent p-0 m-0 buttonclass" href="./pages/404.html" style="text-decoration: none">
+                <img src="./assets/img/X Logo.png" alt="X" class="Logo" />
+            </a>
+
+            <a class="btn bg-transparent p-0 m-0 buttonclass" href="./pages/404.html" style="text-decoration: none">
+                <img src="./assets/img/Facebook icon.png" alt="Facebook" class="Logo" />
+            </a>
+
+            <a class="btn bg-transparent p-0 m-0 buttonclass" href="./pages/404.html" style="text-decoration: none">
+                <img src="./assets/img/Youtube Logo.png" alt="Youtube" class="Logo" />
+            </a>
+        </div>
+
+        <div class="vertical-line"></div>
+        <div class="vertical-line"></div>
+
+        <div class="FooterSeccion">
+            <a href="./pages/acercade.html">
+                <h2 class="mb-0 fs-5">ACERCA DE NOSOTROS</h2>
+            </a>
+        </div>
+        <div class="vertical-line"></div>
+
+        <div class="FooterSeccion">
+            <a href="./pages/contacto.html">
+                <h2 class="mb-0 fs-5">CONTACTO</h2>
+            </a>
+        </div>
+
+        <div class="vertical-line"></div>
+
+        <div class="FooterSeccion">
+            <h3 class="mb-0 fs-5">Proyecto Creado Para Rolling Code</h3>
+        </div>
+    </footer>
+    <!--FOOTER-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
-
+    <script src="./js/PaginaPrincipal.js"></script>
+    <script src="./js/loginHandler.js"></script>
+    <script src="./js/registerHandler.js"></script>
+    <link rel="stylesheet" href="css/Footer.css" />
+    <link rel="stylesheet" href="css/modalPP.css" />
 </body>
 
 </html>
