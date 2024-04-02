@@ -1,135 +1,126 @@
+const sectionCarrusel = document.getElementById('contenedor-carruseles');
+let allMovies = JSON.parse(localStorage.getItem('movies')) || [];
+
+const categoriasUnicas = Array.from(new Set(allMovies.map((movie) => movie.categoria)));
+
+categoriasUnicas.forEach((categoria) => {
+  // Filtrar las películas que pertenecen a esta categoría
+  const moviesInCategory = allMovies.filter((movie) => movie.categoria === categoria);
+
+  // Verificar si hay películas en esta categoría
+  if (moviesInCategory.length > 0) {
+    const div = document.createElement('div');
+    div.innerHTML = `
+      <h1 class="text-center">${categoria}</h1>
+      <div class="carousel">
+        <div id="slider${categoria}" class="carousel-items d-flex">
+          ${moviesInCategory
+            .map(
+              (movie) => `
+            <div class="card">
+              <img src="${movie.urlImagen}" class="card-img-top" alt="${movie.nombre}">
+            </div>
+          `
+            )
+            .join('')}
+        </div>
+      </div>`;
+    sectionCarrusel.appendChild(div);
+  }
+});
+
+// function carrusel(categoria) {
+//   const sliderCategoria = document.getElementById(`slider${categoria}`);
+//   allMovies.map((movie) => {
+//     if (movie.categoria === categoria) {
+//       const div = document.createElement('div');
+//       div.innerHTML = `
+//         <div class="card">
+//           <img src="${movie.urlImagen}" class="card-img-top" alt="${movie.nombre}">
+//         </div>
+//       `;
+//       sliderCategoria.appendChild(div);
+//     }
+//   });
+// }
 
 function toggleMenu() {
-	var menu = document.getElementById("menu");
-	menu.classList.toggle("active");
+  var menu = document.getElementById('menu');
+  menu.classList.toggle('active');
 }
 
-
-
-const AdminUser = document.getElementById('AdminUser')
+const AdminUser = document.getElementById('AdminUser');
 
 if (localStorage.getItem('userLogged') !== undefined) {
-	const AdminLogged = JSON.parse(localStorage.getItem('userLogged'));
+  const AdminLogged = JSON.parse(localStorage.getItem('userLogged'));
 
-	if (AdminLogged !== null) {
-		const isAdminLogged = AdminLogged.userRol == 0 ? true : false;
-		if (isAdminLogged) {
-			AdminUser.style.display = "block";
-		} else {
-			AdminUser.style.display = "none";
-		}
-	}
-};
-
-
-
-
-
-const miImagen = document.querySelectorAll("img.imgButton")
-miImagen.forEach((imagen) => {
-	imagen.addEventListener('click', () => {
-
-		let title = imagen.alt
-		let movies = JSON.parse(localStorage.getItem('movies'))
-		let movieFound = movies.find((movie) => movie.nombre == title)
-		let modalInfo = document.getElementById('modal-body')
-		let modalContent = document.getElementById('bg-image')
-		let buttonClose = document.createElement('button');
-		let divBodyMovieDetail = document.createElement('div');
-		let divInnerModalMovieDetail = document.createElement('div')
-		let h1 = document.createElement('h1')
-		let spanDescription = document.createElement('p')
-		let videoLink = movieFound.urlVideo.substr(32)
-
-		buttonClose.type = "button"
-		buttonClose.className = "btn-close mt-3 me-3"
-		buttonClose.setAttribute('data-bs-dismiss', 'modal')
-		buttonClose.setAttribute('aria-label', 'Close')
-		buttonClose.style.position = "absolute"
-		buttonClose.style.top = 0;
-		buttonClose.style.right = 0;
-		buttonClose.style.backgroundColor = "white"
-		buttonClose.style.zIndex = "3"
-		buttonClose.id = "buttonClose"
-
-
-
-		if (movieFound !== undefined) {
-			modalInfo.className = "container-fluid d-flex align-items-center m-auto h-100 w-100 p-0"
-
-			let video = `<iframe id="miVideo" src="https://www.youtube.com/embed/${videoLink}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
-			divBodyMovieDetail.className = "modal-title"
-			video.id = "video"
-			h1.textContent = `${title.toUpperCase()}`
-			h1.style.textAlign = "center"
-			// h1.style.margin = "1rem";
-			h1.style.marginBottom = "1rem"
-			h1.style.textDecoration = "underline"
-			spanDescription.textContent = `${movieFound.descripcion}`
-			spanDescription.id = "descripcion"
-			spanDescription.className = "d-none d-md-block"
-			divInnerModalMovieDetail.className = "container-fluid p-5"
-			divInnerModalMovieDetail.style.backgroundColor = "rgba(0,0,0,0.7)"
-			divInnerModalMovieDetail.style.height = "100%"
-			divBodyMovieDetail.style.color = "White"
-			divBodyMovieDetail.className = "border rounded"
-			divBodyMovieDetail.id = "modal-detail"
-			divBodyMovieDetail.style.height = "100%"
-			divBodyMovieDetail.style.width = "100%"
-			divBodyMovieDetail.style.backgroundSize = "cover"
-			divBodyMovieDetail.style.backgroundImage = `url('./assets/img/${title}.png')`;
-			divBodyMovieDetail.style.backgroundRepeat = "no-repeat"
-			divInnerModalMovieDetail.innerHTML = buttonClose.outerHTML
-			divInnerModalMovieDetail.append(h1)
-			divInnerModalMovieDetail.append(spanDescription)
-			divInnerModalMovieDetail.innerHTML += video
-			divBodyMovieDetail.appendChild(divInnerModalMovieDetail)
-			modalInfo.innerHTML = divBodyMovieDetail.outerHTML
-			// modalContent.style.height = "80vh"
-			// modalContent.style.width = "80vw"
-			// modalContent.style.backgroundImage = `url('./assets/img/${title}.png')`;
-			// modalContent.style.backgroundPosition = "50% center"
-			// modalContent.style.backgroundRepeat = "no-repeat"
-			// modalContent.style.backgroundSize = "cover"
-			// modalContent.id = "modal-content"
-			modalContent.appendChild(modalInfo)
-
-
-			// let isDetallePeliculaActivo = detallePelicula ? true : false;
-
-			// Escuchar el evento hidden.bs.modal del modal
-			document.getElementById('detallePelicula').addEventListener('hidden.bs.modal', function () {
-				// Obtener el elemento de video
-				let videoElement = document.getElementById('miVideo');
-				// Verificar si el elemento de video existe
-				if (videoElement) {
-					// Eliminar el elemento de video del DOM
-					videoElement.parentNode.removeChild(videoElement);
-				}
-			});
-		}
-	})
-	imagen.setAttribute('data-bs-toggle', 'modal')
-	imagen.setAttribute('data-bs-target', '#detallePelicula')
-})
+  if (AdminLogged !== null) {
+    const isAdminLogged = AdminLogged.userRol == 0 ? true : false;
+    if (isAdminLogged) {
+      AdminUser.style.display = 'block';
+    } else {
+      AdminUser.style.display = 'none';
+    }
+  }
+}
 
 const adminHandler = () => {
-	if (window.location.href.includes('index')) {
-		window.location.href = "./pages/panel-admin/index.html"
-	}
-	if (window.location.href.includes('contacto') || window.location.href.includes('404') || window.location.href.includes('acercade')) {
-		window.location.href = "./panel-admin/index.html"
-	}
-}
+  if (window.location.href.includes('index')) {
+    window.location.href = './pages/panel-admin/index.html';
+  }
+  if (
+    window.location.href.includes('contacto') ||
+    window.location.href.includes('404') ||
+    window.location.href.includes('acercade')
+  ) {
+    window.location.href = './panel-admin/index.html';
+  }
+};
 
 const to404 = () => {
-	if (window.location.href.includes('index')) {
-		window.location.href = "./pages/404.html"
-	}
-	if (window.location.href.includes('contacto') || window.location.href.includes('acercade')) {
-		window.location.href = "./404.html"
-	}
-	if (window.location.href.includes('admin') || window.location.href.includes('panel-admin')) {
-		window.location.href = "../404.html"
-	}
-}
+  if (window.location.href.includes('index')) {
+    window.location.href = './pages/404.html';
+  }
+  if (window.location.href.includes('contacto') || window.location.href.includes('acercade')) {
+    window.location.href = './404.html';
+  }
+  if (window.location.href.includes('admin') || window.location.href.includes('panel-admin')) {
+    window.location.href = '../404.html';
+  }
+};
+
+// Carrusel: Controles
+$(document).ready(function () {
+  $('.carousel-items').slick({
+    slidesToShow: 5, //Se veraán 5 cards
+    slidesToScroll: 5, //se moverán 5 cards
+    infinite: true, //Carrusel infinito
+    arrows: true,
+    prevArrow: '<button type="button" class="slick-atras"><i class="fa-solid fa-circle-arrow-left"></i></button>', //Aqui le puedo poner HTML al boton
+    nextArrow: '<button type="button" class="slick-siguiente"><i class="fa-solid fa-circle-arrow-right"></i></button>', //Aqui le puedo poner HTML al boton
+    responsive: [
+      //cuando sea menos que los pixeles indicados el tamaño de la ventana se hace responsive
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 3, //Se veraán 3 cards
+          slidesToScroll: 3, //se moverán 3 cards
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+});

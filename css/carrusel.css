@@ -1,0 +1,21 @@
+.carousel {
+  margin: 50px;
+}
+.card {
+  margin: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f8f8f8;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.slick-arrow {
+  background-color: red;
+  z-index: 1;
+}
+.slick-siguiente {
+  font-size: 30px; /* Cambia el tamaño según tus preferencias */
+}
+.slick-atras {
+  font-size: 30px; /* Cambia el tamaño según tus preferencias */
+}
