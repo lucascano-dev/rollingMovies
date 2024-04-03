@@ -328,5 +328,71 @@
     "urlVideo": "https://www.youtube.com/watch?v=dyotdtUtKu0",
     "isPublicado": true,
     "isDestacado": false
+  },
+  {
+    "id": 31,
+    "nombre": "Scarface",
+    "categoria": "Drama",
+    "descripcion": "Un inmigrante cubano de las cárceles de Fidel Castro provoca un camino de destrucción en su ascenso en el mundo de las drogas de Miami.",
+    "urlImagen": "https://i.ibb.co/4PySYVL/Scarface.png",
+    "descripcionImagen": "Imagen de la película Scarface",
+    "urlVideo": "https://www.youtube.com/watch?v=7pQQHnqBa2E",
+    "isPublicado": true,
+    "isDestacado": false
+  },
+  {
+    "id": 32,
+    "nombre": "Gladiador",
+    "categoria": "Drama",
+    "descripcion": "Máximo, general romano, desea volver a casa, pero el emperador Marco Aurelio quiere que herede el imperio. Esto hace que Cómodo ordene matar a su familia. Máximo escapa de la muerte y regresa a Roma como gladiador para vengar la muerte de su familia.",
+    "urlImagen": "https://as01.epimg.net/epik/imagenes/2020/05/06/portada/1588761236_799202_1588761314_noticia_normal.jpg",
+    "descripcionImagen": "Imagen de la película Gladiador",
+    "urlVideo": "https://www.youtube.com/watch?v=P5ieIbInFpg",
+    "isPublicado": true,
+    "isDestacado": false
+  },
+  {
+    "id": 33,
+    "nombre": "Interestellar",
+    "categoria": "Drama",
+    "descripcion": "Gracias a un descubrimiento, un grupo de científicos y exploradores, encabezados por Cooper, se embarcan en un viaje espacial para encontrar un lugar con las condiciones necesarias para reemplazar a la Tierra y comenzar una nueva vida allí.",
+    "urlImagen": "https://i.ibb.co/nCkRMG2/Interstellar.png",
+    "descripcionImagen": "Imagen de la película Interestellar",
+    "urlVideo": "https://www.youtube.com/watch?v=LYS2O1nl9iM",
+    "isPublicado": true,
+    "isDestacado": false
+  },
+  {
+    "id": 34,
+    "nombre": "Breaking Bad",
+    "categoria": "Drama",
+    "descripcion": "Un profesor de Química de secundaria con cáncer terminal se asocia a un exestudiante para asegurar el futuro de su familia al fabricar y vender metanfetamina.",
+    "urlImagen": "https://i.ibb.co/3Td8w3j/Breaking-Bad.png",
+    "descripcionImagen": "Imagen de la película Breaking Bad",
+    "urlVideo": "https://www.youtube.com/watch?v=HhesaQXLuRY",
+    "isPublicado": true,
+    "isDestacado": false
+  },
+  {
+    "id": 35,
+    "nombre": "Indiana Jones 5",
+    "categoria": "Drama",
+    "descripcion": "Quinta entrega de la saga cinematográfica protagonizada por el legendario héroe arqueólogo Indiana Jones. Finales de la década de 1960. Alejado de las aventuras de su juventud, Indy, que ha seguido impartiendo clases en la universidad, se jubila",
+    "urlImagen": "https://www.lucasfilm.com/app/uploads/indiana-dod-lp-marquee-1.jpg",
+    "descripcionImagen": "Imagen de la película Indiana Jones 5",
+    "urlVideo": "https://www.youtube.com/watch?v=0cDgY0klK4c",
+    "isPublicado": true,
+    "isDestacado": false
+  },
+  {
+    "id": 36,
+    "nombre": "Spiderman",
+    "categoria": "Drama",
+    "descripcion": "Mordido por una araña genéticamente modificada, un estudiante de secundaria tímido y torpe obtiene increíbles capacidades como arácnido. Pronto comprenderá que su cometido es utilizarlas para luchar contra el mal y defender a sus vecinos.",
+    "urlImagen": "https://i0.wp.com/codigoespagueti.com/wp-content/uploads/2021/06/10-curiosidades-de-Spiderman-2002-compressed-1.jpg",
+    "descripcionImagen": "Imagen de la película Spiderman",
+    "urlVideo": "https://www.youtube.com/watch?v=_yhFofFZGcc",
+    "isPublicado": true,
+    "isDestacado": false
   }
 ]
