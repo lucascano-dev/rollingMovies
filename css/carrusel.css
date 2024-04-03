@@ -1,16 +1,28 @@
 .carousel {
-  margin: 50px;
+  margin: 0 40px 50px;
+  /* border: 1px solid #ba8383; */
 }
 .card {
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+
   margin: 30px;
-  padding: 20px;
-  border: 1px solid #ccc;
   border-radius: 5px;
-  background: #f8f8f8;
+  background: #1c0000;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+
+.card img {
+  max-width: 100%;
+  height: 200px;
+  /* object-fit: cover; */
+}
+
 .slick-arrow {
-  background-color: red;
+  background-color: rgb(230, 227, 227);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgb(230, 227, 227);
   z-index: 1;
 }
 .slick-siguiente {

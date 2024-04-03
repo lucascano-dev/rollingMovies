@@ -18,7 +18,7 @@ categoriasUnicas.forEach((categoria) => {
             .map(
               (movie) => `
             <div class="card">
-              <img src="${movie.urlImagen}" class="card-img-top" alt="${movie.nombre}">
+              <img src="${movie.urlImagen}"  alt="${movie.nombre}">
             </div>
           `
             )

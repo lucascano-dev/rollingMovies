@@ -1,0 +1,154 @@
+[
+  {
+    "id": 0,
+    "nombre": "admin",
+    "email": "admin@admin.com",
+    "password": "admin",
+    "stateActivation": 1,
+    "userRol": 1
+  },
+  {
+    "id": 1710140322029,
+    "nombre": "María Rodríguez",
+    "email": "maria.rodriguez@example.com",
+    "password": "qwerty",
+    "stateActivation": 0,
+    "userRol": 1
+  },
+  {
+    "id": 1710140322030,
+    "nombre": "Carlos Sánchez",
+    "email": "carlos.sanchez@example.com",
+    "password": "securepass",
+    "stateActivation": 0,
+    "userRol": 1
+  },
+  {
+    "id": 1710140322031,
+    "nombre": "Laura García",
+    "email": "laura.garcia@example.com",
+    "password": "password123",
+    "stateActivation": 0,
+    "userRol": 1
+  },
+  {
+    "id": 1710140322032,
+    "nombre": "Pedro López",
+    "email": "pedro.lopez@example.com",
+    "password": "ilovecoding",
+    "stateActivation": 0,
+    "userRol": 1
+  },
+  {
+    "id": 1710140322033,
+    "nombre": "Ana Navarro",
+    "email": "ana.navarro@example.com",
+    "password": "ana123",
+    "stateActivation": 0,
+    "userRol": 1
+  },
+  {
+    "id": 1710140322034,
+    "nombre": "David Ruiz",
+    "email": "david.ruiz@example.com",
+    "password": "davidpass",
+    "stateActivation": 0,
+    "userRol": 1
+  },
+  {
+    "id": 1710140322035,
+    "nombre": "Sara Gómez",
+    "email": "sara.gomez@example.com",
+    "password": "sara567",
+    "stateActivation": 0,
+    "userRol": 1
+  },
+  {
+    "id": 1710140322036,
+    "nombre": "Javier Martín",
+    "email": "javier.martin@example.com",
+    "password": "javierpass",
+    "stateActivation": 0,
+    "userRol": 1
+  },
+  {
+    "id": 1710140322037,
+    "nombre": "Elena Martínez",
+    "email": "elena.martinez@example.com",
+    "password": "elenapass",
+    "stateActivation": 0,
+    "userRol": 1
+  },
+  {
+    "id": 1710140322038,
+    "nombre": "Antonio Fernandez",
+    "email": "antonio.fernandez@example.com",
+    "password": "fernandez123",
+    "stateActivation": 0,
+    "userRol": 1
+  },
+  {
+    "id": 1710140322039,
+    "nombre": "Isabel Pérez",
+    "email": "isabel.perez@example.com",
+    "password": "isabelpass",
+    "stateActivation": 0,
+    "userRol": 1
+  },
+  {
+    "id": 1710140322040,
+    "nombre": "Diego González",
+    "email": "diego.gonzalez@example.com",
+    "password": "diegopass",
+    "stateActivation": 0,
+    "userRol": 1
+  },
+  {
+    "id": 1710140322041,
+    "nombre": "Carmen López",
+    "email": "carmen.lopez@example.com",
+    "password": "carmenpass",
+    "stateActivation": 0,
+    "userRol": 1
+  },
+  {
+    "id": 1710140322042,
+    "nombre": "Manuel Rodríguez",
+    "email": "manuel.rodriguez@example.com",
+    "password": "manuel123",
+    "stateActivation": 0,
+    "userRol": 1
+  },
+  {
+    "id": 1710140322043,
+    "nombre": "Luisa Martínez",
+    "email": "luisa.martinez@example.com",
+    "password": "luisapass",
+    "stateActivation": 0,
+    "userRol": 1
+  },
+  {
+    "id": 1710140322044,
+    "nombre": "Pablo Jiménez",
+    "email": "pablo.jimenez@example.com",
+    "password": "pablopass",
+    "stateActivation": 0,
+    "userRol": 1
+  },
+  {
+    "id": 1710140322045,
+    "nombre": "Lucía García",
+    "email": "lucia.garcia@example.com",
+    "password": "luciapass",
+    "stateActivation": 0,
+    "userRol": 1
+  },
+  {
+    "id": 1710140322046,
+    "nombre": "Jorge Hernández",
+    "email": "jorge.hernandez@example.com",
+    "password": "jorgepass",
+    "stateActivation": 0,
+    "userRol": 1
+  }
+]
