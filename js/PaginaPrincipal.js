@@ -5,7 +5,7 @@ const categoriasUnicas = Array.from(new Set(allMovies.map((movie) => movie.categ
 
 categoriasUnicas.forEach((categoria) => {
   // Filtrar las películas que pertenecen a esta categoría
-  const moviesInCategory = allMovies.filter((movie) => movie.categoria === categoria);
+  const moviesInCategory = allMovies.filter((movie) => movie.categoria === categoria && movie.isPublicado);
 
   // Verificar si hay películas en esta categoría
   if (moviesInCategory.length > 0) {
@@ -13,16 +13,16 @@ categoriasUnicas.forEach((categoria) => {
     div.innerHTML = `
       <h1 class="text-center">${categoria}</h1>
       <div class="carousel">
-        <div id="slider${categoria}" class="carousel-items d-flex">
-          ${moviesInCategory
-            .map(
-              (movie) => `
-            <div class="card">
+      <div id="slider${categoria}" class="carousel-items d-flex align-items-center">
+      ${moviesInCategory
+        .map(
+          (movie) => `
+            <div class="card" onclick=alert(${movie.id})>
               <img src="${movie.urlImagen}"  alt="${movie.nombre}">
             </div>
           `
-            )
-            .join('')}
+        )
+        .join('')}
         </div>
       </div>`;
     sectionCarrusel.appendChild(div);
@@ -96,8 +96,8 @@ $(document).ready(function () {
     slidesToScroll: 5, //se moverán 5 cards
     infinite: true, //Carrusel infinito
     arrows: true,
-    prevArrow: '<button type="button" class="slick-atras"><i class="fa-solid fa-circle-arrow-left"></i></button>', //Aqui le puedo poner HTML al boton
-    nextArrow: '<button type="button" class="slick-siguiente"><i class="fa-solid fa-circle-arrow-right"></i></button>', //Aqui le puedo poner HTML al boton
+    prevArrow: '<button type="button" class="slick-atras"><i class="fa-solid fa-chevron-left"></i></button>', //Aqui le puedo poner HTML al boton
+    nextArrow: '<button type="button" class="slick-siguiente"><i class="fa-solid fa-chevron-right"></i></i></button>', //Aqui le puedo poner HTML al boton
     responsive: [
       //cuando sea menos que los pixeles indicados el tamaño de la ventana se hace responsive
       {
