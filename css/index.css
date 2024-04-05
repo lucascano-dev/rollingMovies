@@ -1,0 +1,68 @@
+.carousel-item {
+  /* position: relative; */
+  width: 100%; /* Ajusta el ancho al 100% del contenedor */
+  height: 500px; /* Ajusta la altura según lo deseado */
+}
+
+.carousel-item .SlideButton {
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  width: 100%;
+  height: 500px;
+}
+
+.carousel-item .imgButton {
+  width: 100%; /* Ajusta el ancho al 100% del contenedor */
+  height: 150%; /* Ajusta la altura al 100% del contenedor */
+  object-fit: content; /* Escala la imagen para llenar el contenedor */
+}
+
+@media (width <=1500px) {
+  .carousel-item {
+    height: 400px;
+  }
+
+  .carousel-item .SlideButton {
+    height: 400px;
+  }
+}
+
+@media (width <=900px) {
+  .carousel-item {
+    height: 320px;
+  }
+
+  .carousel-item .SlideButton {
+    height: 320px;
+  }
+}
+@media (width <=800px) {
+  .carousel-item {
+    height: 300px;
+  }
+
+  .carousel-item .SlideButton {
+    height: 300px;
+  }
+}
+
+@media (width <=580px) {
+  .carousel-item {
+    height: 280px;
+  }
+
+  .carousel-item .SlideButton {
+    height: 280px;
+  }
+}
+
+@media (width <=440px) {
+  .carousel-item {
+    height: 250px;
+  }
+
+  .carousel-item .SlideButton {
+    height: 250px;
+  }
+}

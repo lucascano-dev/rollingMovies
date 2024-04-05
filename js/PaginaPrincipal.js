@@ -1,19 +1,18 @@
 const sectionCarrusel = document.getElementById('contenedor-carruseles');
+// let allMovies = JSON.parse(localStorage.getItem('movies')) || [];
 let allMovies = JSON.parse(localStorage.getItem('movies')) || [];
 const carouselDestacado = document.getElementById('carrusel-destacado');
 const moviesDestacado = allMovies.filter((movie) => movie.isDestacado && movie.isPublicado);
 
-console.log('🚀 ~ allMovies.forEach ~ moviesDestacado:', moviesDestacado);
-// // //Carga de contenido destacado
-
+//Carga de contenido destacado
 let carouselItemsHTML = '';
 moviesDestacado.forEach((movie, index) => {
   carouselItemsHTML += `
     <div class="carousel-item ${index === 0 ? 'active' : ''}">
       <button type="button" class="SlideButton">
-        <img class="img-fluid imgButton" style="width: 100vw" src="${movie.urlImagen}" alt="${
+        <img class="card-img-top imgButton" src="${movie.urlImagen}" alt="${
     movie.desceripcionImagen
-  }" />
+  }" style="width: 100%; height: 100%;" />
       </button>
     </div>
   `;
