@@ -3,6 +3,8 @@ const sectionCarrusel = document.getElementById('contenedor-carruseles');
 let allMovies = JSON.parse(localStorage.getItem('movies')) || [];
 const carouselDestacado = document.getElementById('carrusel-destacado');
 const moviesDestacado = allMovies.filter((movie) => movie.isDestacado && movie.isPublicado);
+const btnContacto = document.getElementById('btn-contacto');
+const btnAcercaDe = document.getElementById('btn-acerca-de');
 
 //Carga de contenido destacado
 let carouselItemsHTML = '';
@@ -67,6 +69,14 @@ if (localStorage.getItem('userLogged') !== undefined) {
     }
   }
 }
+
+btnAcercaDe.addEventListener('click', () => {
+  window.location.href = './pages/acercade.html';
+});
+
+btnContacto.addEventListener('click', () => {
+  window.location.href = './pages/contacto.html';
+});
 
 const adminHandler = () => {
   if (window.location.href.includes('index')) {
