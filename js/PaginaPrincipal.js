@@ -1,5 +1,25 @@
 const sectionCarrusel = document.getElementById('contenedor-carruseles');
 let allMovies = JSON.parse(localStorage.getItem('movies')) || [];
+const carouselDestacado = document.getElementById('carrusel-destacado');
+const moviesDestacado = allMovies.filter((movie) => movie.isDestacado && movie.isPublicado);
+
+console.log('🚀 ~ allMovies.forEach ~ moviesDestacado:', moviesDestacado);
+// // //Carga de contenido destacado
+
+let carouselItemsHTML = '';
+moviesDestacado.forEach((movie, index) => {
+  carouselItemsHTML += `
+    <div class="carousel-item ${index === 0 ? 'active' : ''}">
+      <button type="button" class="SlideButton">
+        <img class="img-fluid imgButton" style="width: 100vw" src="${movie.urlImagen}" alt="${
+    movie.desceripcionImagen
+  }" />
+      </button>
+    </div>
+  `;
+});
+// Insertar el HTML en el carousel-inner
+carouselDestacado.innerHTML = carouselItemsHTML;
 
 const categoriasUnicas = Array.from(new Set(allMovies.map((movie) => movie.categoria)));
 
@@ -28,21 +48,6 @@ categoriasUnicas.forEach((categoria) => {
     sectionCarrusel.appendChild(div);
   }
 });
-
-// function carrusel(categoria) {
-//   const sliderCategoria = document.getElementById(`slider${categoria}`);
-//   allMovies.map((movie) => {
-//     if (movie.categoria === categoria) {
-//       const div = document.createElement('div');
-//       div.innerHTML = `
-//         <div class="card">
-//           <img src="${movie.urlImagen}" class="card-img-top" alt="${movie.nombre}">
-//         </div>
-//       `;
-//       sliderCategoria.appendChild(div);
-//     }
-//   });
-// }
 
 function toggleMenu() {
   var menu = document.getElementById('menu');
