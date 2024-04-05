@@ -1,7 +1,7 @@
 .carousel-item {
   /* position: relative; */
   width: 100%; /* Ajusta el ancho al 100% del contenedor */
-  height: 500px; /* Ajusta la altura según lo deseado */
+  height: 600px; /* Ajusta la altura según lo deseado */
 }
 
 .carousel-item .SlideButton {
@@ -9,7 +9,7 @@
   top: 0;
   left: 0; */
   width: 100%;
-  height: 500px;
+  height: 600px;
 }
 
 .carousel-item .imgButton {
