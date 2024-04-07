@@ -1,0 +1,438 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e3e3e3;
+}
+
+/* NAVBAR */
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(171, 22, 22);
+  margin-top: 0px;
+}
+
+.CinestrenarLogo {
+  /* width: 200px;
+  height: auto; */
+}
+
+.Hamburguer {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: #534848;
+  margin: 3px 0;
+}
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  margin: 0;
+}
+
+.menu li {
+  margin-right: 20px;
+  display: inline-block;
+}
+
+/* .menu button {
+	color: #333333 !important;
+	text-decoration: none !important;
+	transition: color 0.3s !important;
+}
+
+.menu button:hover {
+	color: #ccc !important;
+	font-size: 35px !important;
+} */
+
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(5px);
+    font-size: 20px;
+    padding: 15px;
+    left: 0;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 300px;
+    z-index: 1000;
+  }
+
+  .menu.active {
+    display: flex;
+    opacity: 1;
+  }
+
+  .Hamburguer {
+    display: flex;
+  }
+
+  .Navbar {
+    flex-direction: column;
+  }
+
+  .CinestrenarLogo {
+    height: 100px;
+    width: auto;
+  }
+
+  .menu button {
+    color: #fff !important;
+  }
+
+  .menu li {
+    margin-bottom: 10px;
+  }
+}
+
+/* NAVBAR */
+
+/* FOOTER */
+.FooterContainer {
+  display: flex;
+  background-color: rgb(227, 227, 227);
+  padding: 1rem;
+  font-family: 'Roboto', sans-serif;
+  color: #333333;
+  font-style: normal;
+}
+
+.FooterContainer a:hover {
+  color: #ccc;
+}
+
+.FooterSeccion {
+  text-align: center;
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin: auto;
+}
+
+.FooterSeccion h3 {
+  font-size: 18px;
+}
+
+.FooterSeccion h2 {
+  font-size: 1rem;
+}
+
+.Logo {
+  width: 30px;
+  height: auto;
+  margin: 21px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.FooterSeccion a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.vertical-line {
+  border-left: 1px solid #ffffff;
+}
+
+@media (max-width: 768px) {
+  .FooterContainer {
+    flex-direction: column;
+  }
+
+  .vertical-line {
+    border-left: none;
+  }
+
+  .Logo {
+    width: 30px;
+    margin: 15px;
+  }
+
+  .FooterSeccion {
+    margin: 1rem;
+  }
+  .buttonclass {
+    margin: 0 !important;
+    width: 3.4rem;
+  }
+  .FooterSeccion a {
+    font-size: 11px;
+  }
+
+  .FooterSeccion h3 {
+    font-size: 13px;
+  }
+
+  .FooterSeccion:nth-child(1)::after {
+    content: '';
+    display: block;
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+}
+/*FOOTER*/
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(227, 227, 227);
+
+  margin-top: 0px;
+}
+
+#registerButton {
+  padding: 20px;
+  background-color: transparent;
+  color: black;
+  border: none;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+
+  margin-top: 0px;
+}
+
+#registerButton:hover {
+  padding: 20px;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  color: black;
+
+  font-family: 'Roboto', sans-serif;
+  margin-top: 0px;
+}
+
+.CinestrenarLogo {
+  border: none !important;
+  width: 15rem;
+  height: auto;
+}
+
+.Hamburguer {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: #534848;
+  margin: 3px 0;
+}
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+}
+
+.menu li {
+  margin-right: 20px;
+  display: inline-block;
+}
+
+/* .menu button {
+	color: #333333 !important;
+	text-decoration: none !important;
+	transition: color 0.3s !important;
+}
+
+.menu button:hover {
+	color: #ccc !important;
+	font-size: 35px !important;
+} */
+
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(5px);
+    font-size: 20px;
+    padding: 15px;
+    left: 0;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 300px;
+  }
+
+  .btn-logo {
+    position: absolute;
+    top: -10px;
+    left: 0px;
+  }
+  .menu.active {
+    display: flex;
+    opacity: 1;
+  }
+
+  .Hamburguer {
+    display: flex;
+  }
+
+  .Navbar {
+    flex-direction: column;
+  }
+
+  .CinestrenarLogo {
+    height: 100px;
+    width: auto;
+  }
+
+  .menu button {
+    color: #ff0808 !important;
+  }
+
+  .menu li {
+    margin-bottom: 10px;
+  }
+}
+/* PAGINA PRINCIPAL */
+.SlideButton {
+  border: 0;
+  padding: 0;
+}
+
+.buttoncard {
+  padding: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* PAGINA PRINCIPAL */
+
+/* #navButton {
+  padding: 20px;
+  background-color: transparent;
+  color: #333333 !important;
+  text-decoration: none !important;
+  transition: color 0.3s !important;
+  border: none;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+
+  margin-top: 0px;
+}
+
+#navButton:hover {
+  padding: 20px;
+  background-color: transparent;
+  border: none;
+  color: #ccc !important;
+  font-size: 35px !important;
+
+  font-family: 'Roboto', sans-serif;
+  margin-top: 0px;
+}
+
+#loginButton {
+  padding: 20px;
+  background-color: transparent;
+  color: #333333 !important;
+  text-decoration: none !important;
+  transition: color 0.3s !important;
+  border: none;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+
+  margin-top: 0px;
+}
+
+#loginButton:hover {
+  padding: 20px;
+  background-color: transparent;
+  border: none;
+  color: #ccc !important;
+  font-size: 35px !important;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 0px;
+}
+
+#registerButton {
+  padding: 20px;
+  background-color: transparent;
+  color: #333333 !important;
+  text-decoration: none !important;
+  transition: color 0.3s !important;
+  border: none;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+
+  margin-top: 0px;
+}
+
+#registerButton:hover {
+  padding: 20px;
+  background-color: transparent;
+  border: none;
+  color: #ccc !important;
+  font-size: 35px !important;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 0px;
+} */
+
+.btn-navegador {
+  padding: 20px !important;
+  background-color: transparent !important;
+  color: #333333 !important;
+  text-decoration: none !important;
+  transition: color 0.3s !important;
+  border: none !important;
+  font-size: 20px !important;
+  font-family: 'Roboto', sans-serif !important;
+  margin-top: 0px;
+  transition: transform 0.2s ease-in-out !important;
+}
+
+.btn-navegador:hover {
+  padding: 20px !important;
+  background-color: transparent !important;
+  border: none !important;
+  color: #e00707 !important;
+  font-weight: bolder;
+  transform: scale(1.2) !important;
+
+  font-family: 'Roboto', sans-serif !important;
+  margin-top: 0px !important;
+}
