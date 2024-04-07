@@ -9,9 +9,9 @@
   },
   {
     "id": 1710140322029,
-    "nombre": "María Rodríguez",
-    "email": "maria.rodriguez@example.com",
-    "password": "qwerty",
+    "nombre": "Juan Perez",
+    "email": "usuario@usuario.com",
+    "password": "usuario",
     "stateActivation": 0,
     "userRol": 1
   },
@@ -73,9 +73,9 @@
   },
   {
     "id": 1710140322037,
-    "nombre": "Elena Martínez",
-    "email": "elena.martinez@example.com",
-    "password": "elenapass",
+    "nombre": "Lucas Cano",
+    "email": "lucas@cano.com",
+    "password": "lucas123",
     "stateActivation": 0,
     "userRol": 1
   },
