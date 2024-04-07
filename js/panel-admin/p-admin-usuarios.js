@@ -11,6 +11,15 @@ const modalEditarUsuario = document.getElementById('modalEditarUsuario');
 const estadoUsuario = document.getElementById('estadoUsuario');
 const searchFilterUser = document.querySelector('.searchFilterUser');
 const inputSearch = document.querySelector('.inputFilterUser');
+const errorFilterUser = document.getElementById('errorFilterUser');
+const userLogged = JSON.parse(localStorage.getItem('userLogged'));
+
+if (userLogged !== null) {
+  const isAdminLogged = userLogged.userRol == 0 ? true : false;
+  if (isAdminLogged === false) {
+    window.location.href = '/';
+  }
+}
 
 let usuariosRegistrados = JSON.parse(localStorage.getItem('usuarios')) || [];
 
@@ -35,7 +44,16 @@ inputSearch.addEventListener('input', () => {
       );
     });
     cargaUsuarios(usuarioEncontrado);
-    console.log('DATO ENCONTRADO: ', usuarioEncontrado);
+    // console.log('DATO ENCONTRADOs: ', usuarioEncontrado);
+    if (usuarioEncontrado.length > 0) {
+      console.log('Dato encotrado');
+      errorFilterUser.innerHTML = '';
+      errorFilterUser.classList.remove('bg-danger');
+    } else {
+      console.log('Dato no encotrado');
+      errorFilterUser.innerHTML = 'Sin resultados';
+      errorFilterUser.classList.add('bg-danger', 'fs-5');
+    }
   } else {
     cargaUsuarios(0);
   }
