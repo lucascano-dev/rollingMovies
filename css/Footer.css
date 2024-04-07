@@ -10,13 +10,13 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: rgb(227, 227, 227);
+  background-color: rgb(171, 22, 22);
   margin-top: 0px;
 }
 
 .CinestrenarLogo {
-  width: 200px;
-  height: auto;
+  /* width: 200px;
+  height: auto; */
 }
 
 .Hamburguer {
@@ -298,6 +298,11 @@ a {
     width: 300px;
   }
 
+  .btn-logo {
+    position: absolute;
+    top: -10px;
+    left: 0px;
+  }
   .menu.active {
     display: flex;
     opacity: 1;

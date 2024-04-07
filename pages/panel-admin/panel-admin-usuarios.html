@@ -26,333 +26,222 @@
   </head>
 
   <body>
-    <section class="container-navbar">
-      <nav class="Navbar">
-        <div class="Hamburguer" onclick="toggleMenu()">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-        </div>
-
-        <ul class="menu" id="menu">
-          <!-- <li><button type="button" class="btn bg-transparent">PELICULAS</button></li> -->
-          <li>
-            <button
-              type="button"
-              class="btn btn-primary bg-transparent text-black"
-              id="loginButton"
-              data-bs-toggle="modal"
-              data-bs-target="#modalLogin"
-            >
-              INGRESO
-            </button>
-            <div
-              class="modal fade"
-              id="modalLogin"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Ingreso</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <form action="" class="row" id="form">
-                      <label for="user" class="col-4">Nombre/Correo Electronico: </label>
-                      <input type="text" name="user" id="user" class="col-6 my-2" />
-                      <label for="passUser" class="col-4">Contraseña</label>
-                      <input type="password" name="passUser" id="passUser" class="col-6 my-2" />
-                    </form>
-                  </div>
-                  <button onclick="location.href='./pages/404.html'" class="btn text-left text-primary">
-                    Has olvidado tu contraseña? click aqui
-                  </button>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" id="logUser">Ingresar!</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <!-- Button trigger modal -->
-            <button
-              type="button"
-              class="btn btn-primary bg-transparent text-black"
-              id="registerButton"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-            >
-              REGISTRO
-            </button>
-
-            <!-- Modal -->
-            <div
-              class="modal fade"
-              id="exampleModal"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Registro</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <form action="" class="row" id="form">
-                      <label for="name" class="col-4">Nombre: </label>
-                      <input type="text" name="name" id="name" class="col-6 my-2" />
-                      <label for="pass" class="col-4">Correo Electronico</label>
-                      <input type="email" name="mail" id="mail" class="col-6 my-2" />
-                      <label for="pass" class="col-4">Contraseña</label>
-                      <input type="password" name="pass" id="pass" class="col-6 my-2" />
-                      <label for="confirmPass" class="col-4">Confirmar Contraseña</label>
-                      <input type="password" name="confirmPass" id="confirmPass" class="col-6 my-2" />
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" id="regUser">Registrarse!</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li id="AdminUser" style="display: none">
-            <button
-              type="button"
-              class="btn btn-primary bg-transparent text-black"
-              id="navButton"
-              onclick="adminHandler()"
-            >
-              ADMINISTRACION
-            </button>
-          </li>
-        </ul>
-
-        <a href="../../index.html"
-          ><img
-            src="../../assets/img/Cinestrenar Logo sin sombra.png"
-            alt="Cinestrenar"
-            class="CinestrenarLogo btn bg-transparent"
-        /></a>
-      </nav>
-    </section>
-
-    <div class="container-columnas-administracion">
-      <!-- Panel de administracion -->
-      <!-- <section class="container-panel-lateral-oculto">
-      <div class="contenedor-head-titulo-panel d-flex justify-content-center align-items-center bg-danger p-2 gap-1">
-        <div>
-          <p class="head-nombre-panel"></p>
-        </div>
-        <button id="btn-manipular-panel-izquierdo-oculto" class="btn btn-dark" type="button">
-          <i class="btn-abrir-panel-izquierdo fa-solid fa-circle-chevron-right"></i>
-        </button>
+    <!--NAVBAR-->
+    <nav class="Navbar border-bottom border-danger position-fixed w-100 z-3">
+      <div class="Hamburguer" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
       </div>
-    </section>
-    <section class="container-panel-lateral-expandido">
-      <div class="container-elementos-panel">
-        <div class="d-flex justify-content-center align-items-center bg-danger p-2 gap-1">
-          <p>Panel de administración</p>
-          <button id="btn-manipular-panel-izquierdo-expandido" class="btn btn-dark" type="button">
-            <i class="btn-cerrar-panel-izquierdo fa-solid fa-circle-chevron-left"></i>
-          </button>
-        </div>
-        <br /> -->
-      <!-- Boton Administracion de contenidos -->
-      <!-- <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle btn-admin" type="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            <span>Sobre Contenidos</span>
-          </button>
 
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item enlace-test" href="#">Mostrar todos los contenidos</a></li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-            <li><a class="dropdown-item" href="#">Agregar nuevo contenido</a></li>
-          </ul>
-        </div>
-        <hr /> -->
-      <!-- Boton Administracion de usuarios -->
-      <!-- <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle btn-admin" type="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Sobre Usuarios
-          </button>
+      <a class="btn-logo" href="/">
+        <img
+          src="../../assets/img/Cinestrenar Logo sin sombra.png"
+          alt="Cinestrenar"
+          class="CinestrenarLogo btn bg-transparent"
+        />
+      </a>
 
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Mostrar todos los usuarios</a></li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-            <li><a class="dropdown-item" href="#">Agregar nuevo usuario</a></li>
-          </ul>
-        </div> -->
-      <!-- </div>
-    </section> -->
+      <ul class="menu" id="menu">
+        <li class="nav-item">
+          <a class="nav-link btn-navegador" id="btn-acerca-de" href="../acercade.html">Acerca de</a>
+        </li>
+        <li>
+          <a class="btn btn-primary bg-transparent text-black btn-navegador" id="btn-contacto" href="../contacto.html"
+            >Contacto</a
+          >
+        </li>
+        <li>
+          <a
+            class="btn btn-primary bg-transparent text-black btn-navegador"
+            id="registerButton"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Registro
+          </a>
+        </li>
+        <li id="AdminUser" style="display: none">
+          <a
+            class="btn btn-primary bg-transparent text-black btn-navegador"
+            id="navButton"
+            href="./index.html"
+            onclick="adminHandler()"
+          >
+            Adminstración
+          </a>
+        </li>
+        <li>
+          <a
+            class="btn btn-primary bg-transparent text-black btn-navegador"
+            id="loginButton"
+            data-bs-toggle="modal"
+            data-bs-target="#modalLogin"
+          >
+            Ingreso
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-      <!-- Tablas -->
-      <section class="container-panel-derecho">
-        <div class="encabezado-titulo-botones d-flex justify-content-between flex-column">
-          <div>
-            <button id="btn-volver" type="button" class="btn btn-primary btn-sm">< Ir a Panel de administración</button>
-            <h1 id="encabezado-tablas" class="text-center text-black">Administración de usuarios</h1>
-            <div class="input mb-3 d-flex justify-content-start w-25">
-              <input type="text" class="form-control inputFilterUser" placeholder="ID, nombre, email" />
-              <button class="btn btn-danger searchFilterUser" type="button" id="button-addon2">
-                <i class="fa-solid fa-magnifying-glass"></i>
+    <main>
+      <div class="container-columnas-administracion">
+        <!-- Tablas -->
+        <section class="container-panel-derecho">
+          <div class="encabezado-titulo-botones d-flex justify-content-between flex-column">
+            <div>
+              <button id="btn-volver" type="button" class="btn btn-primary btn-sm">
+                < Ir a Panel de administración
+              </button>
+              <h1 id="encabezado-tablas" class="text-center text-black">Administración de usuarios</h1>
+              <div class="input mb-3 d-flex justify-content-start w-25">
+                <input type="text" class="form-control inputFilterUser" placeholder="ID, nombre, email" />
+                <button class="btn btn-danger searchFilterUser" type="button" id="button-addon2">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-tablas table-responsive mb-2">
+            <table class="table table-dark table-striped fs-6">
+              <thead class="table-light">
+                <tr>
+                  <th class="border" scope="col">ID</th>
+                  <th class="border" scope="col">Nombre</th>
+                  <th class="border" scope="col">Email</th>
+                  <th class="border" scope="col">Password</th>
+                  <th class="border" scope="col">Estado</th>
+                  <th class="border" scope="col">Rol</th>
+                  <th class="border" scope="col">Acción</th>
+                </tr>
+              </thead>
+              <tbody id="tablaUsuarios">
+                <!-- Se crea aqui el contenido de la tabla mediante JS -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Botones de paginacion -->
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link">Anterior</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Siguiente</a>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- MODAL EDITAR USUARIO -->
+
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="modalEditarUsuario"
+            tabindex="-1"
+            aria-labelledby="modalEditarUsuario"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered text-black">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Editar usuario <span id="idUsuarioEditar">123</span>
+                  </h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="formularioEditarUsuario">
+                    <div class="mb-3">
+                      <label for="inputNombreUsuario" class="form-label">Nombre</label>
+                      <input type="text" class="form-control" id="inputNombreUsuario" aria-describedby="nombre" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputEmailUsuario" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="inputEmailUsuario" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputPasswordUsuario" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="inputPasswordUsuario" />
+                    </div>
+                    <div class="d-flex justify-content-end gap-2">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                      <button id="btnActualizarUsuario" type="submit" data-bs-dismiss="modal" class="btn btn-success">
+                        Actualizar
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <!-- <div class="modal-footer"></div> -->
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Modal login -->
+      <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Ingreso</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="" class="row" id="form">
+                <div class="col-12">
+                  <label for="user" class="form-label">Nombre/Correo Electrónico:</label>
+                  <input type="text" name="user" id="user" class="form-control" />
+                </div>
+                <div class="col-12">
+                  <label for="passUser" class="form-label">Contraseña:</label>
+                  <input type="password" name="passUser" id="passUser" class="form-control" />
+                </div>
+              </form>
+              <button onclick="location.href='./pages/404.html'" class="btn text-start text-primary">
+                ¿Olvidaste tu contraseña? Haz clic aquí
               </button>
             </div>
-          </div>
-        </div>
-
-        <div class="container-tablas table-responsive mb-2">
-          <table class="table table-dark table-striped fs-6">
-            <thead class="table-light">
-              <tr>
-                <th class="border" scope="col">ID</th>
-                <th class="border" scope="col">Nombre</th>
-                <th class="border" scope="col">Email</th>
-                <th class="border" scope="col">Password</th>
-                <th class="border" scope="col">Estado</th>
-                <th class="border" scope="col">Rol</th>
-                <th class="border" scope="col">Acción</th>
-              </tr>
-            </thead>
-            <tbody id="tablaUsuarios">
-              <!-- Se crea aqui el contenido de la tabla mediante JS -->
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Botones de paginacion -->
-        <nav aria-label="Page navigation example">
-          <ul class="pagination justify-content-center">
-            <li class="page-item disabled">
-              <a class="page-link">Anterior</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#">Siguiente</a>
-            </li>
-          </ul>
-        </nav>
-
-        <!-- MODAL EDITAR USUARIO -->
-
-        <!-- Modal -->
-        <div
-          class="modal fade"
-          id="modalEditarUsuario"
-          tabindex="-1"
-          aria-labelledby="modalEditarUsuario"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered text-black">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">
-                  Editar usuario <span id="idUsuarioEditar">123</span>
-                </h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <form id="formularioEditarUsuario">
-                  <div class="mb-3">
-                    <label for="inputNombreUsuario" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="inputNombreUsuario" aria-describedby="nombre" />
-                  </div>
-                  <div class="mb-3">
-                    <label for="inputEmailUsuario" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmailUsuario" />
-                  </div>
-                  <div class="mb-3">
-                    <label for="inputPasswordUsuario" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="inputPasswordUsuario" />
-                  </div>
-                  <div class="d-flex justify-content-end gap-2">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button id="btnActualizarUsuario" type="submit" data-bs-dismiss="modal" class="btn btn-success">
-                      Actualizar
-                    </button>
-                  </div>
-                </form>
-              </div>
-              <!-- <div class="modal-footer"></div> -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-primary" id="logUser">Ingresar</button>
             </div>
           </div>
         </div>
-      </section>
-    </div>
-    <!-- Modal login -->
-    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Ingreso</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form action="" class="row" id="form">
-              <div class="col-12">
-                <label for="user" class="form-label">Nombre/Correo Electrónico:</label>
-                <input type="text" name="user" id="user" class="form-control" />
-              </div>
-              <div class="col-12">
-                <label for="passUser" class="form-label">Contraseña:</label>
-                <input type="password" name="passUser" id="passUser" class="form-control" />
-              </div>
-            </form>
-            <button onclick="location.href='./pages/404.html'" class="btn text-start text-primary">
-              ¿Olvidaste tu contraseña? Haz clic aquí
-            </button>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary" id="logUser">Ingresar</button>
-          </div>
-        </div>
       </div>
-    </div>
 
-    <!-- Modal Registro -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Registro</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form action="" class="row" id="form">
-              <label for="name" class="col-4">Nombre: </label>
-              <input type="text" name="name" id="name" class="col-6 my-2" />
-              <label for="pass" class="col-4">Correo Electronico</label>
-              <input type="email" name="mail" id="mail" class="col-6 my-2" />
-              <label for="pass" class="col-4">Contraseña</label>
-              <input type="password" name="pass" id="pass" class="col-6 my-2" />
-              <label for="confirmPass" class="col-4">Confirmar Contraseña</label>
-              <input type="password" name="confirmPass" id="confirmPass" class="col-6 my-2" />
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary" id="regUser">Registrarse!</button>
+      <!-- Modal Registro -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Registro</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="" class="row" id="form">
+                <label for="name" class="col-4">Nombre: </label>
+                <input type="text" name="name" id="name" class="col-6 my-2" />
+                <label for="pass" class="col-4">Correo Electronico</label>
+                <input type="email" name="mail" id="mail" class="col-6 my-2" />
+                <label for="pass" class="col-4">Contraseña</label>
+                <input type="password" name="pass" id="pass" class="col-6 my-2" />
+                <label for="confirmPass" class="col-4">Confirmar Contraseña</label>
+                <input type="password" name="confirmPass" id="confirmPass" class="col-6 my-2" />
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-primary" id="regUser">Registrarse!</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
     <!--FOOTER-->
     <footer class="FooterContainer">
       <div class="FooterSeccion">
@@ -408,5 +297,6 @@
     <script src="../../js/registerHandler.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../../css/Footer.css" />
+    <link rel="stylesheet" href="../../css/main.css" />
   </body>
 </html>

@@ -57,41 +57,19 @@ const AdminUser = document.getElementById('AdminUser');
 
 if (localStorage.getItem('userLogged') !== undefined) {
   const AdminLogged = JSON.parse(localStorage.getItem('userLogged'));
+  const linkRegistro = document.querySelector('#registerButton');
 
   if (AdminLogged !== null) {
     const isAdminLogged = AdminLogged.userRol == 0 ? true : false;
     if (isAdminLogged) {
       AdminUser.style.display = 'block';
+      linkRegistro.style.display = 'none';
     } else {
       AdminUser.style.display = 'none';
+      linkRegistro.style.display = 'block';
     }
   }
 }
-
-const adminHandler = () => {
-  if (window.location.href.includes('index')) {
-    window.location.href = './pages/panel-admin/index.html';
-  }
-  if (
-    window.location.href.includes('contacto') ||
-    window.location.href.includes('404') ||
-    window.location.href.includes('acercade')
-  ) {
-    window.location.href = './panel-admin/index.html';
-  }
-};
-
-const to404 = () => {
-  if (window.location.href.includes('index')) {
-    window.location.href = './pages/404.html';
-  }
-  if (window.location.href.includes('contacto') || window.location.href.includes('acercade')) {
-    window.location.href = './404.html';
-  }
-  if (window.location.href.includes('admin') || window.location.href.includes('panel-admin')) {
-    window.location.href = '../404.html';
-  }
-};
 
 // Carrusel: Controles
 $(document).ready(function () {

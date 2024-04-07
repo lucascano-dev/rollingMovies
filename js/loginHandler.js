@@ -10,7 +10,7 @@ const regButtonText = document.getElementById('loginButton');
 const logUser = document.getElementById('logUser');
 const isLogged = localStorage.getItem('userLogged') ? true : false;
 if (isLogged) {
-  regButtonText.innerText = 'DESCONECTARSE';
+  regButtonText.innerText = 'Cerrar sesión';
   regButtonText.removeAttribute('data-bs-toggle');
   regButtonText.removeAttribute('data-bs-target');
   regButtonText.addEventListener('click', (e) => {
