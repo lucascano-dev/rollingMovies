@@ -95,6 +95,10 @@ body {
   justify-content: center;
 }
 
+.container-filter {
+  width: 100% !important;
+}
+
 .encabezado-titulo-botones {
   margin-bottom: 20px;
   width: 100%;
