@@ -1,0 +1,23 @@
+main {
+  margin-top: 0 !important;
+  padding-top: 130px;
+  z-index: 10;
+  width: 100%;
+}
+
+@media (width <= 840px) {
+  main {
+    margin-top: 0 !important;
+    padding-top: 120px;
+    z-index: 10;
+    width: 100%;
+  }
+}
+@media (width <= 768px) {
+  main {
+    margin-top: 0 !important;
+    padding-top: 50px;
+    z-index: 10;
+    width: 100%;
+  }
+}

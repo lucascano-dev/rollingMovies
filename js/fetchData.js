@@ -5,6 +5,7 @@ async function fetchDataAndLoadPage() {
     return;
   }
   try {
+    console.log('No se encotraron datos en LocalStorage. Se procede a cargarlos y cargar la pagina...');
     // Realizar la solicitud Fetch de usuarios y almacenar los datos en localStorage
     const usuariosResponse = await fetch('../assets/data/usuarios.JSON');
     const usuariosData = await usuariosResponse.json();

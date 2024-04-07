@@ -3,8 +3,6 @@ const sectionCarrusel = document.getElementById('contenedor-carruseles');
 let allMovies = JSON.parse(localStorage.getItem('movies')) || [];
 const carouselDestacado = document.getElementById('carrusel-destacado');
 const moviesDestacado = allMovies.filter((movie) => movie.isDestacado && movie.isPublicado);
-const btnContacto = document.getElementById('btn-contacto');
-const btnAcercaDe = document.getElementById('btn-acerca-de');
 
 //Carga de contenido destacado
 let carouselItemsHTML = '';
@@ -59,49 +57,19 @@ const AdminUser = document.getElementById('AdminUser');
 
 if (localStorage.getItem('userLogged') !== undefined) {
   const AdminLogged = JSON.parse(localStorage.getItem('userLogged'));
+  const linkRegistro = document.querySelector('#registerButton');
 
   if (AdminLogged !== null) {
     const isAdminLogged = AdminLogged.userRol == 0 ? true : false;
     if (isAdminLogged) {
       AdminUser.style.display = 'block';
+      linkRegistro.style.display = 'none';
     } else {
       AdminUser.style.display = 'none';
+      linkRegistro.style.display = 'block';
     }
   }
 }
-
-btnAcercaDe.addEventListener('click', () => {
-  window.location.href = './pages/acercade.html';
-});
-
-btnContacto.addEventListener('click', () => {
-  window.location.href = './pages/contacto.html';
-});
-
-const adminHandler = () => {
-  if (window.location.href.includes('index')) {
-    window.location.href = './pages/panel-admin/index.html';
-  }
-  if (
-    window.location.href.includes('contacto') ||
-    window.location.href.includes('404') ||
-    window.location.href.includes('acercade')
-  ) {
-    window.location.href = './panel-admin/index.html';
-  }
-};
-
-const to404 = () => {
-  if (window.location.href.includes('index')) {
-    window.location.href = './pages/404.html';
-  }
-  if (window.location.href.includes('contacto') || window.location.href.includes('acercade')) {
-    window.location.href = './404.html';
-  }
-  if (window.location.href.includes('admin') || window.location.href.includes('panel-admin')) {
-    window.location.href = '../404.html';
-  }
-};
 
 // Carrusel: Controles
 $(document).ready(function () {

@@ -33,164 +33,165 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/carrusel.css" />
     <link rel="stylesheet" href="css/Footer.css" />
     <link rel="stylesheet" href="css/modalPP.css" />
+    <link rel="stylesheet" href="css/main.css" />
 
     <title>Rolling Movies</title>
   </head>
 
   <body>
-    <!--NAVBAR-->
-    <nav class="Navbar">
+    <nav class="Navbar border-bottom border-danger position-fixed w-100 z-3">
       <div class="Hamburguer" onclick="toggleMenu()">
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
       </div>
 
+      <a class="btn-logo">
+        <img
+          src="./assets/img/Cinestrenar Logo sin sombra.png"
+          alt="Cinestrenar"
+          class="CinestrenarLogo btn bg-transparent"
+        />
+      </a>
+
       <ul class="menu" id="menu">
-        <!-- <li><button type="button" class="btn bg-transparent">PELICULAS</button></li> -->
-        <li>
-          <button type="button" class="btn btn-primary bg-transparent text-black btn-navegador" id="btn-acerca-de">
-            ACERCA DE NOSOTROS
-          </button>
-          <div class="vertical-line"></div>
+        <li class="nav-item">
+          <a class="nav-link btn-navegador" id="btn-acerca-de" href="./pages/acercade.html">Acerca de</a>
         </li>
         <li>
-          <button type="button" class="btn btn-primary bg-transparent text-black btn-navegador" id="btn-contacto">
-            CONTACTO
-          </button>
-        </li>
-        <li>
-          <button
-            type="button"
+          <a
             class="btn btn-primary bg-transparent text-black btn-navegador"
-            id="loginButton"
-            data-bs-toggle="modal"
-            data-bs-target="#modalLogin"
+            id="btn-contacto"
+            href="./pages/contacto.html"
+            >Contacto</a
           >
-            INGRESO
-          </button>
         </li>
+
         <li>
-          <!-- Button trigger modal -->
-          <button
-            type="button"
+          <a
             class="btn btn-primary bg-transparent text-black btn-navegador"
             id="registerButton"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
           >
-            REGISTRO
-          </button>
+            Registro
+          </a>
         </li>
         <li id="AdminUser" style="display: none">
-          <button
-            type="button"
+          <a
             class="btn btn-primary bg-transparent text-black btn-navegador"
             id="navButton"
+            href="./pages/panel-admin/index.html"
             onclick="adminHandler()"
           >
-            ADMINISTRACION
-          </button>
+            Adminstración
+          </a>
+        </li>
+        <li>
+          <a
+            class="btn btn-primary bg-transparent text-black btn-navegador"
+            id="loginButton"
+            data-bs-toggle="modal"
+            data-bs-target="#modalLogin"
+          >
+            Ingreso
+          </a>
         </li>
       </ul>
-
-      <a href="./index.html"
-        ><img
-          src="./assets/img/Cinestrenar Logo sin sombra.png"
-          alt="Cinestrenar"
-          class="CinestrenarLogo btn bg-transparent"
-      /></a>
     </nav>
 
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-      <div id="carrusel-destacado" class="carousel-inner">
-        <!-- Aqui se generan los carruseles de peliculas destacadas -->
+    <main>
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div id="carrusel-destacado" class="carousel-inner">
+          <!-- Aqui se generan los carruseles de peliculas destacadas -->
+        </div>
       </div>
-    </div>
 
-    <section id="contenedor-carruseles">
-      <!-- Aqui iran todos los carruseles de peliculas publicadas -->
-    </section>
+      <section id="contenedor-carruseles">
+        <!-- Aqui iran todos los carruseles de peliculas publicadas -->
+      </section>
 
-    <!-- Button trigger modal -->
-    <!-- Modal -->
-    <div class="modal fade" id="detallePelicula" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg h-100 d-flex justify-content-center align-items-center" id="contenedorModal">
-        <!-- Agregamos la clase modal-lg para que el modal sea grande y le añadimos un margen en la parte superior del 10% del alto de la pantalla -->
-        <div class="modal-content" id="bg-image">
-          <!-- <div class="modal-header">
-                     <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Modal title</h1>
-                    </div> -->
-          <div class="modal-body" id="modal-body">
-            <!-- <button type="button" class="btn-close mt-3 me-3" data-bs-dismiss="modal" aria-label="Close"
-                        style="position: absolute; top: 0; right: 0; z-index: 3; "></button> -->
+      <!-- Button trigger modal -->
+      <!-- Modal -->
+      <div class="modal fade" id="detallePelicula" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg h-100 d-flex justify-content-center align-items-center" id="contenedorModal">
+          <!-- Agregamos la clase modal-lg para que el modal sea grande y le añadimos un margen en la parte superior del 10% del alto de la pantalla -->
+          <div class="modal-content" id="bg-image">
+            <!-- <div class="modal-header">
+                       <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Modal title</h1>
+                      </div> -->
+            <div class="modal-body" id="modal-body">
+              <!-- <button type="button" class="btn-close mt-3 me-3" data-bs-dismiss="modal" aria-label="Close"
+                          style="position: absolute; top: 0; right: 0; z-index: 3; "></button> -->
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Modal login -->
-    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Ingreso</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form action="" class="row" id="form-login">
-              <div class="col-12">
-                <label for="user" class="form-label">Nombre/Correo Electrónico:</label>
-                <input type="text" name="user" id="user" class="form-control" />
-              </div>
-              <div class="col-12">
-                <label for="passUser" class="form-label">Contraseña:</label>
-                <input type="password" name="passUser" id="passUser" class="form-control" />
-              </div>
-            </form>
-            <button onclick="location.href='./pages/404.html'" class="btn text-start text-primary">
-              ¿Olvidaste tu contraseña? Haz clic aquí
-            </button>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary" id="logUser">Ingresar</button>
+      <!-- Modal login -->
+      <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Ingreso</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="" class="row" id="form-login">
+                <div class="col-12">
+                  <label for="user" class="form-label">Nombre/Correo Electrónico:</label>
+                  <input type="text" name="user" id="user" class="form-control" />
+                </div>
+                <div class="col-12">
+                  <label for="passUser" class="form-label">Contraseña:</label>
+                  <input type="password" name="passUser" id="passUser" class="form-control" />
+                </div>
+              </form>
+              <button onclick="location.href='./pages/404.html'" class="btn text-start text-primary">
+                ¿Olvidaste tu contraseña? Haz clic aquí
+              </button>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-primary" id="logUser">Ingresar</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Modal Registro -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Registro</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form action="" class="row" id="form-registro">
-              <label for="name" class="col-4">Nombre: </label>
-              <input type="text" name="name" id="name" class="col-6 my-2" />
-              <label for="pass" class="col-4">Correo Electronico</label>
-              <input type="email" name="mail" id="mail" class="col-6 my-2" />
-              <label for="pass" class="col-4">Contraseña</label>
-              <input type="password" name="pass" id="pass" class="col-6 my-2" />
-              <label for="confirmPass" class="col-4">Confirmar Contraseña</label>
-              <input type="password" name="confirmPass" id="confirmPass" class="col-6 my-2" />
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary" id="regUser">Registrarse!</button>
+      <!-- Modal Registro -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Registro</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="" class="row" id="form-registro">
+                <label for="name" class="col-4">Nombre: </label>
+                <input type="text" name="name" id="name" class="col-6 my-2" />
+                <label for="pass" class="col-4">Correo Electronico</label>
+                <input type="email" name="mail" id="mail" class="col-6 my-2" />
+                <label for="pass" class="col-4">Contraseña</label>
+                <input type="password" name="pass" id="pass" class="col-6 my-2" />
+                <label for="confirmPass" class="col-4">Confirmar Contraseña</label>
+                <input type="password" name="confirmPass" id="confirmPass" class="col-6 my-2" />
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-primary" id="regUser">Registrarse!</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
 
     <!--FOOTER-->
     <footer class="FooterContainer">
@@ -267,9 +268,9 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <script src="./js/fetchData.js"></script>
-    <script src="./js/PaginaPrincipal.js"></script>
     <script src="./js/loginHandler.js"></script>
     <script src="./js/registerHandler.js"></script>
+    <script src="./js/PaginaPrincipal.js"></script>
     <script src="./js/navbar.js"></script>
   </body>
 </html>

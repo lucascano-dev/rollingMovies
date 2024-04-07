@@ -10,13 +10,13 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: rgb(227, 227, 227);
+  background-color: rgb(171, 22, 22);
   margin-top: 0px;
 }
 
 .CinestrenarLogo {
-  width: 200px;
-  height: auto;
+  /* width: 200px;
+  height: auto; */
 }
 
 .Hamburguer {
@@ -286,7 +286,7 @@ a {
     position: absolute;
     top: 50px;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
     opacity: 0;
     transition: opacity 0.3s ease;
     backdrop-filter: blur(5px);
@@ -298,6 +298,11 @@ a {
     width: 300px;
   }
 
+  .btn-logo {
+    position: absolute;
+    top: -10px;
+    left: 0px;
+  }
   .menu.active {
     display: flex;
     opacity: 1;
@@ -317,7 +322,7 @@ a {
   }
 
   .menu button {
-    color: #fff !important;
+    color: #ff0808 !important;
   }
 
   .menu li {
@@ -337,7 +342,7 @@ a {
 
 /* PAGINA PRINCIPAL */
 
-#navButton {
+/* #navButton {
   padding: 20px;
   background-color: transparent;
   color: #333333 !important;
@@ -405,11 +410,29 @@ a {
   font-size: 35px !important;
   font-family: 'Roboto', sans-serif;
   margin-top: 0px;
+} */
+
+.btn-navegador {
+  padding: 20px !important;
+  background-color: transparent !important;
+  color: #333333 !important;
+  text-decoration: none !important;
+  transition: color 0.3s !important;
+  border: none !important;
+  font-size: 20px !important;
+  font-family: 'Roboto', sans-serif !important;
+  margin-top: 0px;
+  transition: transform 0.2s ease-in-out !important;
 }
 
-/*@media screen and (max-width: 768px) {
-	.MovieCards {
-		flex-wrap: nowrap !important;
-	}
+.btn-navegador:hover {
+  padding: 20px !important;
+  background-color: transparent !important;
+  border: none !important;
+  color: #e00707 !important;
+  font-weight: bolder;
+  transform: scale(1.2) !important;
+
+  font-family: 'Roboto', sans-serif !important;
+  margin-top: 0px !important;
 }
-*/
