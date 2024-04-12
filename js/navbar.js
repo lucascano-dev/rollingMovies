@@ -3,10 +3,10 @@ const btnAcercaDe = document.getElementById('btn-acerca-de');
 const handlerToggler = document.querySelector('.handlerToggler');
 const navbarCollapse = document.querySelector('.navbar-collapse');
 
-handlerToggler.addEventListener('click', () => {
-  navbarCollapse.classList.remove('show');
-  // navbarCollapse.classList.add('hide');
-});
+// handlerToggler.addEventListener('click', () => {
+//   navbarCollapse.classList.remove('show');
+//   // navbarCollapse.classList.add('hide');
+// });
 
 // // Obtener la URL actual
 // let urlActual = window.location.href;
