@@ -30,6 +30,8 @@ Este proyecto fue desarrollado por un grupo de estudiantes durante el bootcamp d
 2. Abre el archivo `index.html` en tu navegador web.
 3. ¡Comienza a gestionar tu colección de películas y series!
 
+⚠ ATENCIÓN: Puedes eliminar el contenido completo desde el Local Storage sin problemas. Cuando regreses a la página principal, los datos se volverán a generar. Esto permite realizar prácticas y pruebas para este ejercicio tantas veces quieras. 😉
+
 ## Contribuciones 🤓
 
 Todavía hay muchísimas cosas que se le pueden mejorar.
