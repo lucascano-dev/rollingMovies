@@ -12,14 +12,6 @@ const formularioEditarContenido = document.getElementById('formularioEditarConte
 const searchFilterContenido = document.querySelector('.searchFilterContenido');
 const inputSearch = document.querySelector('.inputFilterContenido');
 let allMovies = JSON.parse(localStorage.getItem('movies')) || [];
-const userLogged = JSON.parse(localStorage.getItem('userLogged'));
-
-if (userLogged !== null) {
-  const isAdminLogged = userLogged.userRol == 0 ? true : false;
-  if (isAdminLogged === false) {
-    window.location.href = '/';
-  }
-}
 
 class ContenidoStreaming {
   constructor(id, nombre, categoria, descripcion, urlImagen, urlVideo, isPublicado, isDestacado) {
