@@ -204,11 +204,67 @@ function editarUsuario(e) {
   cargaUsuarios(0);
 }
 
+// function eliminarUsuario(idUsuario) {
+//   if (idUsuario === 0) {
+//     Swal.fire({
+//       icon: 'error',
+//       title: 'Oops...',
+//       text: 'No se puede eliminar el administrador principal.',
+//     });
+//     return; // Mantener al administrador principal en el arreglo
+//   }
+
+//   usuariosRegistrados = usuariosRegistrados.filter(function (usuario) {
+//     Swal.fire({
+//       icon: 'success',
+//       title: 'Oops...',
+//       text: 'Usuario eliminado correctamente',
+//     });
+//     return usuario.id !== idUsuario;
+//   });
+//   localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
+//   cargaUsuarios(0);
+// }
+
 function eliminarUsuario(idUsuario) {
+  // Verificar si el ID es cero
+  if (idUsuario === 0) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'No se puede eliminar el usuario administrador.',
+    });
+    return; // No hace nada si el ID es cero
+  }
+
+  let usuarioAEliminar = usuariosRegistrados.find(function (usuario) {
+    return usuario.id === idUsuario;
+  });
+
+  if (!usuarioAEliminar) {
+    alert('El usuario no existe.');
+    return; // No hace nada si el usuario no existe
+  }
+
+  let confirmacion = confirm(`¿Esta seguro que desea eliminar al usuario ${usuarioAEliminar.nombre}?`);
+
+  if (!confirmacion) {
+    return; // No hace nada si el usuario cancela la eliminación
+  }
+
+  // Filtrar el arreglo de usuarios para eliminar el usuario con el ID correspondiente
   usuariosRegistrados = usuariosRegistrados.filter(function (usuario) {
+    Swal.fire({
+      icon: 'success',
+      title: `${usuarioAEliminar.nombre} eliminado/a`,
+    });
     return usuario.id !== idUsuario;
   });
+
+  // Actualizar el almacenamiento local con el nuevo arreglo de usuarios
   localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
+
+  // Cargar los usuarios nuevamente (asumiendo que cargaUsuarios está definido en otro lugar)
   cargaUsuarios(0);
 }
 
