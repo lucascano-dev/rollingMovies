@@ -24,13 +24,13 @@ Este proyecto fue desarrollado por un grupo de estudiantes durante el bootcamp d
 - [Marcelo de Cristobal](https://github.com/MarcedeCris)
 - [Leonardo Balbastro](https://github.com/leobalbastro)
 
-## Instalación y Uso 🐱‍🏍
+## Instalación y Uso 🚀
 
 1. Clona este repositorio en tu máquina local.
 2. Abre el archivo `index.html` en tu navegador web.
 3. ¡Comienza a gestionar tu colección de películas y series!
 
-## Contribuciones
+## Contribuciones 🤓
 
 Todavía hay muchísimas cosas que se le pueden mejorar.
 ¡Las contribuciones son bienvenidas! Si deseas mejorar este proyecto, sigue estos pasos:
@@ -41,6 +41,6 @@ Todavía hay muchísimas cosas que se le pueden mejorar.
 4. Sube tus cambios al repositorio (`git push origin feature/improvement`).
 5. Abre un Pull Request.
 
-## Licencia
+## Licencia 😉
 
 Este proyecto está bajo la Licencia [MIT](https://opensource.org/licenses/MIT).
