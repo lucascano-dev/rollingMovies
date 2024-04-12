@@ -14,6 +14,10 @@ El objetivo principal de este proyecto es proporcionar una aplicación web que p
 - Las películas destacadas se muestran en el home principal como un carrusel
 - Según sean seleccionadas como publicadas o no, se irán mostrando en cada sección según su categoría.
 
+## Deploy
+
+Cinestrenar: [https://cinestrenar2.netlify.app/](https://cinestrenar2.netlify.app/)
+
 ## Colaboradores ✔
 
 Este proyecto fue desarrollado por un grupo de estudiantes durante el bootcamp de RollingCode. Los colaboradores principales son:
