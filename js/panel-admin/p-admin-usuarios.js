@@ -204,28 +204,6 @@ function editarUsuario(e) {
   cargaUsuarios(0);
 }
 
-// function eliminarUsuario(idUsuario) {
-//   if (idUsuario === 0) {
-//     Swal.fire({
-//       icon: 'error',
-//       title: 'Oops...',
-//       text: 'No se puede eliminar el administrador principal.',
-//     });
-//     return; // Mantener al administrador principal en el arreglo
-//   }
-
-//   usuariosRegistrados = usuariosRegistrados.filter(function (usuario) {
-//     Swal.fire({
-//       icon: 'success',
-//       title: 'Oops...',
-//       text: 'Usuario eliminado correctamente',
-//     });
-//     return usuario.id !== idUsuario;
-//   });
-//   localStorage.setItem('usuarios', JSON.stringify(usuariosRegistrados));
-//   cargaUsuarios(0);
-// }
-
 function eliminarUsuario(idUsuario) {
   // Verificar si el ID es cero
   if (idUsuario === 0) {
