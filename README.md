@@ -1,12 +1,12 @@
-# Gestión de Películas y Series
+# RollingMovies: Gestión de Películas y Series 😎
 
 Este repositorio contiene un proyecto de gestión de películas y series desarrollado utilizando HTML, CSS y JavaScript. El proyecto fue creado como parte del bootcamp de RollingCode en el curso de desarrollo full stack.
 
-## Descripción
+## Descripción 😃
 
 El objetivo principal de este proyecto es proporcionar una aplicación web que permita a los usuarios gestionar y organizar su colección de películas y series de una manera sencilla y eficiente. La aplicación ofrece, en su Panel de Administración, funcionalidades como agregar nuevas películas o series, editar información existente, buscar contenido por diferentes criterios, marcar películas o series como destacadas, y también publicadas.
 
-## Características
+## Características 🤗
 
 - Interfaz intuitiva y fácil de usar.
 - Capacidad para agregar películas y series nuevas.
@@ -14,7 +14,7 @@ El objetivo principal de este proyecto es proporcionar una aplicación web que p
 - Las películas destacadas se muestran en el home principal como un carrusel
 - Según sean seleccionadas como publicadas o no, se irán mostrando en cada sección según su categoría.
 
-## Colaboradores
+## Colaboradores ✔
 
 Este proyecto fue desarrollado por un grupo de estudiantes durante el bootcamp de RollingCode. Los colaboradores principales son:
 
@@ -24,7 +24,7 @@ Este proyecto fue desarrollado por un grupo de estudiantes durante el bootcamp d
 - [Marcelo de Cristobal](https://github.com/MarcedeCris)
 - [Leonardo Balbastro](https://github.com/leobalbastro)
 
-## Instalación y Uso
+## Instalación y Uso 🐱‍🏍
 
 1. Clona este repositorio en tu máquina local.
 2. Abre el archivo `index.html` en tu navegador web.
